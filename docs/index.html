@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB 부동산 주간 시계열 대시보드</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <h1>KB 부동산 주간 시계열 대시보드</h1>
+            <p class="update-date">업데이트 기준일: <span id="surveyDate">-</span></p>
+        </header>
+
+        <!-- 탭 네비게이션 -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="home">홈</button>
+            <button class="tab-btn" data-tab="national">전국 흐름</button>
+            <button class="tab-btn" data-tab="regional">지역 흐름</button>
+            <button class="tab-btn" data-tab="top10">TOP 10</button>
+            <button class="tab-btn" data-tab="supply">수요 & 공급</button>
+            <button class="tab-btn" data-tab="map">지도</button>
+            <button class="tab-btn" data-tab="notice">공지사항</button>
+        </nav>
+
+        <!-- 탭 콘텐츠 -->
+        <main class="tab-content-wrapper">
+            <!-- 홈 탭 -->
+            <div class="tab-content active" id="tab-home">
+                <div class="welcome-section">
+                    <h2>이 페이지는 매주 업데이트 KB 부동산 주간 시계열 데이터를<br>
+                        차트로 시각화해 정보를 제공하는 대시보드입니다.</h2>
+                    <p class="welcome-description">
+                        주간 시계열 데이터가 업데이트 되는 날에 맞춰<br>
+                        대시보드도 동일하게 업데이트하여 정보를 제공합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 전국 흐름 탭 -->
+            <div class="tab-content" id="tab-national">
+                <!-- 전국 통계 -->
+                <section class="stats-section">
+                    <h2>전국 흐름</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>전국 매매 증감률</h3>
+                            <div class="stat-value" id="nationalTrade">-</div>
+                            <div class="stat-change" id="nationalTradeChange">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>전국 전세 증감률</h3>
+                            <div class="stat-value" id="nationalJeonse">-</div>
+                            <div class="stat-change" id="nationalJeonseChange">-</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 권역별 통계 -->
+                <section class="regional-section">
+                    <div class="regional-grid">
+                        <div class="regional-category">
+                            <h3 class="regional-category-title">권역별 매매 증감률</h3>
+                            <div class="regional-stats-row">
+                                <div class="regional-stat-item">
+                                    <div class="regional-label">수도권</div>
+                                    <div class="regional-value" id="capitalTrade">-</div>
+                                    <div class="regional-change" id="capitalTradeChange">-</div>
+                                </div>
+                                <div class="regional-stat-item">
+                                    <div class="regional-label">5개 광역시</div>
+                                    <div class="regional-value" id="metroTrade">-</div>
+                                    <div class="regional-change" id="metroTradeChange">-</div>
+                                </div>
+                                <div class="regional-stat-item">
+                                    <div class="regional-label">기타지방</div>
+                                    <div class="regional-value" id="otherTrade">-</div>
+                                    <div class="regional-change" id="otherTradeChange">-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="regional-category">
+                            <h3 class="regional-category-title">권역별 전세 증감률</h3>
+                            <div class="regional-stats-row">
+                                <div class="regional-stat-item">
+                                    <div class="regional-label">수도권</div>
+                                    <div class="regional-value" id="capitalJeonse">-</div>
+                                    <div class="regional-change" id="capitalJeonseChange">-</div>
+                                </div>
+                                <div class="regional-stat-item">
+                                    <div class="regional-label">5개 광역시</div>
+                                    <div class="regional-value" id="metroJeonse">-</div>
+                                    <div class="regional-change" id="metroJeonseChange">-</div>
+                                </div>
+                                <div class="regional-stat-item">
+                                    <div class="regional-label">기타지방</div>
+                                    <div class="regional-value" id="otherJeonse">-</div>
+                                    <div class="regional-change" id="otherJeonseChange">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 권역별 증감 흐름 차트 -->
+                <section class="flow-chart-section">
+                    <div class="flow-chart-grid">
+                        <div class="flow-chart-card">
+                            <h3>권역별 매매증감 흐름</h3>
+                            <div class="flow-chart-container">
+                                <canvas id="tradeFlowChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="flow-chart-card">
+                            <h3>권역별 전세증감 흐름</h3>
+                            <div class="flow-chart-container">
+                                <canvas id="jeonseFlowChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 지역 흐름 탭 -->
+            <div class="tab-content" id="tab-regional">
+                <!-- 지역 Top 10 랭킹 -->
+                <section class="ranking-section">
+                    <h2>지역 흐름</h2>
+                    <div class="ranking-grid">
+                        <div class="ranking-card">
+                            <h3 class="ranking-title rising">상승 Top 10</h3>
+                            <div class="ranking-list" id="risingRank"></div>
+                        </div>
+                        <div class="ranking-card">
+                            <h3 class="ranking-title falling">하락 Top 10</h3>
+                            <div class="ranking-list" id="fallingRank"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 주간 증감 비교 바차트 -->
+                <section class="bar-chart-section">
+                    <div class="bar-chart-grid">
+                        <div class="bar-chart-card">
+                            <h3>주간 매매증감</h3>
+                            <div class="bar-chart-container">
+                                <canvas id="tradeBarChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="bar-chart-card">
+                            <h3>주간 전세증감</h3>
+                            <div class="bar-chart-container">
+                                <canvas id="jeonseBarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 지역별 증감률 테이블 -->
+                <section class="heatmap-section">
+                    <div class="heatmap-container">
+                        <div class="table-wrapper">
+                            <table id="heatmapTable" class="heatmap-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" class="region-header">지역명</th>
+                                        <th colspan="3" class="trade-header">매매 증감</th>
+                                        <th colspan="3" class="jeonse-header">전세 증감</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="sub-header">이번주</th>
+                                        <th class="sub-header">변동률</th>
+                                        <th class="sub-header">지난주</th>
+                                        <th class="sub-header">이번주</th>
+                                        <th class="sub-header">변동률</th>
+                                        <th class="sub-header">지난주</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="heatmapTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- TOP 10 탭 -->
+            <div class="tab-content" id="tab-top10">
+                <section class="top10-section">
+                    <h2>증감률 Top 10</h2>
+                    <div class="top10-grid">
+                        <!-- 매매 증감률 상위 -->
+                        <div class="top10-card">
+                            <h3 class="top10-title">매매 증감률 상위 (Top 10)</h3>
+                            <div class="top10-bar-chart">
+                                <canvas id="tradeTop10BarChart"></canvas>
+                            </div>
+                            <div class="top10-heatmap">
+                                <table id="tradeTop10HeatmapTable" class="top10-heatmap-table">
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 전세 증감률 상위 -->
+                        <div class="top10-card">
+                            <h3 class="top10-title">전세 증감률 상위 (Top 10)</h3>
+                            <div class="top10-bar-chart">
+                                <canvas id="jeonseTop10BarChart"></canvas>
+                            </div>
+                            <div class="top10-heatmap">
+                                <table id="jeonseTop10HeatmapTable" class="top10-heatmap-table">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 수요 & 공급 탭 -->
+            <div class="tab-content" id="tab-supply">
+                <section class="multiples-section">
+                    <h2>우위지수 & 수급지수 추세</h2>
+                    <div class="multiples-grid">
+                        <div class="multiple-chart-card">
+                            <h4>수도권 매수우위지수</h4>
+                            <canvas id="capitalBuyerIndex"></canvas>
+                        </div>
+                        <div class="multiple-chart-card">
+                            <h4>수도권 전세수급지수</h4>
+                            <canvas id="capitalJeonseSupplyIndex"></canvas>
+                        </div>
+                        <div class="multiple-chart-card">
+                            <h4>광역시 매수우위지수</h4>
+                            <canvas id="metroBuyerIndex"></canvas>
+                        </div>
+                        <div class="multiple-chart-card">
+                            <h4>광역시 전세수급지수</h4>
+                            <canvas id="metroJeonseSupplyIndex"></canvas>
+                        </div>
+                        <div class="multiple-chart-card">
+                            <h4>기타지방1 매수우위지수</h4>
+                            <canvas id="other1BuyerIndex"></canvas>
+                        </div>
+                        <div class="multiple-chart-card">
+                            <h4>기타지방1 전세수급지수</h4>
+                            <canvas id="other1JeonseSupplyIndex"></canvas>
+                        </div>
+                        <div class="multiple-chart-card">
+                            <h4>기타지방2 매수우위지수</h4>
+                            <canvas id="other2BuyerIndex"></canvas>
+                        </div>
+                        <div class="multiple-chart-card">
+                            <h4>기타지방2 전세수급지수</h4>
+                            <canvas id="other2JeonseSupplyIndex"></canvas>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 지도 탭 -->
+            <div class="tab-content" id="tab-map">
+                <section class="hexmap-section">
+                    <h2>지역별 증감률 지도</h2>
+                    <div class="hexmap-container-wrapper">
+                        <div class="hexmap-card">
+                            <h3 id="tradeMapTitle">매매 증감률</h3>
+                            <p class="hexmap-date" id="tradeMapDate">-</p>
+                            <div class="hexmap-canvas" id="tradeHexMap"></div>
+                        </div>
+                        <div class="hexmap-card">
+                            <h3 id="jeonseMapTitle">전세 증감률</h3>
+                            <p class="hexmap-date" id="jeonseMapDate">-</p>
+                            <div class="hexmap-canvas" id="jeonseHexMap"></div>
+                        </div>
+                        <div class="date-selector-panel">
+                            <div class="date-selector-header">
+                                <h3>날짜 선택</h3>
+                                <label class="toggle-switch">
+                                    <span>자동 모드 보기</span>
+                                    <input type="checkbox" id="autoPlayToggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="date-list-container" id="dateListContainer">
+                            </div>
+                            <div class="selected-date-display" id="selectedDateDisplay">
+                                -
+                            </div>
+                            <div class="color-legend">
+                                <div class="legend-bar"></div>
+                                <div class="legend-labels">
+                                    <span>-0.8%</span>
+                                    <span>0%</span>
+                                    <span>+0.8%</span>
+                                </div>
+                            </div>
+                            <div class="color-density-control">
+                                <label>색상 밀도</label>
+                                <input type="range" id="colorDensitySlider" min="0.1" max="2.0" step="0.1" value="0.8">
+                                <span class="density-value" id="densityValue">0.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 공지사항 탭 -->
+            <div class="tab-content" id="tab-notice">
+                <section class="notice-section">
+                    <h2>공지사항</h2>
+                    <div class="notice-content">
+                        <p>향후 업데이트 예정입니다.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- 로딩 인디케이터 -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>데이터 로딩 중...</p>
+        </div>
+
+        <!-- 에러 메시지 -->
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/hexagon.js"></script>
+</body>
+</html>

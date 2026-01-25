@@ -1,0 +1,46 @@
+name: Update Data
+
+# 엑셀 파일 업로드 시 자동 실행
+on:
+  push:
+    paths:
+      - 'data/*.xlsx'
+  workflow_dispatch:  # 수동 실행도 가능
+
+jobs:
+  convert-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 리포지토리 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Python 환경 설정
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. 필요한 Python 패키지 설치
+      - name: Install dependencies
+        run: |
+          pip install pandas openpyxl
+
+      # 4. 엑셀 → JSON 변환 실행
+      - name: Convert Excel to JSON
+        run: |
+          python scripts/excel_to_json.py
+
+      # 5. 변경사항 커밋 및 푸시
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add docs/data/latest.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Update data: $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
