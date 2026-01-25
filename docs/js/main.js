@@ -877,10 +877,10 @@ function displayBarCharts(timeSeriesData) {
     const jeonseData = prepareBarChartData(timeSeriesData, displayRegions, latestWeek, previousWeek, 'jeonse');
 
     // 매매 증감 차트
-    displayBarChart('tradeBarChart', tradeData, '주간 매매증감', 'trade');
+    displayBarChart('tradeBarChart', tradeData, '주간 매매증감', 'trade', latestWeek, previousWeek);
 
     // 전세 증감 차트
-    displayBarChart('jeonseBarChart', jeonseData, '주간 전세증감', 'jeonse');
+    displayBarChart('jeonseBarChart', jeonseData, '주간 전세증감', 'jeonse', latestWeek, previousWeek);
 }
 
 // 바 차트 데이터 준비 함수
@@ -916,7 +916,7 @@ function prepareBarChartData(timeSeriesData, displayRegions, latestWeek, previou
     };
 }
 
-function displayBarChart(canvasId, chartData, title, chartType) {
+function displayBarChart(canvasId, chartData, title, chartType, latestWeek, previousWeek) {
     const ctx = document.getElementById(canvasId);
     if (!ctx) return;
 
@@ -936,6 +936,10 @@ function displayBarChart(canvasId, chartData, title, chartType) {
         previous: 'rgba(144, 238, 144, 0.5)'    // 연한 초록 (지난주)
     };
 
+    // 범례 라벨에 날짜 추가
+    const currentLabel = latestWeek ? `이번주(${latestWeek})` : '이번주';
+    const previousLabel = previousWeek ? `지난주(${previousWeek})` : '지난주';
+
     // 차트 생성
     const newChart = new Chart(ctx, {
         type: 'bar',
@@ -943,14 +947,14 @@ function displayBarChart(canvasId, chartData, title, chartType) {
             labels: chartData.labels,
             datasets: [
                 {
-                    label: '이번주',
+                    label: currentLabel,
                     data: chartData.currentWeek,
                     backgroundColor: colors.current,
                     borderColor: colors.current,
                     borderWidth: 1
                 },
                 {
-                    label: '지난주',
+                    label: previousLabel,
                     data: chartData.previousWeek,
                     backgroundColor: colors.previous,
                     borderColor: colors.previous,
@@ -1032,6 +1036,9 @@ function displayHeatmapTable(timeSeriesData) {
 
     console.log('테이블 - 최근 2주:', latestWeek, previousWeek);
 
+    // 테이블 헤더에 날짜 추가
+    updateHeatmapTableHeaders(latestWeek, previousWeek);
+
     // 표시할 지역 순서
     const displayRegions = [
         'Total',
@@ -1100,6 +1107,30 @@ function displayHeatmapTable(timeSeriesData) {
 
         tbody.appendChild(row);
     });
+}
+
+// 히트맵 테이블 헤더 업데이트 (날짜 추가)
+function updateHeatmapTableHeaders(latestWeek, previousWeek) {
+    const table = document.getElementById('heatmapTable');
+    if (!table) return;
+
+    const thead = table.querySelector('thead');
+    if (!thead) return;
+
+    // 두 번째 행 (이번주, 변동률, 지난주 헤더)
+    const headerRows = thead.querySelectorAll('tr');
+    if (headerRows.length >= 2) {
+        const subHeaderRow = headerRows[1];
+        const subHeaders = subHeaderRow.querySelectorAll('th');
+
+        // 매매 이번주 (인덱스 0), 매매 지난주 (인덱스 2), 전세 이번주 (인덱스 3), 전세 지난주 (인덱스 5)
+        if (subHeaders.length >= 6) {
+            subHeaders[0].textContent = `이번주(${latestWeek})`;
+            subHeaders[2].textContent = `지난주(${previousWeek})`;
+            subHeaders[3].textContent = `이번주(${latestWeek})`;
+            subHeaders[5].textContent = `지난주(${previousWeek})`;
+        }
+    }
 }
 
 // 값 셀 생성 (배경색 바 포함)
