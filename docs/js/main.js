@@ -1493,19 +1493,19 @@ function displayTop10Charts(timeSeriesData) {
 
     // 매매 상위 차트 생성
     displayTop10BarChart('tradeTop10BarChart', tradeTop10, '매매 증감률 상위', false);
-    displayTop10Heatmap('tradeTop10HeatmapTable', tradeTop10, recentWeeks);
+    displayTop10Heatmap('tradeTop10HeatmapTable', tradeTop10, recentWeeks, false);
 
     // 전세 상위 차트 생성
     displayTop10BarChart('jeonseTop10BarChart', jeonseTop10, '전세 증감률 상위', false);
-    displayTop10Heatmap('jeonseTop10HeatmapTable', jeonseTop10, recentWeeks);
+    displayTop10Heatmap('jeonseTop10HeatmapTable', jeonseTop10, recentWeeks, false);
 
     // 매매 하위 차트 생성
     displayTop10BarChart('tradeBottom10BarChart', tradeBottom10, '매매 증감률 하위', true);
-    displayTop10Heatmap('tradeBottom10HeatmapTable', tradeBottom10, recentWeeks);
+    displayTop10Heatmap('tradeBottom10HeatmapTable', tradeBottom10, recentWeeks, true);
 
     // 전세 하위 차트 생성
     displayTop10BarChart('jeonseBottom10BarChart', jeonseBottom10, '전세 증감률 하위', true);
-    displayTop10Heatmap('jeonseBottom10HeatmapTable', jeonseBottom10, recentWeeks);
+    displayTop10Heatmap('jeonseBottom10HeatmapTable', jeonseBottom10, recentWeeks, true);
 }
 
 // 상위/하위 10개 지역 추출 및 히트맵 데이터 준비
@@ -1639,7 +1639,7 @@ function displayTop10BarChart(canvasId, top10Data, title, isBottom = false) {
 }
 
 // Top 10 히트맵 테이블 생성
-function displayTop10Heatmap(tableId, top10Data, weeks) {
+function displayTop10Heatmap(tableId, top10Data, weeks, isBottom = false) {
     const table = document.getElementById(tableId);
     if (!table) return;
 
@@ -1699,15 +1699,25 @@ function displayTop10Heatmap(tableId, top10Data, weeks) {
                 cell.textContent = value.toFixed(2);
                 cell.className = 'top10-value-cell';
 
-                // 색상 계산 (값이 클수록 진한 빨간색)
+                // 색상 계산
                 const intensity = (value - minValue) / (maxValue - minValue);
-                const red = 239;
-                const green = Math.floor(68 + (255 - 68) * (1 - intensity));
-                const blue = Math.floor(68 + (255 - 68) * (1 - intensity));
-                cell.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, ${0.3 + intensity * 0.5})`;
+
+                if (isBottom) {
+                    // 하위 Top 10: 파란색 계열 (값이 낮을수록 진한 파란색)
+                    const red = Math.floor(59 + (255 - 59) * intensity);
+                    const green = Math.floor(130 + (255 - 130) * intensity);
+                    const blue = 246;
+                    cell.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, ${0.3 + (1 - intensity) * 0.5})`;
+                } else {
+                    // 상위 Top 10: 빨간색 계열 (값이 높을수록 진한 빨간색)
+                    const red = 239;
+                    const green = Math.floor(68 + (255 - 68) * (1 - intensity));
+                    const blue = Math.floor(68 + (255 - 68) * (1 - intensity));
+                    cell.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, ${0.3 + intensity * 0.5})`;
+                }
 
                 // 진한 배경에는 흰색 텍스트
-                if (intensity > 0.6) {
+                if ((isBottom && intensity < 0.4) || (!isBottom && intensity > 0.6)) {
                     cell.style.color = '#ffffff';
                 }
             } else {
