@@ -5,31 +5,131 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
     color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============================================================================
+   새로운 레이아웃 구조: Header (고정) - Content (스크롤) - Footer (고정)
+   ============================================================================= */
+
+/* 헤더 (고정) */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.site-header h1 {
+    font-size: 1.4rem;
+    color: #667eea;
+    white-space: nowrap;
+}
+
+.site-header .update-date {
+    font-size: 0.9rem;
+    color: #718096;
+    white-space: nowrap;
+}
+
+/* 탭 네비게이션 (헤더 내) */
+.tab-navigation {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.tab-btn {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #4a5568;
+}
+
+.tab-btn:hover {
+    background: #edf2f7;
+    border-color: #667eea;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+}
+
+/* 콘텐츠 영역 (스크롤) */
+.site-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.site-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.site-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.site-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+}
+
+.site-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .container {
-    max-width: 1800px;  /* 테이블 크기에 맞춰 확대 */
+    max-width: 1800px;
     margin: 0 auto;
 }
 
-/* 헤더 */
-header {
+/* Footer (고정) */
+.site-footer {
+    padding: 12px 30px;
+    background: rgba(0, 0, 0, 0.2);
     text-align: center;
-    color: white;
-    margin-bottom: 40px;
-    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    flex-shrink: 0;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+.site-footer p {
+    margin: 0;
+}
+
+/* 기존 헤더 스타일 제거용 */
+.header {
+    display: none;
 }
 
 .subtitle {
@@ -1249,31 +1349,6 @@ header h1 {
 /* 탭 콘텐츠 */
 .tab-content-wrapper {
     position: relative;
-    height: calc(100vh - 200px);
-    min-height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 10px;
-    margin-bottom: 20px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.3) transparent;
-}
-
-.tab-content-wrapper::-webkit-scrollbar {
-    width: 8px;
-}
-
-.tab-content-wrapper::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.tab-content-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
-    border-radius: 4px;
-}
-
-.tab-content-wrapper::-webkit-scrollbar-thumb:hover {
-    background: rgba(255,255,255,0.5);
 }
 
 .tab-content {
@@ -1306,7 +1381,7 @@ header h1 {
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     max-width: 900px;
-    margin: 100px auto 50px auto;
+    margin: 50px auto;
 }
 
 .welcome-section h2 {
@@ -1547,13 +1622,20 @@ header h1 {
 
 /* 태블릿 (1024px 이하) */
 @media (max-width: 1024px) {
-    .container {
-        padding: 0 15px;
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
     }
 
-    .tab-content-wrapper {
-        height: calc(100vh - 180px);
-        min-height: 500px;
+    .header-left {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .tab-navigation {
+        justify-content: center;
     }
 
     .stats-grid,
@@ -1581,45 +1663,36 @@ header h1 {
 
 /* 모바일 (768px 이하) */
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
+    .site-header {
+        padding: 12px 15px;
+        gap: 12px;
     }
 
-    .header {
-        padding: 15px 10px;
-        margin-bottom: 15px;
+    .site-header h1 {
+        font-size: 1.1rem;
     }
 
-    .header h1 {
-        font-size: 1.4rem;
-    }
-
-    .update-date {
-        font-size: 0.9rem;
+    .site-header .update-date {
+        font-size: 0.8rem;
     }
 
     .tab-navigation {
         gap: 5px;
-        padding: 0 5px;
-        margin-bottom: 15px;
     }
 
     .tab-btn {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 0.75rem;
     }
 
-    .tab-content-wrapper {
-        height: calc(100vh - 160px);
-        min-height: 400px;
-        padding: 5px;
+    .site-content {
+        padding: 15px 10px;
     }
 
     /* 홈 화면 */
     .welcome-section {
         padding: 40px 20px;
-        margin: 30px auto;
+        margin: 20px auto;
     }
 
     .welcome-section h2 {
@@ -1733,16 +1806,21 @@ header h1 {
     .notice-modal-body li {
         font-size: 0.9rem;
     }
+
+    .site-footer {
+        padding: 10px 15px;
+        font-size: 0.75rem;
+    }
 }
 
 /* 작은 모바일 (480px 이하) */
 @media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.2rem;
+    .site-header h1 {
+        font-size: 0.95rem;
     }
 
     .tab-btn {
-        padding: 6px 8px;
+        padding: 5px 8px;
         font-size: 0.7rem;
     }
 
@@ -1767,26 +1845,5 @@ header h1 {
 
     .ranking-rate {
         font-size: 0.95rem;
-    }
-}
-
-/* =============================================================================
-   Footer 스타일
-   ============================================================================= */
-.site-footer {
-    text-align: center;
-    padding: 20px 15px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.85rem;
-}
-
-.site-footer p {
-    margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-    .site-footer {
-        padding: 15px 10px;
-        font-size: 0.75rem;
     }
 }

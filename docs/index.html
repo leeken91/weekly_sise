@@ -9,14 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- 헤더 -->
-        <header class="header">
+    <!-- 헤더 (고정) -->
+    <header class="site-header">
+        <div class="header-left">
             <h1>KB 부동산 주간 시계열 대시보드</h1>
-            <p class="update-date">업데이트 기준일: <span id="surveyDate">-</span></p>
-        </header>
-
-        <!-- 탭 네비게이션 -->
+            <span class="update-date">업데이트 기준일: <span id="surveyDate">-</span></span>
+        </div>
         <nav class="tab-navigation">
             <button class="tab-btn active" data-tab="home">홈</button>
             <button class="tab-btn" data-tab="national">전국 흐름</button>
@@ -26,9 +24,12 @@
             <button class="tab-btn" data-tab="map">지도</button>
             <button class="tab-btn" data-tab="notice">공지사항</button>
         </nav>
+    </header>
 
-        <!-- 탭 콘텐츠 -->
-        <main class="tab-content-wrapper">
+    <!-- 콘텐츠 (스크롤 영역) -->
+    <main class="site-content">
+        <div class="container">
+            <div class="tab-content-wrapper">
             <!-- 홈 탭 -->
             <div class="tab-content active" id="tab-home">
                 <div class="welcome-section">
@@ -343,22 +344,8 @@
                     </div>
                 </section>
             </div>
-
-            <!-- 공지사항 모달 -->
-            <div class="notice-modal" id="noticeModal">
-                <div class="notice-modal-content">
-                    <div class="notice-modal-header">
-                        <span class="notice-modal-version" id="modalVersion"></span>
-                        <span class="notice-modal-date" id="modalDate"></span>
-                        <button class="notice-modal-close" id="modalClose">&times;</button>
-                    </div>
-                    <h3 class="notice-modal-title" id="modalTitle"></h3>
-                    <div class="notice-modal-body" id="modalBody">
-                        <!-- JavaScript로 동적 생성 -->
-                    </div>
-                </div>
             </div>
-        </main>
+        </div>
 
         <!-- 로딩 인디케이터 -->
         <div class="loading" id="loading" style="display: none;">
@@ -368,13 +355,26 @@
 
         <!-- 에러 메시지 -->
         <div class="error-message" id="errorMessage" style="display: none;"></div>
-    </div>
+    </main>
 
-    <!-- Footer -->
+    <!-- Footer (고정) -->
     <footer class="site-footer">
-        <p>Data source : KB Real Estate (kbland.kr)</p>
-        <p>Dashboard production : leeken91</p>
+        <p>Data source : KB Real Estate (kbland.kr) | Dashboard production : leeken91</p>
     </footer>
+
+    <!-- 공지사항 모달 -->
+    <div class="notice-modal" id="noticeModal">
+        <div class="notice-modal-content">
+            <div class="notice-modal-header">
+                <span class="notice-modal-version" id="modalVersion"></span>
+                <span class="notice-modal-date" id="modalDate"></span>
+                <button class="notice-modal-close" id="modalClose">&times;</button>
+            </div>
+            <h3 class="notice-modal-title" id="modalTitle"></h3>
+            <div class="notice-modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/hexagon.js"></script>
