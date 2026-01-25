@@ -72,11 +72,11 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: white;
+    color: #333;
 }
 
 .tab-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     border-color: rgba(255, 255, 255, 0.5);
 }
 
