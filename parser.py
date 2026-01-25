@@ -337,6 +337,9 @@ class KBRealEstateParser:
         try:
             df = pd.read_excel(self.file_path, sheet_name=sheet_name, header=2)
 
+            # 컬럼명 정리: 줄바꿈을 공백으로 변환
+            df.columns = [str(col).replace('\n', ' ') if isinstance(col, str) else col for col in df.columns]
+
             logger.info(f"\n=== {sheet_name} 파싱 시작 ===")
             logger.info(f"Shape: {df.shape}")
             logger.info(f"컬럼 샘플 (처음 10개): {df.columns.tolist()[:10]}")

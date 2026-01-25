@@ -8,10 +8,45 @@ let jeonseFlowChart = null;
 let multipleCharts = {};
 let tradeTop10BarChart = null;
 let jeonseTop10BarChart = null;
+let tradeBottom10BarChart = null;
+let jeonseBottom10BarChart = null;
 
 // DOM 요소
 const loading = document.getElementById('loading');
 const errorMessage = document.getElementById('errorMessage');
+
+// =============================================================================
+// 업데이트 히스토리 데이터
+// =============================================================================
+const updateHistory = [
+    {
+        version: 'v0.2',
+        date: '2026-01-25',
+        title: '하위 Top 10 추가 및 버그 수정',
+        changes: [
+            '매매/전세 증감률 하위 Top 10 시각화 추가',
+            '세종시 지도 표시 오류 수정 (excludedRegions에서 제거)',
+            '제주 지역 지도 표시 오류 수정 (지역명 줄바꿈 처리)',
+            '증감률 0% 지역이 "데이터 없음"으로 표시되던 오류 수정',
+            '공지사항을 업데이트 히스토리 게시판 형태로 변경',
+            'Footer 추가 (Data source 및 제작자 정보)',
+            'Top 10 탭 제목 스타일 통일'
+        ]
+    },
+    {
+        version: 'v0.1',
+        date: '2026-01-23',
+        title: 'KB부동산 주간시계열 대시보드 최초 배포',
+        changes: [
+            '홈 탭: 대시보드 소개',
+            '전국 흐름 탭: 전국/권역별 매매·전세 증감률 및 흐름 차트',
+            '지역 흐름 탭: 상승/하락 Top 10, 주간 증감 바차트, 지역별 테이블',
+            'Top 10 탭: 매매/전세 증감률 상위 Top 10 차트 및 히트맵',
+            '수요 & 공급 탭: 매수우위지수, 전세수급지수 추세 차트',
+            '지도 탭: 육각형 지도로 지역별 증감률 시각화 (날짜 선택, 자동 재생 기능)'
+        ]
+    }
+];
 
 // =============================================================================
 // 탭 전환 기능
@@ -91,6 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 탭 초기화
     initializeTabs();
+
+    // 공지사항 모달 초기화
+    initializeNoticeModal();
 
     // 데이터 자동 로드
     loadData();
@@ -1445,32 +1483,42 @@ function displayTop10Charts(timeSeriesData) {
 
     // 매매 데이터 처리
     const tradeData = timeSeriesData.filter(item => item.type === 'trade' && item.week === latestWeek);
-    const tradeTop10 = getTop10Regions(tradeData, recentWeeks, timeSeriesData, 'trade');
+    const tradeTop10 = getTop10Regions(tradeData, recentWeeks, timeSeriesData, 'trade', false);
+    const tradeBottom10 = getTop10Regions(tradeData, recentWeeks, timeSeriesData, 'trade', true);
 
     // 전세 데이터 처리
     const jeonseData = timeSeriesData.filter(item => item.type === 'jeonse' && item.week === latestWeek);
-    const jeonseTop10 = getTop10Regions(jeonseData, recentWeeks, timeSeriesData, 'jeonse');
+    const jeonseTop10 = getTop10Regions(jeonseData, recentWeeks, timeSeriesData, 'jeonse', false);
+    const jeonseBottom10 = getTop10Regions(jeonseData, recentWeeks, timeSeriesData, 'jeonse', true);
 
-    // 매매 차트 생성
-    displayTop10BarChart('tradeTop10BarChart', tradeTop10, '매매 증감률 상위');
+    // 매매 상위 차트 생성
+    displayTop10BarChart('tradeTop10BarChart', tradeTop10, '매매 증감률 상위', false);
     displayTop10Heatmap('tradeTop10HeatmapTable', tradeTop10, recentWeeks);
 
-    // 전세 차트 생성
-    displayTop10BarChart('jeonseTop10BarChart', jeonseTop10, '전세 증감률 상위');
+    // 전세 상위 차트 생성
+    displayTop10BarChart('jeonseTop10BarChart', jeonseTop10, '전세 증감률 상위', false);
     displayTop10Heatmap('jeonseTop10HeatmapTable', jeonseTop10, recentWeeks);
+
+    // 매매 하위 차트 생성
+    displayTop10BarChart('tradeBottom10BarChart', tradeBottom10, '매매 증감률 하위', true);
+    displayTop10Heatmap('tradeBottom10HeatmapTable', tradeBottom10, recentWeeks);
+
+    // 전세 하위 차트 생성
+    displayTop10BarChart('jeonseBottom10BarChart', jeonseBottom10, '전세 증감률 하위', true);
+    displayTop10Heatmap('jeonseBottom10HeatmapTable', jeonseBottom10, recentWeeks);
 }
 
-// 상위 10개 지역 추출 및 히트맵 데이터 준비
-function getTop10Regions(latestWeekData, recentWeeks, allTimeSeriesData, dataType) {
+// 상위/하위 10개 지역 추출 및 히트맵 데이터 준비
+function getTop10Regions(latestWeekData, recentWeeks, allTimeSeriesData, dataType, ascending = false) {
     // 집계 지역 제외 (Total, Seoul Metropolitan Area, 5 Large Cities, Non-Metropolitan Area)
     const excludeRegions = ['Total', 'Seoul Metropolitan Area', '5 Large Cities', 'Non-Metropolitan Area'];
 
     // 개별 지역만 필터링
     const individualRegions = latestWeekData.filter(item => !excludeRegions.includes(item.region));
 
-    // 증감률 기준 내림차순 정렬 후 상위 10개
+    // 증감률 기준 정렬 후 상위/하위 10개
     const top10 = individualRegions
-        .sort((a, b) => parseFloat(b.rate) - parseFloat(a.rate))
+        .sort((a, b) => ascending ? parseFloat(a.rate) - parseFloat(b.rate) : parseFloat(b.rate) - parseFloat(a.rate))
         .slice(0, 10);
 
     // 각 지역에 대해 최근 주차 데이터 추가
@@ -1497,7 +1545,7 @@ function getTop10Regions(latestWeekData, recentWeeks, allTimeSeriesData, dataTyp
 }
 
 // Top 10 가로 막대 차트
-function displayTop10BarChart(canvasId, top10Data, title) {
+function displayTop10BarChart(canvasId, top10Data, title, isBottom = false) {
     const ctx = document.getElementById(canvasId);
     if (!ctx) return;
 
@@ -1506,11 +1554,19 @@ function displayTop10BarChart(canvasId, top10Data, title) {
         tradeTop10BarChart.destroy();
     } else if (canvasId === 'jeonseTop10BarChart' && jeonseTop10BarChart) {
         jeonseTop10BarChart.destroy();
+    } else if (canvasId === 'tradeBottom10BarChart' && tradeBottom10BarChart) {
+        tradeBottom10BarChart.destroy();
+    } else if (canvasId === 'jeonseBottom10BarChart' && jeonseBottom10BarChart) {
+        jeonseBottom10BarChart.destroy();
     }
 
     // 지역명 한글 변환
     const labels = top10Data.map(item => regionNameMap[item.region] || item.region);
     const data = top10Data.map(item => item.currentRate);
+
+    // 색상 설정 (상위: 빨강, 하위: 파랑)
+    const bgColor = isBottom ? 'rgba(59, 130, 246, 0.8)' : 'rgba(239, 68, 68, 0.8)';
+    const borderColor = isBottom ? 'rgba(59, 130, 246, 1)' : 'rgba(239, 68, 68, 1)';
 
     // 차트 생성
     const newChart = new Chart(ctx, {
@@ -1520,8 +1576,8 @@ function displayTop10BarChart(canvasId, top10Data, title) {
             datasets: [{
                 label: title,
                 data: data,
-                backgroundColor: 'rgba(239, 68, 68, 0.8)',
-                borderColor: 'rgba(239, 68, 68, 1)',
+                backgroundColor: bgColor,
+                borderColor: borderColor,
                 borderWidth: 1
             }]
         },
@@ -1575,6 +1631,10 @@ function displayTop10BarChart(canvasId, top10Data, title) {
         tradeTop10BarChart = newChart;
     } else if (canvasId === 'jeonseTop10BarChart') {
         jeonseTop10BarChart = newChart;
+    } else if (canvasId === 'tradeBottom10BarChart') {
+        tradeBottom10BarChart = newChart;
+    } else if (canvasId === 'jeonseBottom10BarChart') {
+        jeonseBottom10BarChart = newChart;
     }
 }
 
@@ -1661,4 +1721,99 @@ function displayTop10Heatmap(tableId, top10Data, weeks) {
         tbody.appendChild(row);
     });
     table.appendChild(tbody);
+}
+
+// =============================================================================
+// 업데이트 히스토리 (공지사항) 기능
+// =============================================================================
+
+// 공지사항 리스트 렌더링
+function renderNoticeList() {
+    const noticeList = document.getElementById('noticeList');
+    if (!noticeList) return;
+
+    noticeList.innerHTML = '';
+
+    updateHistory.forEach((item, index) => {
+        const noticeItem = document.createElement('div');
+        noticeItem.className = 'notice-item';
+        noticeItem.dataset.index = index;
+
+        noticeItem.innerHTML = `
+            <span class="notice-item-version">${item.version}</span>
+            <div class="notice-item-content">
+                <div class="notice-item-title">${item.title}</div>
+                <div class="notice-item-date">${item.date}</div>
+            </div>
+            <span class="notice-item-arrow">›</span>
+        `;
+
+        noticeItem.addEventListener('click', () => openNoticeModal(index));
+        noticeList.appendChild(noticeItem);
+    });
+}
+
+// 공지사항 모달 열기
+function openNoticeModal(index) {
+    const item = updateHistory[index];
+    if (!item) return;
+
+    const modal = document.getElementById('noticeModal');
+    const modalVersion = document.getElementById('modalVersion');
+    const modalDate = document.getElementById('modalDate');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    modalVersion.textContent = item.version;
+    modalDate.textContent = item.date;
+    modalTitle.textContent = item.title;
+
+    // 변경사항 리스트 생성
+    const ul = document.createElement('ul');
+    item.changes.forEach(change => {
+        const li = document.createElement('li');
+        li.textContent = change;
+        ul.appendChild(li);
+    });
+    modalBody.innerHTML = '';
+    modalBody.appendChild(ul);
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+}
+
+// 공지사항 모달 닫기
+function closeNoticeModal() {
+    const modal = document.getElementById('noticeModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // 배경 스크롤 복원
+}
+
+// 공지사항 모달 이벤트 초기화
+function initializeNoticeModal() {
+    const modal = document.getElementById('noticeModal');
+    const closeBtn = document.getElementById('modalClose');
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeNoticeModal);
+    }
+
+    // 모달 배경 클릭 시 닫기
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeNoticeModal();
+            }
+        });
+    }
+
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeNoticeModal();
+        }
+    });
+
+    // 공지사항 리스트 렌더링
+    renderNoticeList();
 }

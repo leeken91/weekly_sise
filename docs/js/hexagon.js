@@ -13,7 +13,7 @@ const excludedRegions = [
     'Seoul', 'Busan', 'Daegu', 'Incheon', 'Gwangju', 'Daejeon', 'Ulsan',
     'Gyeonggi-do', 'Gangwon-do', 'Chungcheongbuk-do', 'Chungcheongnam-do ',
     'Jeollabuk-do', 'Jeollanam-do', 'Gyeongsangbuk-do', 'Gyeongsangnam-do',
-    'Jeju-do ', 'Sejong'
+    'Jeju-do '
 ];
 
 // 하위 구가 있는 시 (상위 시는 제외, 구만 표시)
@@ -156,7 +156,7 @@ function createHexagonMap(containerId, data) {
         const { x, y } = hexToPixel(coords.row, coords.col, hexSize);
         const actualX = x;
         const actualY = y;
-        const value = data[region] || null;
+        const value = data[region] !== undefined ? data[region] : null;
         const color = getColor(value, currentColorDensity);
 
         const hexagon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
@@ -281,7 +281,8 @@ function extractRegionDataForWeek(timeSeriesData, week, type) {
     const data = {};
     timeSeriesData.forEach(item => {
         if (item.week === week && item.type === type) {
-            const region = item.region;
+            // 지역명 정규화: 줄바꿈을 공백으로 변환
+            const region = item.region.replace(/\n/g, ' ');
             if (excludedRegions.includes(region)) return;
             if (citiesWithDistricts.includes(region)) return;
             if (hexagonLayout[region]) {

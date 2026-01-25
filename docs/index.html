@@ -216,6 +216,30 @@
                                 </table>
                             </div>
                         </div>
+
+                        <!-- 매매 증감률 하위 -->
+                        <div class="top10-card">
+                            <h3 class="top10-title">매매 증감률 하위 (Top 10)</h3>
+                            <div class="top10-bar-chart">
+                                <canvas id="tradeBottom10BarChart"></canvas>
+                            </div>
+                            <div class="top10-heatmap">
+                                <table id="tradeBottom10HeatmapTable" class="top10-heatmap-table">
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 전세 증감률 하위 -->
+                        <div class="top10-card">
+                            <h3 class="top10-title">전세 증감률 하위 (Top 10)</h3>
+                            <div class="top10-bar-chart">
+                                <canvas id="jeonseBottom10BarChart"></canvas>
+                            </div>
+                            <div class="top10-heatmap">
+                                <table id="jeonseBottom10HeatmapTable" class="top10-heatmap-table">
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -311,11 +335,28 @@
             <!-- 공지사항 탭 -->
             <div class="tab-content" id="tab-notice">
                 <section class="notice-section">
-                    <h2>공지사항</h2>
-                    <div class="notice-content">
-                        <p>향후 업데이트 예정입니다.</p>
+                    <h2>업데이트 히스토리</h2>
+                    <div class="notice-list-container">
+                        <div class="notice-list" id="noticeList">
+                            <!-- JavaScript로 동적 생성 -->
+                        </div>
                     </div>
                 </section>
+            </div>
+
+            <!-- 공지사항 모달 -->
+            <div class="notice-modal" id="noticeModal">
+                <div class="notice-modal-content">
+                    <div class="notice-modal-header">
+                        <span class="notice-modal-version" id="modalVersion"></span>
+                        <span class="notice-modal-date" id="modalDate"></span>
+                        <button class="notice-modal-close" id="modalClose">&times;</button>
+                    </div>
+                    <h3 class="notice-modal-title" id="modalTitle"></h3>
+                    <div class="notice-modal-body" id="modalBody">
+                        <!-- JavaScript로 동적 생성 -->
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -328,6 +369,11 @@
         <!-- 에러 메시지 -->
         <div class="error-message" id="errorMessage" style="display: none;"></div>
     </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Data source : KB 부동산 & Dashboard production : leeken91</p>
+    </footer>
 
     <script src="js/main.js"></script>
     <script src="js/hexagon.js"></script>
