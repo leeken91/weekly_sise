@@ -1249,7 +1249,31 @@ header h1 {
 /* 탭 콘텐츠 */
 .tab-content-wrapper {
     position: relative;
-    min-height: 500px;
+    height: calc(100vh - 200px);
+    min-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    margin-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.3) transparent;
+}
+
+.tab-content-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tab-content-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tab-content-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+}
+
+.tab-content-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.5);
 }
 
 .tab-content {
@@ -1520,30 +1544,229 @@ header h1 {
 /* =============================================================================
    반응형 디자인
    ============================================================================= */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .tab-content-wrapper {
+        height: calc(100vh - 180px);
+        min-height: 500px;
+    }
+
+    .stats-grid,
+    .regional-grid,
+    .ranking-grid,
+    .flow-chart-grid,
+    .bar-chart-grid,
+    .multiples-grid,
+    .top10-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hexmap-container-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hexmap-card {
+        min-height: 500px;
+    }
+
+    .date-selector-panel {
+        order: -1;
+    }
+}
+
+/* 모바일 (768px 이하) */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 15px 10px;
+        margin-bottom: 15px;
+    }
+
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
+    }
+
+    .update-date {
+        font-size: 0.9rem;
     }
 
     .tab-navigation {
         gap: 5px;
+        padding: 0 5px;
+        margin-bottom: 15px;
     }
 
     .tab-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        border-radius: 6px;
     }
 
+    .tab-content-wrapper {
+        height: calc(100vh - 160px);
+        min-height: 400px;
+        padding: 5px;
+    }
+
+    /* 홈 화면 */
     .welcome-section {
         padding: 40px 20px;
+        margin: 30px auto;
     }
 
     .welcome-section h2 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .welcome-description {
+        font-size: 0.95rem;
+    }
+
+    /* 섹션 제목 */
+    .stats-section h2,
+    .regional-section h2,
+    .ranking-section h2,
+    .chart-section h2,
+    .multiples-section h2,
+    .flow-chart-section h2,
+    .bar-chart-section h2,
+    .heatmap-section h2,
+    .top10-section h2,
+    .notice-section h2,
+    .hexmap-section h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px;
+    }
+
+    /* 통계 카드 */
+    .stat-card,
+    .regional-category,
+    .ranking-card,
+    .flow-chart-card,
+    .bar-chart-card,
+    .top10-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .stat-value {
+        font-size: 1.8rem;
+    }
+
+    .regional-value {
+        font-size: 1.4rem;
+    }
+
+    .regional-stats-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* 차트 컨테이너 */
+    .flow-chart-container {
+        height: 250px;
+    }
+
+    .bar-chart-container {
+        height: 500px;
+    }
+
+    .top10-bar-chart {
+        height: 220px;
+    }
+
+    /* 테이블 */
+    .heatmap-table,
+    .top10-heatmap-table {
+        font-size: 0.7rem;
+    }
+
+    .heatmap-table th,
+    .heatmap-table td {
+        padding: 6px 3px;
+    }
+
+    /* 지도 */
+    .hexmap-card {
+        min-height: 400px;
+        padding: 15px;
+    }
+
+    .date-list-container {
+        max-height: 200px;
+    }
+
+    /* 공지사항 */
+    .notice-list-container {
+        padding: 15px;
+    }
+
+    .notice-item {
+        padding: 15px;
+    }
+
+    .notice-item-title {
         font-size: 1rem;
+    }
+
+    .notice-modal-content {
+        margin: 10px;
+    }
+
+    .notice-modal-title {
+        font-size: 1.2rem;
+        padding: 20px 20px 10px;
+    }
+
+    .notice-modal-body {
+        padding: 0 20px 20px;
+    }
+
+    .notice-modal-body li {
+        font-size: 0.9rem;
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .tab-btn {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .ranking-item {
+        padding: 8px 10px;
+    }
+
+    .ranking-position {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 0.8rem;
+    }
+
+    .ranking-region {
+        font-size: 0.85rem;
+    }
+
+    .ranking-rate {
+        font-size: 0.95rem;
     }
 }
 
@@ -1552,12 +1775,18 @@ header h1 {
    ============================================================================= */
 .site-footer {
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
+    padding: 20px 15px;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .site-footer p {
-    margin: 0;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 15px 10px;
+        font-size: 0.75rem;
+    }
 }
