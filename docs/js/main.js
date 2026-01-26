@@ -168,8 +168,8 @@ function displayDashboard(data) {
         }
 
         if (tradeChangeElement) {
-            tradeChangeElement.textContent = '(지난주 대비) ' + formatRate(tradeChange);
-            tradeChangeElement.className = 'stat-change ' + getRateClass(tradeChange);
+            tradeChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> <span class="' + getRateClass(tradeChange) + '">' + formatRate(tradeChange) + '</span>';
+            tradeChangeElement.className = 'stat-change';
         }
 
         // 전세 통계
@@ -185,8 +185,8 @@ function displayDashboard(data) {
         }
 
         if (jeonseChangeElement) {
-            jeonseChangeElement.textContent = '(지난주 대비) ' + formatRate(jeonseChange);
-            jeonseChangeElement.className = 'stat-change ' + getRateClass(jeonseChange);
+            jeonseChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> <span class="' + getRateClass(jeonseChange) + '">' + formatRate(jeonseChange) + '</span>';
+            jeonseChangeElement.className = 'stat-change';
         }
     }
 
@@ -251,8 +251,8 @@ function displayRegionalStats(region, stats) {
     }
 
     if (tradeChangeElement) {
-        tradeChangeElement.textContent = '(지난주 대비) ' + formatRate(tradeChange);
-        tradeChangeElement.className = 'regional-change ' + getRateClass(tradeChange);
+        tradeChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> <span class="' + getRateClass(tradeChange) + '">' + formatRate(tradeChange) + '</span>';
+        tradeChangeElement.className = 'regional-change';
     }
 
     // 전세 통계
@@ -268,8 +268,8 @@ function displayRegionalStats(region, stats) {
     }
 
     if (jeonseChangeElement) {
-        jeonseChangeElement.textContent = '(지난주 대비) ' + formatRate(jeonseChange);
-        jeonseChangeElement.className = 'regional-change ' + getRateClass(jeonseChange);
+        jeonseChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> <span class="' + getRateClass(jeonseChange) + '">' + formatRate(jeonseChange) + '</span>';
+        jeonseChangeElement.className = 'regional-change';
     }
 }
 
