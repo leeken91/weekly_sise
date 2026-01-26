@@ -168,7 +168,7 @@ function displayDashboard(data) {
         }
 
         if (tradeChangeElement) {
-            tradeChangeElement.textContent = formatRate(tradeChange);
+            tradeChangeElement.textContent = '(지난주 대비) ' + formatRate(tradeChange);
             tradeChangeElement.className = 'stat-change ' + getRateClass(tradeChange);
         }
 
@@ -185,7 +185,7 @@ function displayDashboard(data) {
         }
 
         if (jeonseChangeElement) {
-            jeonseChangeElement.textContent = formatRate(jeonseChange);
+            jeonseChangeElement.textContent = '(지난주 대비) ' + formatRate(jeonseChange);
             jeonseChangeElement.className = 'stat-change ' + getRateClass(jeonseChange);
         }
     }
@@ -251,7 +251,7 @@ function displayRegionalStats(region, stats) {
     }
 
     if (tradeChangeElement) {
-        tradeChangeElement.textContent = formatRate(tradeChange);
+        tradeChangeElement.textContent = '(지난주 대비) ' + formatRate(tradeChange);
         tradeChangeElement.className = 'regional-change ' + getRateClass(tradeChange);
     }
 
@@ -268,7 +268,7 @@ function displayRegionalStats(region, stats) {
     }
 
     if (jeonseChangeElement) {
-        jeonseChangeElement.textContent = formatRate(jeonseChange);
+        jeonseChangeElement.textContent = '(지난주 대비) ' + formatRate(jeonseChange);
         jeonseChangeElement.className = 'regional-change ' + getRateClass(jeonseChange);
     }
 }
@@ -566,7 +566,7 @@ function displayFlowChart(canvasId, weeks, regionalData, label) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: 'bottom',
