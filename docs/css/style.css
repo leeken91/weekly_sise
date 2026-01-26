@@ -810,19 +810,23 @@ body {
 }
 
 .group-national {
-    background: #fed7e2 !important;
+    background: #ff967e !important;
+    color: #000000 !important;
 }
 
 .group-capital {
-    background: #fefcbf !important;
+    background: #ffdc74 !important;
+    color: #000000 !important;
 }
 
 .group-metro {
-    background: #c6f6d5 !important;
+    background: #d9efb9 !important;
+    color: #000000 !important;
 }
 
 .group-other {
-    background: #bee3f8 !important;
+    background: #ceeeff !important;
+    color: #000000 !important;
 }
 
 /* 값 셀 스타일 */
@@ -834,7 +838,6 @@ body {
 
 .value-bar {
     position: absolute;
-    left: 0;
     top: 0;
     height: 100%;
     z-index: 1;

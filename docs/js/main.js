@@ -640,6 +640,8 @@ function displayFlowChart(canvasId, weeks, regionalData, label) {
 const regionNameMap = {
     'Total': '전국',
     'Seoul': '서울',
+    'Northern seoul': '[서울] 강북14개구',
+    'Southern Seoul': '[서울] 강남11개구',
     'Gangbuk-gu': '[서울] 강북구',
     'Gwangjin-gu': '[서울] 광진구',
     'Nowon-gu': '[서울] 노원구',
@@ -862,7 +864,7 @@ function displayBarCharts(timeSeriesData) {
     const displayRegions = [
         'Total',
         'Seoul Metropolitan Area',
-        'Seoul', 'Gyeonggi-do', 'Incheon',
+        'Seoul', 'Northern seoul', 'Southern Seoul', 'Gyeonggi-do', 'Incheon',
         '5 Large Cities',
         'Busan', 'Daegu', 'Gwangju', 'Daejeon', 'Ulsan',
         'Non-Metropolitan Area',
@@ -1043,7 +1045,7 @@ function displayHeatmapTable(timeSeriesData) {
     const displayRegions = [
         'Total',
         'Seoul Metropolitan Area',
-        'Seoul', 'Gyeonggi-do', 'Incheon',
+        'Seoul', 'Northern seoul', 'Southern Seoul', 'Gyeonggi-do', 'Incheon',
         '5 Large Cities',
         'Busan', 'Daegu', 'Gwangju', 'Daejeon', 'Ulsan',
         'Non-Metropolitan Area',
@@ -1055,8 +1057,27 @@ function displayHeatmapTable(timeSeriesData) {
     const regionGroups = {
         'Total': 'group-national',
         'Seoul Metropolitan Area': 'group-capital',
+        'Seoul': 'group-capital',
+        'Northern seoul': 'group-capital',
+        'Southern Seoul': 'group-capital',
+        'Gyeonggi-do': 'group-capital',
+        'Incheon': 'group-capital',
         '5 Large Cities': 'group-metro',
-        'Non-Metropolitan Area': 'group-other'
+        'Busan': 'group-metro',
+        'Daegu': 'group-metro',
+        'Gwangju': 'group-metro',
+        'Daejeon': 'group-metro',
+        'Ulsan': 'group-metro',
+        'Non-Metropolitan Area': 'group-other',
+        'Sejong': 'group-other',
+        'Gangwon-do': 'group-other',
+        'Chungcheongbuk-do': 'group-other',
+        'Chungcheongnam-do ': 'group-other',
+        'Jeollabuk-do': 'group-other',
+        'Jeollanam-do': 'group-other',
+        'Gyeongsangbuk-do': 'group-other',
+        'Gyeongsangnam-do': 'group-other',
+        'Jeju/ Seogwipo': 'group-other'
     };
 
     displayRegions.forEach(engName => {
@@ -1133,7 +1154,7 @@ function updateHeatmapTableHeaders(latestWeek, previousWeek) {
     }
 }
 
-// 값 셀 생성 (배경색 바 포함)
+// 값 셀 생성 (중앙 기준 배경색 바 포함)
 function createValueCell(value, type) {
     if (value === null) {
         return '<td class="value-cell">-</td>';
@@ -1141,10 +1162,17 @@ function createValueCell(value, type) {
 
     const absValue = Math.abs(value);
     const maxValue = 0.3; // 최대값 기준
-    const percentage = Math.min((absValue / maxValue) * 100, 100);
+    const percentage = Math.min((absValue / maxValue) * 50, 50); // 최대 50% (셀 절반)
 
     const colorClass = value >= 0 ? 'positive' : 'negative';
-    const barStyle = `width: ${percentage}%; background-color: ${value >= 0 ? 'rgba(255, 182, 193, 0.6)' : 'rgba(173, 216, 230, 0.6)'}`;
+    const bgColor = value >= 0 ? 'rgba(255, 182, 193, 0.6)' : 'rgba(173, 216, 230, 0.6)';
+
+    let barStyle;
+    if (value >= 0) {
+        barStyle = `left: 50%; width: ${percentage}%; background-color: ${bgColor}`;
+    } else {
+        barStyle = `right: 50%; width: ${percentage}%; background-color: ${bgColor}`;
+    }
 
     return `
         <td class="value-cell ${colorClass}">
