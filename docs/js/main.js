@@ -168,7 +168,7 @@ function displayDashboard(data) {
         }
 
         if (tradeChangeElement) {
-            tradeChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> ' + formatRate(tradeChange);
+            tradeChangeElement.innerHTML = '<span style="color:#333">(지난 주 대비)</span> ' + formatRate(tradeChange);
             tradeChangeElement.className = 'stat-change ' + getRateClass(tradeChange);
         }
 
@@ -185,7 +185,7 @@ function displayDashboard(data) {
         }
 
         if (jeonseChangeElement) {
-            jeonseChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> ' + formatRate(jeonseChange);
+            jeonseChangeElement.innerHTML = '<span style="color:#333">(지난 주 대비)</span> ' + formatRate(jeonseChange);
             jeonseChangeElement.className = 'stat-change ' + getRateClass(jeonseChange);
         }
     }
@@ -251,7 +251,7 @@ function displayRegionalStats(region, stats) {
     }
 
     if (tradeChangeElement) {
-        tradeChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> ' + formatRate(tradeChange);
+        tradeChangeElement.innerHTML = '<span style="color:#333">(지난 주 대비)</span> ' + formatRate(tradeChange);
         tradeChangeElement.className = 'regional-change ' + getRateClass(tradeChange);
     }
 
@@ -268,7 +268,7 @@ function displayRegionalStats(region, stats) {
     }
 
     if (jeonseChangeElement) {
-        jeonseChangeElement.innerHTML = '<span style="color:#333">(지난주 대비)</span> ' + formatRate(jeonseChange);
+        jeonseChangeElement.innerHTML = '<span style="color:#333">(지난 주 대비)</span> ' + formatRate(jeonseChange);
         jeonseChangeElement.className = 'regional-change ' + getRateClass(jeonseChange);
     }
 }
@@ -939,8 +939,8 @@ function displayBarChart(canvasId, chartData, title, chartType, latestWeek, prev
     };
 
     // 범례 라벨에 날짜 추가
-    const currentLabel = latestWeek ? `이번주(${latestWeek})` : '이번주';
-    const previousLabel = previousWeek ? `지난주(${previousWeek})` : '지난주';
+    const currentLabel = latestWeek ? `이번 주 (${latestWeek})` : '이번주';
+    const previousLabel = previousWeek ? `지난 주 (${previousWeek})` : '지난주';
 
     // 차트 생성
     const newChart = new Chart(ctx, {
@@ -1146,10 +1146,10 @@ function updateHeatmapTableHeaders(latestWeek, previousWeek) {
 
         // 매매 이번주 (인덱스 0), 매매 지난주 (인덱스 2), 전세 이번주 (인덱스 3), 전세 지난주 (인덱스 5)
         if (subHeaders.length >= 6) {
-            subHeaders[0].textContent = `이번주(${latestWeek})`;
-            subHeaders[2].textContent = `지난주(${previousWeek})`;
-            subHeaders[3].textContent = `이번주(${latestWeek})`;
-            subHeaders[5].textContent = `지난주(${previousWeek})`;
+            subHeaders[0].textContent = `이번 주 (${latestWeek})`;
+            subHeaders[2].textContent = `지난 주 (${previousWeek})`;
+            subHeaders[3].textContent = `이번 주 (${latestWeek})`;
+            subHeaders[5].textContent = `지난 주 (${previousWeek})`;
         }
     }
 }

@@ -121,11 +121,11 @@
                     <h2>지역 흐름</h2>
                     <div class="ranking-grid">
                         <div class="ranking-card">
-                            <h3 class="ranking-title rising">상승 Top 10</h3>
+                            <h3 class="ranking-title rising">상승 Top 10 <span class="ranking-caption">(전체 지역 중 주간 매매 증감률이 가장 높은 지역 10곳)</span></h3>
                             <div class="ranking-list" id="risingRank"></div>
                         </div>
                         <div class="ranking-card">
-                            <h3 class="ranking-title falling">하락 Top 10</h3>
+                            <h3 class="ranking-title falling">하락 Top 10 <span class="ranking-caption">(전체 지역 중 주간 매매 증감률이 가장 낮은 지역 10곳)</span></h3>
                             <div class="ranking-list" id="fallingRank"></div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                     <div class="top10-grid">
                         <!-- 매매 증감률 상위 -->
                         <div class="top10-card">
-                            <h3 class="top10-title">매매 증감률 상위 (Top 10)</h3>
+                            <h3 class="top10-title">이번 주 매매 증감률 상위 (Top 10)</h3>
                             <div class="top10-bar-chart">
                                 <canvas id="tradeTop10BarChart"></canvas>
                             </div>
@@ -196,7 +196,7 @@
 
                         <!-- 전세 증감률 상위 -->
                         <div class="top10-card">
-                            <h3 class="top10-title">전세 증감률 상위 (Top 10)</h3>
+                            <h3 class="top10-title">이번 주 전세 증감률 상위 (Top 10)</h3>
                             <div class="top10-bar-chart">
                                 <canvas id="jeonseTop10BarChart"></canvas>
                             </div>
@@ -208,7 +208,7 @@
 
                         <!-- 매매 증감률 하위 -->
                         <div class="top10-card">
-                            <h3 class="top10-title">매매 증감률 하위 (Top 10)</h3>
+                            <h3 class="top10-title">이번 주 매매 증감률 하위 (Top 10)</h3>
                             <div class="top10-bar-chart">
                                 <canvas id="tradeBottom10BarChart"></canvas>
                             </div>
@@ -220,7 +220,7 @@
 
                         <!-- 전세 증감률 하위 -->
                         <div class="top10-card">
-                            <h3 class="top10-title">전세 증감률 하위 (Top 10)</h3>
+                            <h3 class="top10-title">이번 주 전세 증감률 하위 (Top 10)</h3>
                             <div class="top10-bar-chart">
                                 <canvas id="jeonseBottom10BarChart"></canvas>
                             </div>
@@ -236,7 +236,9 @@
             <!-- 수요 & 공급 탭 -->
             <div class="tab-content" id="tab-supply">
                 <section class="multiples-section">
-                    <h2>우위지수 & 수급지수 추세</h2>
+                    <h2>매수우위지수 & 전세수급지수 추세</h2>
+                    <p class="section-caption">매수우위지수는 0 ~ 200 범위, 지수가 100을 초과할수록 "매수자가 많음", 100 미만일 경우 "매도자가 많음"을 의미</p>
+                    <p class="section-caption">전세수급지수는 0 ~ 200 범위, 지수가 100을 초과할수록 "공급부족" 비중이 높음</p>
                     <div class="multiples-grid">
                         <div class="multiple-chart-card">
                             <h4>수도권 매수우위지수</h4>
