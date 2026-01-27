@@ -10,6 +10,8 @@ let tradeTop10BarChart = null;
 let jeonseTop10BarChart = null;
 let tradeBottom10BarChart = null;
 let jeonseBottom10BarChart = null;
+let flowChartFullData = null;
+let supplyChartFullData = null;
 
 // DOM 요소
 const loading = document.getElementById('loading');
@@ -20,7 +22,17 @@ const errorMessage = document.getElementById('errorMessage');
 // =============================================================================
 const updateHistory = [
     {
-        version: 'v0.3',
+        version: 'v0.1.3',
+        date: '2026-01-27',
+        title: 'Line chart 기간 조회 개선 (프리셋, 직접 입력)',
+        changes: [
+            '전국 흐름 파트에 있는 권역별 매매증감/전세증감 흐름 라인 차트에 기간 조회 기능 추가',
+            '수요 & 공급 파트에 있는 매수우위지수/전세수급지수 멀티플 차트에 기간 조회 기능 추가',
+            '프리셋 버튼: 1개월, 3개월, 6개월, 1년, 전체'
+        ]
+    },
+    {
+        version: 'v0.1.2',
         date: '2026-01-25',
         title: '레이아웃 구조 개편 및 반응형 디자인',
         changes: [
@@ -32,7 +44,7 @@ const updateHistory = [
         ]
     },
     {
-        version: 'v0.2',
+        version: 'v0.1.1',
         date: '2026-01-25',
         title: '하위 Top 10 추가 및 버그 수정',
         changes: [
@@ -516,11 +528,158 @@ function displayRegionalFlowCharts(timeSeriesData) {
         jeonseData['기타지방'].push(jeonseOther ? parseFloat(jeonseOther.rate) : null);
     });
 
-    // 매매 흐름 차트 생성
-    displayFlowChart('tradeFlowChart', weeks, tradeData, '매매 증감률');
+    // 전체 데이터 저장
+    flowChartFullData = { weeks, tradeData, jeonseData };
 
-    // 전세 흐름 차트 생성
-    displayFlowChart('jeonseFlowChart', weeks, jeonseData, '전세 증감률');
+    // date input min/max 설정
+    if (weeks.length > 0) {
+        const startInput = document.getElementById('flowStartDate');
+        const endInput = document.getElementById('flowEndDate');
+        if (startInput && endInput) {
+            startInput.min = weeks[0];
+            startInput.max = weeks[weeks.length - 1];
+            endInput.min = weeks[0];
+            endInput.max = weeks[weeks.length - 1];
+        }
+    }
+
+    // 필터 이벤트 리스너 등록
+    initFlowChartFilterListeners();
+
+    // 기본값: 6개월 기간으로 차트 렌더링
+    if (weeks.length > 0) {
+        const latestDate = new Date(weeks[weeks.length - 1]);
+        const sixMonthsAgo = new Date(latestDate);
+        sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+        const startStr = sixMonthsAgo.toISOString().split('T')[0];
+        applyFlowChartFilter(startStr, weeks[weeks.length - 1]);
+
+        // 6개월 버튼 active 설정
+        const presetBtns = document.querySelectorAll('.filter-presets button');
+        presetBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.period === '6m') btn.classList.add('active');
+        });
+    }
+}
+
+// 흐름 차트 필터 이벤트 리스너 등록
+function initFlowChartFilterListeners() {
+    // 프리셋 버튼
+    const presetBtns = document.querySelectorAll('.filter-presets button');
+    presetBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // active 클래스 토글
+            presetBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 커스텀 날짜 입력값 초기화
+            const startInput = document.getElementById('flowStartDate');
+            const endInput = document.getElementById('flowEndDate');
+            if (startInput) startInput.value = '';
+            if (endInput) endInput.value = '';
+
+            const period = btn.dataset.period;
+            if (!flowChartFullData) return;
+
+            const weeks = flowChartFullData.weeks;
+            if (weeks.length === 0) return;
+
+            if (period === 'all') {
+                applyFlowChartFilter(null, null);
+                return;
+            }
+
+            const latestDate = new Date(weeks[weeks.length - 1]);
+            let startDate = new Date(latestDate);
+
+            switch (period) {
+                case '1m':
+                    startDate.setMonth(startDate.getMonth() - 1);
+                    break;
+                case '3m':
+                    startDate.setMonth(startDate.getMonth() - 3);
+                    break;
+                case '6m':
+                    startDate.setMonth(startDate.getMonth() - 6);
+                    break;
+                case '1y':
+                    startDate.setFullYear(startDate.getFullYear() - 1);
+                    break;
+            }
+
+            const startStr = startDate.toISOString().split('T')[0];
+            const endStr = weeks[weeks.length - 1];
+            applyFlowChartFilter(startStr, endStr);
+        });
+    });
+
+    // 커스텀 날짜 적용 버튼
+    const applyBtn = document.getElementById('flowDateApply');
+    if (applyBtn) {
+        applyBtn.addEventListener('click', () => {
+            const startInput = document.getElementById('flowStartDate');
+            const endInput = document.getElementById('flowEndDate');
+            const startDate = startInput ? startInput.value : '';
+            const endDate = endInput ? endInput.value : '';
+
+            if (!startDate || !endDate) return;
+
+            // 프리셋 버튼 active 해제
+            const presetBtns = document.querySelectorAll('.filter-presets button');
+            presetBtns.forEach(b => b.classList.remove('active'));
+
+            applyFlowChartFilter(startDate, endDate);
+        });
+    }
+}
+
+// 흐름 차트 기간 필터 적용
+function applyFlowChartFilter(startDate, endDate) {
+    if (!flowChartFullData) return;
+
+    const { weeks, tradeData, jeonseData } = flowChartFullData;
+
+    // 전체 기간
+    if (!startDate || !endDate) {
+        displayFlowChart('tradeFlowChart', weeks, tradeData, '매매 증감률');
+        displayFlowChart('jeonseFlowChart', weeks, jeonseData, '전세 증감률');
+        return;
+    }
+
+    // 범위에 해당하는 인덱스 찾기
+    const indices = [];
+    weeks.forEach((week, i) => {
+        if (week >= startDate && week <= endDate) {
+            indices.push(i);
+        }
+    });
+
+    if (indices.length === 0) {
+        // 빈 데이터로 차트 렌더링
+        const emptyData = { '전국': [], '수도권': [], '5개 광역시': [], '기타지방': [] };
+        displayFlowChart('tradeFlowChart', [], emptyData, '매매 증감률');
+        displayFlowChart('jeonseFlowChart', [], emptyData, '전세 증감률');
+        return;
+    }
+
+    const startIdx = indices[0];
+    const endIdx = indices[indices.length - 1] + 1;
+
+    const filteredWeeks = weeks.slice(startIdx, endIdx);
+
+    const filteredTradeData = {};
+    Object.keys(tradeData).forEach(key => {
+        filteredTradeData[key] = tradeData[key].slice(startIdx, endIdx);
+    });
+
+    const filteredJeonseData = {};
+    Object.keys(jeonseData).forEach(key => {
+        filteredJeonseData[key] = jeonseData[key].slice(startIdx, endIdx);
+    });
+
+    displayFlowChart('tradeFlowChart', filteredWeeks, filteredTradeData, '매매 증감률');
+    displayFlowChart('jeonseFlowChart', filteredWeeks, filteredJeonseData, '전세 증감률');
 }
 
 function displayFlowChart(canvasId, weeks, regionalData, label) {
@@ -543,19 +702,45 @@ function displayFlowChart(canvasId, weeks, regionalData, label) {
         '기타지방': 'rgba(54, 162, 235, 1)'    // 파랑
     };
 
+    // 데이터 포인트 수에 따라 포인트 크기 조정
+    const manyDataPoints = weeks.length > 30;
+    const pointRadius = manyDataPoints ? 0 : 3;
+    const pointHoverRadius = manyDataPoints ? 3 : 5;
+    const borderWidth = manyDataPoints ? 1.5 : 2.5;
+
     Object.keys(regionalData).forEach(region => {
         datasets.push({
             label: region,
             data: regionalData[region],
             borderColor: colors[region] || 'rgba(153, 102, 255, 1)',
             backgroundColor: 'transparent',
-            borderWidth: 2.5,
+            borderWidth: borderWidth,
             tension: 0.3,
-            pointRadius: 3,
-            pointHoverRadius: 5,
+            pointRadius: pointRadius,
+            pointHoverRadius: pointHoverRadius,
             pointBackgroundColor: colors[region] || 'rgba(153, 102, 255, 1)'
         });
     });
+
+    // x축 라벨: 데이터가 많으면 월 단위로 표시
+    const xTicksConfig = {
+        maxRotation: 45,
+        minRotation: 45,
+        font: {
+            size: 10
+        }
+    };
+
+    if (weeks.length > 20) {
+        xTicksConfig.autoSkip = true;
+        xTicksConfig.maxTicksLimit = Math.min(weeks.length, 24);
+        xTicksConfig.callback = function(value, index) {
+            const dateStr = weeks[index];
+            if (!dateStr) return '';
+            // YYYY-MM 형태로 월 단위 표시
+            return dateStr.substring(0, 7);
+        };
+    }
 
     // 차트 생성
     const newChart = new Chart(ctx, {
@@ -582,6 +767,10 @@ function displayFlowChart(canvasId, weeks, regionalData, label) {
                     mode: 'index',
                     intersect: false,
                     callbacks: {
+                        title: function(tooltipItems) {
+                            // 툴팁에는 전체 날짜 표시
+                            return tooltipItems[0].label;
+                        },
                         label: function(context) {
                             let label = context.dataset.label || '';
                             if (label) {
@@ -611,13 +800,7 @@ function displayFlowChart(canvasId, weeks, regionalData, label) {
                     grid: {
                         display: false
                     },
-                    ticks: {
-                        maxRotation: 45,
-                        minRotation: 45,
-                        font: {
-                            size: 10
-                        }
-                    }
+                    ticks: xTicksConfig
                 }
             },
             interaction: {
@@ -1202,6 +1385,66 @@ function createChangeCell(value) {
     `;
 }
 
+// 수요 & 공급 차트 설정 (전역)
+const supplyChartConfigs = [
+    {
+        id: 'capitalBuyerIndex',
+        regions: ['전국 Total', '수도권 Seoul Metropolitan Area', '서울특별시 Seoul', '경기도  Gyeonggi-do', '인천광역시  Incheon'],
+        dataSource: 'buyer_superiority',
+        title: '수도권 매수우위지수',
+        yAxisLabel: '매수우위지수'
+    },
+    {
+        id: 'capitalJeonseSupplyIndex',
+        regions: ['전국 Total', '수도권 Seoul Metropolitan Area', '서울특별시 Seoul', '경기도  Gyeonggi-do', '인천광역시  Incheon'],
+        dataSource: 'jeonse_supply',
+        title: '수도권 전세수급지수',
+        yAxisLabel: '전세수급지수'
+    },
+    {
+        id: 'metroBuyerIndex',
+        regions: ['5개광역시 5 Large Cities', '부산광역시  Busan', '대구광역시  Daegu', '광주광역시  Gwangju', '대전광역시  Daejeon', '울산광역시  Ulsan'],
+        dataSource: 'buyer_superiority',
+        title: '광역시 매수우위지수',
+        yAxisLabel: '매수우위지수'
+    },
+    {
+        id: 'metroJeonseSupplyIndex',
+        regions: ['5개광역시 5 Large Cities', '부산광역시  Busan', '대구광역시  Daegu', '광주광역시  Gwangju', '대전광역시  Daejeon', '울산광역시  Ulsan'],
+        dataSource: 'jeonse_supply',
+        title: '광역시 전세수급지수',
+        yAxisLabel: '전세수급지수'
+    },
+    {
+        id: 'other1BuyerIndex',
+        regions: ['기타지방 Non Metropolitan Area', '세종특별자치시  Sejong', '강원특별자치도 Gangwon-do', '충청북도  ChungCheongbuk-do', '충청남도  ChungCheongnam-do'],
+        dataSource: 'buyer_superiority',
+        title: '기타지방1 매수우위지수',
+        yAxisLabel: '매수우위지수'
+    },
+    {
+        id: 'other1JeonseSupplyIndex',
+        regions: ['기타지방 Non Metropolitan Area', '세종특별자치시  Sejong', '강원특별자치도 Gangwon-do', '충청북도  ChungCheongbuk-do', '충청남도  ChungCheongnam-do'],
+        dataSource: 'jeonse_supply',
+        title: '기타지방1 전세수급지수',
+        yAxisLabel: '전세수급지수'
+    },
+    {
+        id: 'other2BuyerIndex',
+        regions: ['전북특별자치도  Jeollabuk-do', '전라남도  Jeollanam-do', '경상북도  Gyeongsangbuk-do', '경상남도  Gyeongsangnam-do', '제주특별자치도 Jeju'],
+        dataSource: 'buyer_superiority',
+        title: '기타지방2 매수우위지수',
+        yAxisLabel: '매수우위지수'
+    },
+    {
+        id: 'other2JeonseSupplyIndex',
+        regions: ['전북특별자치도  Jeollabuk-do', '전라남도  Jeollanam-do', '경상북도  Gyeongsangbuk-do', '경상남도  Gyeongsangnam-do', '제주특별자치도 Jeju'],
+        dataSource: 'jeonse_supply',
+        title: '기타지방2 전세수급지수',
+        yAxisLabel: '전세수급지수'
+    }
+];
+
 // 멀티플 차트 표시 (수급지수)
 function displayMultipleCharts(supplyIndexData) {
     console.log('=== Supply Index Charts ===');
@@ -1213,68 +1456,113 @@ function displayMultipleCharts(supplyIndexData) {
         return;
     }
 
-    // 차트 설정: 각 권역별로 매수우위지수와 전세수급지수 차트 생성
-    const chartConfigs = [
-        {
-            id: 'capitalBuyerIndex',
-            regions: ['전국 Total', '수도권 Seoul Metropolitan Area', '서울특별시 Seoul', '경기도  Gyeonggi-do', '인천광역시  Incheon'],
-            dataSource: 'buyer_superiority',
-            title: '수도권 매수우위지수',
-            yAxisLabel: '매수우위지수'
-        },
-        {
-            id: 'capitalJeonseSupplyIndex',
-            regions: ['전국 Total', '수도권 Seoul Metropolitan Area', '서울특별시 Seoul', '경기도  Gyeonggi-do', '인천광역시  Incheon'],
-            dataSource: 'jeonse_supply',
-            title: '수도권 전세수급지수',
-            yAxisLabel: '전세수급지수'
-        },
-        {
-            id: 'metroBuyerIndex',
-            regions: ['5개광역시 5 Large Cities', '부산광역시  Busan', '대구광역시  Daegu', '광주광역시  Gwangju', '대전광역시  Daejeon', '울산광역시  Ulsan'],
-            dataSource: 'buyer_superiority',
-            title: '광역시 매수우위지수',
-            yAxisLabel: '매수우위지수'
-        },
-        {
-            id: 'metroJeonseSupplyIndex',
-            regions: ['5개광역시 5 Large Cities', '부산광역시  Busan', '대구광역시  Daegu', '광주광역시  Gwangju', '대전광역시  Daejeon', '울산광역시  Ulsan'],
-            dataSource: 'jeonse_supply',
-            title: '광역시 전세수급지수',
-            yAxisLabel: '전세수급지수'
-        },
-        {
-            id: 'other1BuyerIndex',
-            regions: ['기타지방 Non Metropolitan Area', '세종특별자치시  Sejong', '강원특별자치도 Gangwon-do', '충청북도  ChungCheongbuk-do', '충청남도  ChungCheongnam-do'],
-            dataSource: 'buyer_superiority',
-            title: '기타지방1 매수우위지수',
-            yAxisLabel: '매수우위지수'
-        },
-        {
-            id: 'other1JeonseSupplyIndex',
-            regions: ['기타지방 Non Metropolitan Area', '세종특별자치시  Sejong', '강원특별자치도 Gangwon-do', '충청북도  ChungCheongbuk-do', '충청남도  ChungCheongnam-do'],
-            dataSource: 'jeonse_supply',
-            title: '기타지방1 전세수급지수',
-            yAxisLabel: '전세수급지수'
-        },
-        {
-            id: 'other2BuyerIndex',
-            regions: ['전북특별자치도  Jeollabuk-do', '전라남도  Jeollanam-do', '경상북도  Gyeongsangbuk-do', '경상남도  Gyeongsangnam-do', '제주특별자치도 Jeju'],
-            dataSource: 'buyer_superiority',
-            title: '기타지방2 매수우위지수',
-            yAxisLabel: '매수우위지수'
-        },
-        {
-            id: 'other2JeonseSupplyIndex',
-            regions: ['전북특별자치도  Jeollabuk-do', '전라남도  Jeollanam-do', '경상북도  Gyeongsangbuk-do', '경상남도  Gyeongsangnam-do', '제주특별자치도 Jeju'],
-            dataSource: 'jeonse_supply',
-            title: '기타지방2 전세수급지수',
-            yAxisLabel: '전세수급지수'
-        }
-    ];
+    // 전체 데이터 저장
+    supplyChartFullData = supplyIndexData;
 
-    chartConfigs.forEach(config => {
-        displaySupplyIndexChart(config, supplyIndexData);
+    // 전체 주차 추출 (buyer_superiority 기준)
+    const allWeeks = [...new Set(supplyIndexData.buyer_superiority.map(item => item.week))].sort();
+
+    // date input min/max 설정
+    if (allWeeks.length > 0) {
+        const startInput = document.getElementById('supplyStartDate');
+        const endInput = document.getElementById('supplyEndDate');
+        if (startInput && endInput) {
+            startInput.min = allWeeks[0];
+            startInput.max = allWeeks[allWeeks.length - 1];
+            endInput.min = allWeeks[0];
+            endInput.max = allWeeks[allWeeks.length - 1];
+        }
+    }
+
+    // 필터 이벤트 리스너 등록
+    initSupplyChartFilterListeners();
+
+    // 기본값: 6개월 기간으로 차트 렌더링
+    if (allWeeks.length > 0) {
+        const latestDate = new Date(allWeeks[allWeeks.length - 1]);
+        const sixMonthsAgo = new Date(latestDate);
+        sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+        const startStr = sixMonthsAgo.toISOString().split('T')[0];
+        applySupplyChartFilter(startStr, allWeeks[allWeeks.length - 1]);
+    }
+}
+
+// 수요 & 공급 차트 필터 이벤트 리스너 등록
+function initSupplyChartFilterListeners() {
+    const presetBtns = document.querySelectorAll('#supplyFilterPresets button');
+    presetBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            presetBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const startInput = document.getElementById('supplyStartDate');
+            const endInput = document.getElementById('supplyEndDate');
+            if (startInput) startInput.value = '';
+            if (endInput) endInput.value = '';
+
+            const period = btn.dataset.period;
+            if (!supplyChartFullData) return;
+
+            const allWeeks = [...new Set(supplyChartFullData.buyer_superiority.map(item => item.week))].sort();
+            if (allWeeks.length === 0) return;
+
+            if (period === 'all') {
+                applySupplyChartFilter(null, null);
+                return;
+            }
+
+            const latestDate = new Date(allWeeks[allWeeks.length - 1]);
+            let startDate = new Date(latestDate);
+
+            switch (period) {
+                case '1m': startDate.setMonth(startDate.getMonth() - 1); break;
+                case '3m': startDate.setMonth(startDate.getMonth() - 3); break;
+                case '6m': startDate.setMonth(startDate.getMonth() - 6); break;
+                case '1y': startDate.setFullYear(startDate.getFullYear() - 1); break;
+            }
+
+            applySupplyChartFilter(startDate.toISOString().split('T')[0], allWeeks[allWeeks.length - 1]);
+        });
+    });
+
+    const applyBtn = document.getElementById('supplyDateApply');
+    if (applyBtn) {
+        applyBtn.addEventListener('click', () => {
+            const startDate = document.getElementById('supplyStartDate')?.value || '';
+            const endDate = document.getElementById('supplyEndDate')?.value || '';
+            if (!startDate || !endDate) return;
+
+            const presetBtns = document.querySelectorAll('#supplyFilterPresets button');
+            presetBtns.forEach(b => b.classList.remove('active'));
+
+            applySupplyChartFilter(startDate, endDate);
+        });
+    }
+}
+
+// 수요 & 공급 차트 기간 필터 적용
+function applySupplyChartFilter(startDate, endDate) {
+    if (!supplyChartFullData) return;
+
+    let filteredData;
+
+    if (!startDate || !endDate) {
+        // 전체 기간
+        filteredData = supplyChartFullData;
+    } else {
+        // 기간별 필터링
+        filteredData = {
+            buyer_superiority: supplyChartFullData.buyer_superiority.filter(
+                item => item.week >= startDate && item.week <= endDate
+            ),
+            jeonse_supply: supplyChartFullData.jeonse_supply.filter(
+                item => item.week >= startDate && item.week <= endDate
+            )
+        };
+    }
+
+    supplyChartConfigs.forEach(config => {
+        displaySupplyIndexChart(config, filteredData);
     });
 }
 
@@ -1325,6 +1613,12 @@ function displaySupplyIndexChart(config, supplyIndexData) {
         '제주특별자치도 Jeju': '제주'
     };
 
+    // 데이터 포인트 수에 따라 포인트 크기 조정
+    const manyPoints = weeks.length > 30;
+    const ptRadius = manyPoints ? 0 : 2;
+    const ptHoverRadius = manyPoints ? 3 : 4;
+    const lineWidth = manyPoints ? 1.5 : 2;
+
     // 각 지역별로 데이터셋 생성
     const datasets = [];
     config.regions.forEach((regionName, index) => {
@@ -1352,10 +1646,10 @@ function displaySupplyIndexChart(config, supplyIndexData) {
             data: values,
             borderColor: getChartColor(index),
             backgroundColor: 'transparent',
-            borderWidth: 2,
+            borderWidth: lineWidth,
             tension: 0.3,
-            pointRadius: 2,
-            pointHoverRadius: 4,
+            pointRadius: ptRadius,
+            pointHoverRadius: ptHoverRadius,
             pointBackgroundColor: getChartColor(index),
             fill: false
         });
@@ -1522,10 +1816,19 @@ function displaySupplyIndexChart(config, supplyIndexData) {
                     }
                 },
                 x: {
-                    ticks: {
-                        font: {
-                            size: 8
-                        },
+                    ticks: weeks.length > 20 ? {
+                        font: { size: 8 },
+                        maxRotation: 45,
+                        minRotation: 45,
+                        autoSkip: true,
+                        maxTicksLimit: Math.min(weeks.length, 24),
+                        callback: function(value, index) {
+                            const dateStr = weeks[index];
+                            if (!dateStr) return '';
+                            return dateStr.substring(0, 7);
+                        }
+                    } : {
+                        font: { size: 8 },
                         maxRotation: 45,
                         minRotation: 45
                     },

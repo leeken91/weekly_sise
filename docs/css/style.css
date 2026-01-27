@@ -245,9 +245,32 @@ body {
 }
 
 /* 로딩 */
-.loading {
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-content {
     text-align: center;
-    padding: 40px;
+    padding: 40px 60px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.loading-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: #4a5568;
+    font-weight: 500;
 }
 
 .spinner {
@@ -257,7 +280,7 @@ body {
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
+    margin: 0 auto 16px;
 }
 
 @keyframes spin {
@@ -572,7 +595,7 @@ body {
 .section-caption {
     font-size: 0.85rem;
     font-weight: 400;
-    color: #718096;
+    color: #ffffff;
     margin: 2px 0 0 0;
 }
 
@@ -673,6 +696,111 @@ body {
 .flow-chart-container {
     position: relative;
     height: 350px;
+}
+
+/* 차트 기간 필터 (권역별 흐름 + 수요&공급 공용) */
+.flow-chart-filter {
+    margin-top: 0;
+}
+
+.supply-chart-filter {
+    margin-top: 24px;
+}
+
+.flow-chart-filter,
+.supply-chart-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.filter-presets {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.filter-presets button {
+    background: #f0f0f5;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #4a5568;
+}
+
+.filter-presets button:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e0;
+}
+
+.filter-presets button.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.filter-date-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-date-range label {
+    font-size: 0.85rem;
+    color: #4a5568;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.filter-date-range span {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.filter-date-range input[type="date"] {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #4a5568;
+    background: #f7fafc;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filter-date-range input[type="date"]:focus {
+    border-color: #667eea;
+}
+
+#flowDateApply,
+#supplyDateApply {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#flowDateApply:hover,
+#supplyDateApply:hover {
+    background: #5a6fd6;
 }
 
 /* 가로 막대 차트 섹션 */
@@ -1722,6 +1850,22 @@ body {
     .regional-stats-row {
         flex-direction: column;
         gap: 10px;
+    }
+
+    /* 흐름 차트 필터 */
+    .flow-chart-filter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .filter-presets {
+        justify-content: center;
+    }
+
+    .filter-date-range {
+        justify-content: center;
     }
 
     /* 차트 컨테이너 */

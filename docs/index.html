@@ -97,6 +97,22 @@
 
                 <!-- 권역별 증감 흐름 차트 -->
                 <section class="flow-chart-section">
+                    <div class="flow-chart-filter">
+                        <div class="filter-presets">
+                            <button data-period="1m">1개월</button>
+                            <button data-period="3m">3개월</button>
+                            <button data-period="6m" class="active">6개월</button>
+                            <button data-period="1y">1년</button>
+                            <button data-period="all">전체</button>
+                        </div>
+                        <div class="filter-date-range">
+                            <label>기간 직접 선택:</label>
+                            <input type="date" id="flowStartDate">
+                            <span>~</span>
+                            <input type="date" id="flowEndDate">
+                            <button id="flowDateApply">적용</button>
+                        </div>
+                    </div>
                     <div class="flow-chart-grid">
                         <div class="flow-chart-card">
                             <h3>권역별 매매증감 흐름</h3>
@@ -239,6 +255,22 @@
                     <h2>매수우위지수 & 전세수급지수 추세</h2>
                     <p class="section-caption">매수우위지수는 0 ~ 200 범위, 지수가 100을 초과할수록 "매수자가 많음", 100 미만일 경우 "매도자가 많음"을 의미</p>
                     <p class="section-caption">전세수급지수는 0 ~ 200 범위, 지수가 100을 초과할수록 "공급부족" 비중이 높음</p>
+                    <div class="supply-chart-filter">
+                        <div class="filter-presets" id="supplyFilterPresets">
+                            <button data-period="1m">1개월</button>
+                            <button data-period="3m">3개월</button>
+                            <button data-period="6m" class="active">6개월</button>
+                            <button data-period="1y">1년</button>
+                            <button data-period="all">전체</button>
+                        </div>
+                        <div class="filter-date-range">
+                            <label>기간 직접 선택:</label>
+                            <input type="date" id="supplyStartDate">
+                            <span>~</span>
+                            <input type="date" id="supplyEndDate">
+                            <button id="supplyDateApply">적용</button>
+                        </div>
+                    </div>
                     <div class="multiples-grid">
                         <div class="multiple-chart-card">
                             <h4>수도권 매수우위지수</h4>
@@ -337,10 +369,12 @@
             </div>
         </div>
 
-        <!-- 로딩 인디케이터 -->
-        <div class="loading" id="loading" style="display: none;">
-            <div class="spinner"></div>
-            <p>데이터 로딩 중...</p>
+        <!-- 로딩 인디케이터 (오버레이) -->
+        <div class="loading-overlay" id="loading" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p>데이터 로딩 중...</p>
+            </div>
         </div>
 
         <!-- 에러 메시지 -->

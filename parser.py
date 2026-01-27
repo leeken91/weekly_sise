@@ -331,8 +331,15 @@ class KBRealEstateParser:
 
         return rankings
     
+    # 흐름 차트용 집계 지역 (전체 기간 포함 대상)
+    AGGREGATE_REGIONS = {'Total', 'Seoul Metropolitan Area', '5 Large Cities', 'Non-Metropolitan Area'}
+
     def _parse_change_sheet(self, sheet_name):
-        """증감 시트 파싱 - 행에 날짜, 열에 지역"""
+        """증감 시트 파싱 - 행에 날짜, 열에 지역
+
+        집계 지역(전국/수도권/5개광역시/기타지방)은 전체 기간,
+        개별 지역은 최근 26주만 포함하여 JSON 크기를 최적화합니다.
+        """
 
         try:
             df = pd.read_excel(self.file_path, sheet_name=sheet_name, header=2)
@@ -357,17 +364,18 @@ class KBRealEstateParser:
                 logger.warning(f"경고: {sheet_name}에서 날짜 행을 찾을 수 없습니다!")
                 return None
 
-            # 최근 26주 데이터 추출 (약 6개월)
-            recent_rows = date_rows[-26:] if len(date_rows) >= 26 else date_rows
-            logger.info(f"최근 {len(recent_rows)}주 데이터 추출")
+            # 최근 26주 경계 인덱스
+            recent_cutoff = len(date_rows) - 26 if len(date_rows) >= 26 else 0
 
             recent_data = []
-            for row_idx in recent_rows:
+            for i, row_idx in enumerate(date_rows):
                 date_val = df.iloc[row_idx, 0]
                 try:
                     date_str = pd.to_datetime(date_val).strftime('%Y-%m-%d')
                 except:
                     continue
+
+                is_recent = i >= recent_cutoff
 
                 weekly_data = {
                     'date': date_str,
@@ -376,11 +384,17 @@ class KBRealEstateParser:
 
                 # 각 컬럼(지역)의 값 추출
                 for col_idx, col_name in enumerate(df.columns[1:], start=1):
+                    col_str = str(col_name)
+
+                    # 오래된 주차: 집계 지역만 포함
+                    if not is_recent and col_str not in self.AGGREGATE_REGIONS:
+                        continue
+
                     value = df.iloc[row_idx, col_idx]
 
                     if pd.notna(value) and isinstance(value, (int, float)):
                         weekly_data['regions'].append({
-                            'name': str(col_name),
+                            'name': col_str,
                             'value': float(value)
                         })
 
@@ -388,7 +402,7 @@ class KBRealEstateParser:
                     recent_data.append(weekly_data)
                     logger.debug(f"  주차 {date_str}: {len(weekly_data['regions'])}개 지역 데이터")
 
-            logger.info(f"{sheet_name} 파싱 완료: {len(recent_data)}주 데이터")
+            logger.info(f"{sheet_name} 파싱 완료: {len(recent_data)}주 데이터 (전체 기간 집계 + 최근 26주 개별)")
             return {'sheet_name': sheet_name, 'recent_weeks': recent_data}
 
         except Exception as e:
@@ -435,9 +449,9 @@ class KBRealEstateParser:
                 logger.warning(f"경고: {sheet_name}에서 날짜 행을 찾을 수 없습니다!")
                 return None
 
-            # 최근 26주 데이터 추출
-            recent_rows = date_rows[-26:] if len(date_rows) >= 26 else date_rows
-            logger.info(f"최근 {len(recent_rows)}주 데이터 추출")
+            # 전체 주차 데이터 추출
+            recent_rows = date_rows
+            logger.info(f"전체 {len(recent_rows)}주 데이터 추출")
 
             recent_data = []
             for row_idx in recent_rows:
