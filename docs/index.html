@@ -17,12 +17,12 @@
             <span class="update-date">업데이트 기준일: <span id="surveyDate">-</span></span>
         </div>
         <nav class="tab-navigation">
-            <button class="tab-btn active" data-tab="national">전국 흐름</button>
-            <button class="tab-btn" data-tab="regional">지역 흐름</button>
-            <button class="tab-btn" data-tab="top10">TOP 10</button>
-            <button class="tab-btn" data-tab="supply">수요 & 공급</button>
-            <button class="tab-btn" data-tab="map">지도</button>
-            <button class="tab-btn" data-tab="notice">공지사항</button>
+            <a class="tab-link active" data-tab="national" href="#">전국 흐름</a>
+            <a class="tab-link" data-tab="regional" href="#">지역 흐름</a>
+            <a class="tab-link" data-tab="top10" href="#">TOP 10</a>
+            <a class="tab-link" data-tab="supply" href="#">수요 &amp; 공급</a>
+            <a class="tab-link" data-tab="map" href="#">지도</a>
+            <a class="tab-link" data-tab="notice" href="#">업데이트</a>
         </nav>
     </header>
 
@@ -312,6 +312,7 @@
             <div class="tab-content" id="tab-map">
                 <section class="hexmap-section">
                     <h2>지역별 증감률 지도</h2>
+                    <p class="section-caption">업데이트일 포함 최근 26주 데이터를 조회합니다</p>
                     <div class="hexmap-container-wrapper">
                         <div class="hexmap-card">
                             <h3 id="tradeMapTitle">매매 증감률</h3>
@@ -384,6 +385,7 @@
     <!-- Footer (고정) -->
     <footer class="site-footer">
         <p>Data source : KB Real Estate (kbland.kr) | Dashboard production : leeken91</p>
+        <p>ⓒ 2026 leeken91. All rights reserved. (v0.14)</p> 
     </footer>
 
     <!-- 공지사항 모달 -->

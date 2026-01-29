@@ -22,6 +22,15 @@ const errorMessage = document.getElementById('errorMessage');
 // =============================================================================
 const updateHistory = [
     {
+        version: 'v0.1.4',
+        date: '2026-01-28',
+        title: '일부 차트 반응형 다지안 개선 및 홈페이지 UI/UX 개선',
+        changes: [
+            '일부 차트 반응형 디자인 개선: 브라우저 크기 조절에 따라 차트의 크기 및 비율이 유연하게 변경되도록 수정',
+            '홈페이지 UI/UX 개선: 탭 메뉴 및 레이아웃 디자인을 보다 직관적이고 사용하기 쉽게 개선'
+        ]
+    },
+    {
         version: 'v0.1.3',
         date: '2026-01-27',
         title: 'Line chart 기간 조회 개선 (프리셋, 직접 입력)',
@@ -76,11 +85,12 @@ const updateHistory = [
 // 탭 전환 기능
 // =============================================================================
 function initializeTabs() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabBtns = document.querySelectorAll('.tab-link');
     const tabContents = document.querySelectorAll('.tab-content');
 
     tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             const targetTab = btn.dataset.tab;
 
             // 모든 탭 버튼의 active 클래스 제거
@@ -353,6 +363,7 @@ function displayTimeSeriesChart(timeSeriesData) {
         options: {
             responsive: true,
             maintainAspectRatio: true,
+            aspectRatio: 2,
             plugins: {
                 legend: {
                     position: 'top',
@@ -751,7 +762,8 @@ function displayFlowChart(canvasId, weeks, regionalData, label) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: true,
+            aspectRatio: 2,
             plugins: {
                 legend: {
                     position: 'bottom',
@@ -1150,7 +1162,8 @@ function displayBarChart(canvasId, chartData, title, chartType, latestWeek, prev
         options: {
             indexAxis: 'y',
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: true,
+            aspectRatio: 2,
             plugins: {
                 legend: {
                     display: true,

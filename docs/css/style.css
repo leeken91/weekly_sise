@@ -12,7 +12,7 @@ html, body {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #e2e2e2;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -25,66 +25,71 @@ body {
 /* 헤더 (고정) */
 .site-header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    padding: 15px 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 0 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
     flex-shrink: 0;
     z-index: 100;
-    gap: 12px;
 }
 
 .header-left {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 1px;
+    flex-shrink: 0;
+    margin-right: auto;
+    padding: 16px 0;
 }
 
 .site-header h1 {
     font-size: 1.4rem;
-    color: white;
+    color: #4361ee;
     white-space: nowrap;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
 }
 
 .site-header .update-date {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.7rem;
+    color: #999;
     white-space: nowrap;
 }
 
 /* 탭 네비게이션 (헤더 내) */
 .tab-navigation {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    height: 100%;
+}
+
+.tab-link {
+    display: flex;
     align-items: center;
-}
-
-.tab-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    padding: 0 16px;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #777;
+    text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: #333;
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: none;
+    outline: none;
+    transition: color 0.15s ease;
+    line-height: 54px;
 }
 
-.tab-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.5);
+.tab-link:hover {
+    color: #4361ee;
 }
 
-.tab-btn.active {
-    background: white;
-    color: #667eea;
-    border-color: white;
+.tab-link.active {
+    color: #4361ee;
     font-weight: 600;
+    border-bottom-color: #4361ee;
 }
 
 /* 콘텐츠 영역 (스크롤) */
@@ -120,11 +125,12 @@ body {
 /* Footer (고정) */
 .site-footer {
     padding: 12px 30px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #ffffff;
     text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+    color: #888;
     font-size: 0.85rem;
     flex-shrink: 0;
+    border-top: 1px solid #e0e0e0;
 }
 
 .site-footer p {
@@ -351,10 +357,10 @@ body {
 .flow-chart-section h2,
 .bar-chart-section h2,
 .heatmap-section h2 {
-    color: white;
+    color: #4361ee;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
     display: block !important;
     width: 100% !important;
     max-width: none !important;
@@ -595,7 +601,7 @@ body {
 .section-caption {
     font-size: 0.85rem;
     font-weight: 400;
-    color: #ffffff;
+    color: #333;
     margin: 2px 0 0 0;
 }
 
@@ -695,7 +701,12 @@ body {
 
 .flow-chart-container {
     position: relative;
-    height: 350px;
+    width: 100%;
+}
+
+.flow-chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
 }
 
 /* 차트 기간 필터 (권역별 흐름 + 수요&공급 공용) */
@@ -823,7 +834,12 @@ body {
 
 .bar-chart-container {
     position: relative;
-    height: 750px;
+    width: 100%;
+}
+
+.bar-chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
 }
 
 /* 히트맵 테이블 섹션 */
@@ -1064,10 +1080,10 @@ body {
 /* Top 10 증감률 섹션 */
 
 .top10-section h2 {
-    color: white;
+    color: #4361ee;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
 }
 
 
@@ -1159,15 +1175,16 @@ body {
 
 .hexmap-section h2 {
     font-size: 1.8rem;
-    color: white;
+    color: #4361ee;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
 }
 
 .hexmap-container-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 400px;
     gap: 20px;
+    margin-top: 15px;
     background: transparent;
 }
 
@@ -1453,7 +1470,7 @@ body {
 .header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
 }
 
 .update-date {
@@ -1461,39 +1478,7 @@ body {
     opacity: 0.9;
 }
 
-.tab-navigation {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
-    padding: 0 20px;
-    flex-wrap: wrap;
-}
 
-.tab-btn {
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    line-height: 1.4;
-}
-
-.tab-btn:hover {
-    background: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.tab-btn.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-}
 
 /* 탭 콘텐츠 */
 .tab-content-wrapper {
@@ -1529,10 +1514,10 @@ body {
 }
 
 .notice-section h2 {
-    color: white;
+    color: #4361ee;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
 }
 
 .notice-list-container {
@@ -1757,10 +1742,6 @@ body {
         text-align: center;
     }
 
-    .tab-navigation {
-        justify-content: center;
-    }
-
     .stats-grid,
     .regional-grid,
     .ranking-grid,
@@ -1800,12 +1781,13 @@ body {
     }
 
     .tab-navigation {
-        gap: 5px;
+        gap: 0;
     }
 
-    .tab-btn {
-        padding: 6px 10px;
+    .tab-link {
         font-size: 0.75rem;
+        padding: 0 10px;
+        line-height: 48px;
     }
 
     .site-content {
@@ -1869,13 +1851,7 @@ body {
     }
 
     /* 차트 컨테이너 */
-    .flow-chart-container {
-        height: 250px;
-    }
 
-    .bar-chart-container {
-        height: 500px;
-    }
 
     .top10-bar-chart {
         height: 220px;
@@ -1944,9 +1920,10 @@ body {
         font-size: 0.95rem;
     }
 
-    .tab-btn {
-        padding: 5px 8px;
+    .tab-link {
         font-size: 0.7rem;
+        padding: 0 8px;
+        line-height: 44px;
     }
 
     .stat-value {

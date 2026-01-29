@@ -357,7 +357,11 @@ function toggleAutoPlay() {
 // 자동 모드 시작
 function startAutoPlay() {
     if (autoPlayInterval) return;
-    const weeks = [...new Set(allTimeSeriesData.map(item => item.week))].sort();
+    const weeksWithMapData = allTimeSeriesData.filter(item => {
+        const region = item.region.replace(/\n/g, ' ');
+        return hexagonLayout[region] && !excludedRegions.includes(region) && !citiesWithDistricts.includes(region);
+    });
+    const weeks = [...new Set(weeksWithMapData.map(item => item.week))].sort();
     let currentIndex = weeks.indexOf(currentSelectedWeek);
     autoPlayInterval = setInterval(() => {
         currentIndex++;
@@ -399,7 +403,12 @@ function updateColorDensity(value) {
 function displayHexagonMaps(timeSeriesData) {
     console.log('Displaying hexagon maps with data:', timeSeriesData);
     allTimeSeriesData = timeSeriesData;
-    const weeks = [...new Set(timeSeriesData.map(item => item.week))].sort();
+    // 지도에 표시 가능한 주차만 필터 (구 단위 데이터가 있는 주차)
+    const weeksWithMapData = timeSeriesData.filter(item => {
+        const region = item.region.replace(/\n/g, ' ');
+        return hexagonLayout[region] && !excludedRegions.includes(region) && !citiesWithDistricts.includes(region);
+    });
+    const weeks = [...new Set(weeksWithMapData.map(item => item.week))].sort();
     console.log('Available weeks:', weeks);
     createDateList(weeks);
     const autoPlayToggle = document.getElementById('autoPlayToggle');
