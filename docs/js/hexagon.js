@@ -54,7 +54,7 @@ const hexagonLayout = {
     
     // row 9
     'Siheung': { row: 9, col: 5 }, 'Danwon-gu': { row: 9, col: 6 }, 'Sangrok-gu': { row: 9, col: 7 }, 'Jangan-gu': { row: 9, col: 8 },
-    'Paldal-gu': { row: 9, col: 9 }, 'Yeongtong-gu': { row: 9, col: 10 }, 'Gwonseon-gu': { row: 9, col: 111 }, 'Giheung-gu': { row: 9, col: 12 },
+    'Paldal-gu': { row: 9, col: 9 }, 'Yeongtong-gu': { row: 9, col: 10 }, 'Gwonseon-gu': { row: 9, col: 11 }, 'Giheung-gu': { row: 9, col: 12 },
     'Cheoin-gu': { row: 9, col: 13 },
     
     // row 10
