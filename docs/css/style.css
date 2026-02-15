@@ -699,6 +699,35 @@ body {
     padding-bottom: 10px;
 }
 
+.card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-header-row h3,
+.card-header-row h4 {
+    margin-bottom: 0;
+}
+
+.btn-download {
+    background: none;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: #4a5568;
+    transition: background 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.btn-download:hover {
+    background: #edf2f7;
+    border-color: #a0aec0;
+}
+
 .flow-chart-container {
     position: relative;
     width: 100%;
@@ -843,6 +872,14 @@ body {
 }
 
 /* 히트맵 테이블 섹션 */
+
+.heatmap-title {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
 
 .heatmap-container {
     background: white;
@@ -1097,8 +1134,10 @@ body {
 .top10-title {
     font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 16px;
-    color: #2d3748;
+    margin-bottom: 20px;
+    color: #667eea;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1170,7 +1209,7 @@ body {
 
 /* 육각형 지도 섹션 */
 .hexmap-section {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .hexmap-section h2 {
@@ -1225,6 +1264,15 @@ body {
 .hexmap-canvas svg {
     width: 100%;
     height: 100%;
+}
+
+/* 서울 25개구 지도 스타일 */
+#seoulMapSection .hexmap-canvas {
+    min-height: 450px;
+}
+
+#seoulMapSection .hexmap-canvas svg {
+    min-height: 450px;
 }
 
 /* 날짜 선택 패널 */
@@ -1947,5 +1995,59 @@ body {
 
     .ranking-rate {
         font-size: 0.95rem;
+    }
+}
+
+/* =============================================================================
+   지역 선택 GeoJSON 지도
+   ============================================================================= */
+
+.region-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.region-selector {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.region-btn {
+    padding: 8px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    background: #f7fafc;
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.region-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.region-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .region-map-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .region-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
     }
 }

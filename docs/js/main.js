@@ -1,8 +1,6 @@
 // 전역 변수
 let currentData = null;
 let timeSeriesChart = null;
-let tradeBarChart = null;
-let jeonseBarChart = null;
 let tradeFlowChart = null;
 let jeonseFlowChart = null;
 let multipleCharts = {};
@@ -22,6 +20,17 @@ const errorMessage = document.getElementById('errorMessage');
 // =============================================================================
 const updateHistory = [
     {
+        version: 'v2.0.0',
+        date: '2026-02-15',
+        title: '지역별 지도 GeoJSON 차트 추가 및 차트/지도 이미지 다운로드 기능 추가',
+        changes: [
+            '지역별 지도 차트: 주요 지역별(수도권, 광역시 각 지역) 지도 차트 추가',
+            '이미지 다운로드 기능: 각 차트, 지도 시각화 자료를 이미지 파일로 다운로드 가능하도록 구현',
+            '차트 조회 기간 프리셋 추가: 3년, 5년',
+            '전체 코드 최적화, 버그 수정 및 CSS 스타일 개선'
+        ]
+    },
+    {
         version: 'v0.1.4',
         date: '2026-01-28',
         title: '일부 차트 반응형 다지안 개선 및 홈페이지 UI/UX 개선',
@@ -37,7 +46,7 @@ const updateHistory = [
         changes: [
             '전국 흐름 파트에 있는 권역별 매매증감/전세증감 흐름 라인 차트에 기간 조회 기능 추가',
             '수요 & 공급 파트에 있는 매수우위지수/전세수급지수 멀티플 차트에 기간 조회 기능 추가',
-            '프리셋 버튼: 1개월, 3개월, 6개월, 1년, 전체'
+            '차트 조회 기간 프리셋 추가: 1개월, 3개월, 6개월, 1년, 전체'
         ]
     },
     {
@@ -106,12 +115,31 @@ function initializeTabs() {
                 targetContent.classList.add('active');
             }
 
-            // 지도 탭으로 전환 시 지도 재렌더링
-            if (targetTab === 'map' && currentData) {
-                setTimeout(() => {
-                    initializeHexMap(currentData);
-                }, 100);
-            }
+            // 탭 전환 시 차트/지도 재렌더링
+            setTimeout(() => {
+                if (targetTab === 'map' && currentData) {
+                    // 육각형 지도 재렌더링
+                    if (typeof updateMaps === 'function') {
+                        updateMaps();
+                    }
+                    // 지역별 GeoJSON 지도 재렌더링
+                    if (typeof updateRegionMaps === 'function') {
+                        updateRegionMaps();
+                    }
+                }
+                if (targetTab === 'supply') {
+                    // 수요 & 공급 차트 리사이즈
+                    Object.values(multipleCharts).forEach(chart => {
+                        if (chart) chart.resize();
+                    });
+                }
+                if (targetTab === 'top10') {
+                    // Top 10 차트 리사이즈
+                    [tradeTop10BarChart, jeonseTop10BarChart, tradeBottom10BarChart, jeonseBottom10BarChart].forEach(chart => {
+                        if (chart) chart.resize();
+                    });
+                }
+            }, 100);
         });
     });
 }
@@ -230,11 +258,6 @@ function displayDashboard(data) {
         displayRegionalFlowCharts(data.time_series);
     }
 
-    // 가로 막대 차트
-    if (data.time_series && data.time_series.length > 0) {
-        displayBarCharts(data.time_series);
-    }
-
     // 히트맵 테이블
     if (data.time_series && data.time_series.length > 0) {
         displayHeatmapTable(data.time_series);
@@ -248,6 +271,11 @@ function displayDashboard(data) {
     // 육각형 지도
     if (data.time_series && data.time_series.length > 0) {
         displayHexagonMaps(data.time_series);
+    }
+
+    // 지역별 GeoJSON 지도
+    if (data.time_series && data.time_series.length > 0) {
+        initializeRegionMaps(data.time_series);
     }
 
     // 멀티플 차트 (수급지수)
@@ -577,7 +605,7 @@ function displayRegionalFlowCharts(timeSeriesData) {
 // 흐름 차트 필터 이벤트 리스너 등록
 function initFlowChartFilterListeners() {
     // 프리셋 버튼
-    const presetBtns = document.querySelectorAll('.filter-presets button');
+    const presetBtns = document.querySelectorAll('.flow-chart-filter .filter-presets button');
     presetBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // active 클래스 토글
@@ -616,6 +644,12 @@ function initFlowChartFilterListeners() {
                     break;
                 case '1y':
                     startDate.setFullYear(startDate.getFullYear() - 1);
+                    break;
+                case '3y':
+                    startDate.setFullYear(startDate.getFullYear() - 3);
+                    break;
+                case '5y':
+                    startDate.setFullYear(startDate.getFullYear() - 5);
                     break;
             }
 
@@ -707,10 +741,10 @@ function displayFlowChart(canvasId, weeks, regionalData, label) {
     // 데이터셋 생성
     const datasets = [];
     const colors = {
-        '전국': 'rgba(255, 99, 132, 1)',      // 빨강
-        '수도권': 'rgba(255, 159, 64, 1)',    // 오렌지
+        '전국': 'rgba(255, 99, 132, 1)',       // 빨강
+        '수도권': 'rgba(255, 159, 64, 1)',     // 오렌지
         '5개 광역시': 'rgba(75, 192, 120, 1)',  // 초록
-        '기타지방': 'rgba(54, 162, 235, 1)'    // 파랑
+        '기타지방': 'rgba(54, 162, 235, 1)'     // 파랑
     };
 
     // 데이터 포인트 수에 따라 포인트 크기 조정
@@ -1050,180 +1084,6 @@ const regionNameMap = {
     '제주특별자치도 Jeju': '제주'
 };
 
-// 가로 막대 차트 표시 (이번주/지난주 비교)
-function displayBarCharts(timeSeriesData) {
-    // 최근 2주 데이터 추출
-    const weeks = [...new Set(timeSeriesData.map(item => item.week))].sort();
-    const latestWeek = weeks[weeks.length - 1];  // 이번주
-    const previousWeek = weeks[weeks.length - 2]; // 지난주
-
-    console.log('최근 2주:', latestWeek, previousWeek);
-
-    // 표시할 지역 순서 정의 (영어 이름)
-    const displayRegions = [
-        'Total',
-        'Seoul Metropolitan Area',
-        'Seoul', 'Northern seoul', 'Southern Seoul', 'Gyeonggi-do', 'Incheon',
-        '5 Large Cities',
-        'Busan', 'Daegu', 'Gwangju', 'Daejeon', 'Ulsan',
-        'Non-Metropolitan Area',
-        'Sejong', 'Gangwon-do', 'Chungcheongbuk-do', 'Chungcheongnam-do ',
-        'Jeollabuk-do', 'Jeollanam-do', 'Gyeongsangbuk-do', 'Gyeongsangnam-do', 'Jeju/ Seogwipo'
-    ];
-
-    // 매매 데이터 준비
-    const tradeData = prepareBarChartData(timeSeriesData, displayRegions, latestWeek, previousWeek, 'trade');
-
-    // 전세 데이터 준비
-    const jeonseData = prepareBarChartData(timeSeriesData, displayRegions, latestWeek, previousWeek, 'jeonse');
-
-    // 매매 증감 차트
-    displayBarChart('tradeBarChart', tradeData, '주간 매매증감', 'trade', latestWeek, previousWeek);
-
-    // 전세 증감 차트
-    displayBarChart('jeonseBarChart', jeonseData, '주간 전세증감', 'jeonse', latestWeek, previousWeek);
-}
-
-// 바 차트 데이터 준비 함수
-function prepareBarChartData(timeSeriesData, displayRegions, latestWeek, previousWeek, dataType) {
-    const labels = [];
-    const currentWeekData = [];
-    const previousWeekData = [];
-
-    displayRegions.forEach(engName => {
-        const korName = regionNameMap[engName] || engName;
-
-        // 이번주 데이터
-        const currentItem = timeSeriesData.find(item =>
-            item.region === engName && item.week === latestWeek && item.type === dataType
-        );
-
-        // 지난주 데이터
-        const previousItem = timeSeriesData.find(item =>
-            item.region === engName && item.week === previousWeek && item.type === dataType
-        );
-
-        if (currentItem || previousItem) {
-            labels.push(korName);
-            currentWeekData.push(currentItem ? parseFloat(currentItem.rate) : 0);
-            previousWeekData.push(previousItem ? parseFloat(previousItem.rate) : 0);
-        }
-    });
-
-    return {
-        labels: labels,
-        currentWeek: currentWeekData,
-        previousWeek: previousWeekData
-    };
-}
-
-function displayBarChart(canvasId, chartData, title, chartType, latestWeek, previousWeek) {
-    const ctx = document.getElementById(canvasId);
-    if (!ctx) return;
-
-    // 기존 차트 제거
-    if (canvasId === 'tradeBarChart' && tradeBarChart) {
-        tradeBarChart.destroy();
-    } else if (canvasId === 'jeonseBarChart' && jeonseBarChart) {
-        jeonseBarChart.destroy();
-    }
-
-    // 색상 설정 (매매=오렌지, 전세=초록)
-    const colors = chartType === 'trade' ? {
-        current: 'rgba(255, 140, 0, 0.8)',      // 진한 오렌지 (이번주)
-        previous: 'rgba(255, 200, 124, 0.5)'    // 연한 오렌지 (지난주)
-    } : {
-        current: 'rgba(34, 139, 34, 0.8)',      // 진한 초록 (이번주)
-        previous: 'rgba(144, 238, 144, 0.5)'    // 연한 초록 (지난주)
-    };
-
-    // 범례 라벨에 날짜 추가
-    const currentLabel = latestWeek ? `이번 주 (${latestWeek})` : '이번주';
-    const previousLabel = previousWeek ? `지난 주 (${previousWeek})` : '지난주';
-
-    // 차트 생성
-    const newChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: chartData.labels,
-            datasets: [
-                {
-                    label: currentLabel,
-                    data: chartData.currentWeek,
-                    backgroundColor: colors.current,
-                    borderColor: colors.current,
-                    borderWidth: 1
-                },
-                {
-                    label: previousLabel,
-                    data: chartData.previousWeek,
-                    backgroundColor: colors.previous,
-                    borderColor: colors.previous,
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            indexAxis: 'y',
-            responsive: true,
-            maintainAspectRatio: true,
-            aspectRatio: 2,
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: {
-                        usePointStyle: true,
-                        padding: 15,
-                        font: {
-                            size: 11
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return context.dataset.label + ': ' + formatRate(context.parsed.x);
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    ticks: {
-                        callback: function(value) {
-                            return formatRate(value);
-                        },
-                        font: {
-                            size: 10
-                        }
-                    },
-                    grid: {
-                        color: 'rgba(0, 0, 0, 0.05)'
-                    }
-                },
-                y: {
-                    grid: {
-                        display: false
-                    },
-                    ticks: {
-                        font: {
-                            size: 11
-                        }
-                    }
-                }
-            }
-        }
-    });
-
-    if (canvasId === 'tradeBarChart') {
-        tradeBarChart = newChart;
-    } else if (canvasId === 'jeonseBarChart') {
-        jeonseBarChart = newChart;
-    }
-}
-
 // 히트맵 테이블 표시
 function displayHeatmapTable(timeSeriesData) {
     const tbody = document.getElementById('heatmapTableBody');
@@ -1536,6 +1396,8 @@ function initSupplyChartFilterListeners() {
                 case '3m': startDate.setMonth(startDate.getMonth() - 3); break;
                 case '6m': startDate.setMonth(startDate.getMonth() - 6); break;
                 case '1y': startDate.setFullYear(startDate.getFullYear() - 1); break;
+                case '3y': startDate.setFullYear(startDate.getFullYear() - 3); break;
+                case '5y': startDate.setFullYear(startDate.getFullYear() - 5); break;
             }
 
             applySupplyChartFilter(startDate.toISOString().split('T')[0], allWeeks[allWeeks.length - 1]);

@@ -21,7 +21,7 @@
             <a class="tab-link" data-tab="regional" href="#">지역 흐름</a>
             <a class="tab-link" data-tab="top10" href="#">TOP 10</a>
             <a class="tab-link" data-tab="supply" href="#">수요 &amp; 공급</a>
-            <a class="tab-link" data-tab="map" href="#">지도</a>
+            <a class="tab-link" data-tab="map" href="#">지역별 지도</a>
             <a class="tab-link" data-tab="notice" href="#">업데이트</a>
         </nav>
     </header>
@@ -103,6 +103,8 @@
                             <button data-period="3m">3개월</button>
                             <button data-period="6m" class="active">6개월</button>
                             <button data-period="1y">1년</button>
+                            <button data-period="3y">3년</button>
+                            <button data-period="5y">5년</button>
                             <button data-period="all">전체</button>
                         </div>
                         <div class="filter-date-range">
@@ -114,14 +116,20 @@
                         </div>
                     </div>
                     <div class="flow-chart-grid">
-                        <div class="flow-chart-card">
-                            <h3>권역별 매매증감 흐름</h3>
+                        <div class="flow-chart-card" id="tradeFlowCard">
+                            <div class="card-header-row">
+                                <h3>권역별 매매증감 흐름</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('tradeFlowCard'), '권역별_매매증감_흐름')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <div class="flow-chart-container">
                                 <canvas id="tradeFlowChart"></canvas>
                             </div>
                         </div>
-                        <div class="flow-chart-card">
-                            <h3>권역별 전세증감 흐름</h3>
+                        <div class="flow-chart-card" id="jeonseFlowCard">
+                            <div class="card-header-row">
+                                <h3>권역별 전세증감 흐름</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('jeonseFlowCard'), '권역별_전세증감_흐름')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <div class="flow-chart-container">
                                 <canvas id="jeonseFlowChart"></canvas>
                             </div>
@@ -147,28 +155,11 @@
                     </div>
                 </section>
 
-                <!-- 주간 증감 비교 바차트 -->
-                <section class="bar-chart-section">
-                    <div class="bar-chart-grid">
-                        <div class="bar-chart-card">
-                            <h3>주간 매매증감</h3>
-                            <div class="bar-chart-container">
-                                <canvas id="tradeBarChart"></canvas>
-                            </div>
-                        </div>
-                        <div class="bar-chart-card">
-                            <h3>주간 전세증감</h3>
-                            <div class="bar-chart-container">
-                                <canvas id="jeonseBarChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 <!-- 지역별 증감률 테이블 -->
                 <section class="heatmap-section">
                     <div class="heatmap-container">
                         <div class="table-wrapper">
+                            <h3 class="heatmap-title">주간 매매증감 &amp; 전세증감</h3>
                             <table id="heatmapTable" class="heatmap-table">
                                 <thead>
                                     <tr>
@@ -199,8 +190,11 @@
                     <h2>증감률 Top 10</h2>
                     <div class="top10-grid">
                         <!-- 매매 증감률 상위 -->
-                        <div class="top10-card">
-                            <h3 class="top10-title">이번 주 매매 증감률 상위 (Top 10)</h3>
+                        <div class="top10-card" id="tradeTop10Card">
+                            <div class="card-header-row">
+                                <h3 class="top10-title">이번 주 매매 증감률 상위 (Top 10)</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('tradeTop10Card'), '매매_증감률_상위_Top10')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <div class="top10-bar-chart">
                                 <canvas id="tradeTop10BarChart"></canvas>
                             </div>
@@ -211,8 +205,11 @@
                         </div>
 
                         <!-- 전세 증감률 상위 -->
-                        <div class="top10-card">
-                            <h3 class="top10-title">이번 주 전세 증감률 상위 (Top 10)</h3>
+                        <div class="top10-card" id="jeonseTop10Card">
+                            <div class="card-header-row">
+                                <h3 class="top10-title">이번 주 전세 증감률 상위 (Top 10)</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('jeonseTop10Card'), '전세_증감률_상위_Top10')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <div class="top10-bar-chart">
                                 <canvas id="jeonseTop10BarChart"></canvas>
                             </div>
@@ -223,8 +220,11 @@
                         </div>
 
                         <!-- 매매 증감률 하위 -->
-                        <div class="top10-card">
-                            <h3 class="top10-title">이번 주 매매 증감률 하위 (Top 10)</h3>
+                        <div class="top10-card" id="tradeBottom10Card">
+                            <div class="card-header-row">
+                                <h3 class="top10-title">이번 주 매매 증감률 하위 (Top 10)</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('tradeBottom10Card'), '매매_증감률_하위_Top10')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <div class="top10-bar-chart">
                                 <canvas id="tradeBottom10BarChart"></canvas>
                             </div>
@@ -235,8 +235,11 @@
                         </div>
 
                         <!-- 전세 증감률 하위 -->
-                        <div class="top10-card">
-                            <h3 class="top10-title">이번 주 전세 증감률 하위 (Top 10)</h3>
+                        <div class="top10-card" id="jeonseBottom10Card">
+                            <div class="card-header-row">
+                                <h3 class="top10-title">이번 주 전세 증감률 하위 (Top 10)</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('jeonseBottom10Card'), '전세_증감률_하위_Top10')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <div class="top10-bar-chart">
                                 <canvas id="jeonseBottom10BarChart"></canvas>
                             </div>
@@ -261,6 +264,8 @@
                             <button data-period="3m">3개월</button>
                             <button data-period="6m" class="active">6개월</button>
                             <button data-period="1y">1년</button>
+                            <button data-period="3y">3년</button>
+                            <button data-period="5y">5년</button>
                             <button data-period="all">전체</button>
                         </div>
                         <div class="filter-date-range">
@@ -272,36 +277,60 @@
                         </div>
                     </div>
                     <div class="multiples-grid">
-                        <div class="multiple-chart-card">
-                            <h4>수도권 매수우위지수</h4>
+                        <div class="multiple-chart-card" id="capitalBuyerCard">
+                            <div class="card-header-row">
+                                <h4>수도권 매수우위지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('capitalBuyerCard'), '수도권_매수우위지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="capitalBuyerIndex"></canvas>
                         </div>
-                        <div class="multiple-chart-card">
-                            <h4>수도권 전세수급지수</h4>
+                        <div class="multiple-chart-card" id="capitalJeonseSupplyCard">
+                            <div class="card-header-row">
+                                <h4>수도권 전세수급지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('capitalJeonseSupplyCard'), '수도권_전세수급지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="capitalJeonseSupplyIndex"></canvas>
                         </div>
-                        <div class="multiple-chart-card">
-                            <h4>광역시 매수우위지수</h4>
+                        <div class="multiple-chart-card" id="metroBuyerCard">
+                            <div class="card-header-row">
+                                <h4>광역시 매수우위지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('metroBuyerCard'), '광역시_매수우위지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="metroBuyerIndex"></canvas>
                         </div>
-                        <div class="multiple-chart-card">
-                            <h4>광역시 전세수급지수</h4>
+                        <div class="multiple-chart-card" id="metroJeonseSupplyCard">
+                            <div class="card-header-row">
+                                <h4>광역시 전세수급지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('metroJeonseSupplyCard'), '광역시_전세수급지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="metroJeonseSupplyIndex"></canvas>
                         </div>
-                        <div class="multiple-chart-card">
-                            <h4>기타지방1 매수우위지수</h4>
+                        <div class="multiple-chart-card" id="other1BuyerCard">
+                            <div class="card-header-row">
+                                <h4>기타지방1 매수우위지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('other1BuyerCard'), '기타지방1_매수우위지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="other1BuyerIndex"></canvas>
                         </div>
-                        <div class="multiple-chart-card">
-                            <h4>기타지방1 전세수급지수</h4>
+                        <div class="multiple-chart-card" id="other1JeonseSupplyCard">
+                            <div class="card-header-row">
+                                <h4>기타지방1 전세수급지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('other1JeonseSupplyCard'), '기타지방1_전세수급지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="other1JeonseSupplyIndex"></canvas>
                         </div>
-                        <div class="multiple-chart-card">
-                            <h4>기타지방2 매수우위지수</h4>
+                        <div class="multiple-chart-card" id="other2BuyerCard">
+                            <div class="card-header-row">
+                                <h4>기타지방2 매수우위지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('other2BuyerCard'), '기타지방2_매수우위지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="other2BuyerIndex"></canvas>
                         </div>
-                        <div class="multiple-chart-card">
-                            <h4>기타지방2 전세수급지수</h4>
+                        <div class="multiple-chart-card" id="other2JeonseSupplyCard">
+                            <div class="card-header-row">
+                                <h4>기타지방2 전세수급지수</h4>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('other2JeonseSupplyCard'), '기타지방2_전세수급지수')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <canvas id="other2JeonseSupplyIndex"></canvas>
                         </div>
                     </div>
@@ -314,13 +343,19 @@
                     <h2>지역별 증감률 지도</h2>
                     <p class="section-caption">업데이트일 포함 최근 26주 데이터를 조회합니다</p>
                     <div class="hexmap-container-wrapper">
-                        <div class="hexmap-card">
-                            <h3 id="tradeMapTitle">매매 증감률</h3>
+                        <div class="hexmap-card" id="tradeHexCard">
+                            <div class="card-header-row">
+                                <h3 id="tradeMapTitle">매매 증감률</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('tradeHexCard'), '전국_매매_증감률_지도')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <p class="hexmap-date" id="tradeMapDate">-</p>
                             <div class="hexmap-canvas" id="tradeHexMap"></div>
                         </div>
-                        <div class="hexmap-card">
-                            <h3 id="jeonseMapTitle">전세 증감률</h3>
+                        <div class="hexmap-card" id="jeonseHexCard">
+                            <div class="card-header-row">
+                                <h3 id="jeonseMapTitle">전세 증감률</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('jeonseHexCard'), '전국_전세_증감률_지도')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
                             <p class="hexmap-date" id="jeonseMapDate">-</p>
                             <div class="hexmap-canvas" id="jeonseHexMap"></div>
                         </div>
@@ -350,6 +385,69 @@
                                 <label>색상 밀도</label>
                                 <input type="range" id="colorDensitySlider" min="0.1" max="2.0" step="0.1" value="0.8">
                                 <span class="density-value" id="densityValue">0.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 지역별 GeoJSON 지도 -->
+                <section class="hexmap-section" id="regionMapSection">
+                    <div class="region-map-header">
+                        <h2 id="regionMapTitle">지역별 증감률 지도</h2>
+                        <div class="region-selector">
+                            <button class="region-btn active" data-region="seoul">서울</button>
+                            <button class="region-btn" data-region="gyeonggi">경기</button>
+                            <button class="region-btn" data-region="incheon">인천</button>
+                            <button class="region-btn" data-region="busan">부산</button>
+                            <button class="region-btn" data-region="daegu">대구</button>
+                            <button class="region-btn" data-region="daejeon">대전</button>
+                            <button class="region-btn" data-region="gwangju">광주</button>
+                            <button class="region-btn" data-region="ulsan">울산</button>
+                        </div>
+                    </div>
+                    <div class="hexmap-container-wrapper">
+                        <div class="hexmap-card" id="regionTradeCard">
+                            <div class="card-header-row">
+                                <h3 id="regionTradeTitle">매매 증감률</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('regionTradeCard'), '지역별_매매_증감률_지도')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
+                            <p class="hexmap-date" id="regionTradeMapDate">-</p>
+                            <div class="hexmap-canvas" id="regionTradeMap"></div>
+                        </div>
+                        <div class="hexmap-card" id="regionJeonseCard">
+                            <div class="card-header-row">
+                                <h3 id="regionJeonseTitle">전세 증감률</h3>
+                                <button class="btn-download" onclick="ImageExport.downloadCardAsPng(document.getElementById('regionJeonseCard'), '지역별_전세_증감률_지도')" title="PNG 다운로드">Download <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+                            </div>
+                            <p class="hexmap-date" id="regionJeonseMapDate">-</p>
+                            <div class="hexmap-canvas" id="regionJeonseMap"></div>
+                        </div>
+                        <div class="date-selector-panel">
+                            <div class="date-selector-header">
+                                <h3>날짜 선택</h3>
+                                <label class="toggle-switch">
+                                    <span>자동 모드 보기</span>
+                                    <input type="checkbox" id="regionAutoPlayToggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="date-list-container" id="regionDateListContainer">
+                            </div>
+                            <div class="selected-date-display" id="regionSelectedDateDisplay">
+                                -
+                            </div>
+                            <div class="color-legend">
+                                <div class="legend-bar"></div>
+                                <div class="legend-labels">
+                                    <span>-0.8%</span>
+                                    <span>0%</span>
+                                    <span>+0.8%</span>
+                                </div>
+                            </div>
+                            <div class="color-density-control">
+                                <label>색상 밀도</label>
+                                <input type="range" id="regionColorDensitySlider" min="0.1" max="2.0" step="0.1" value="0.8">
+                                <span class="density-value" id="regionDensityValue">0.8</span>
                             </div>
                         </div>
                     </div>
@@ -402,7 +500,9 @@
         </div>
     </div>
 
+    <script src="js/imageExport.js"></script>
     <script src="js/main.js"></script>
     <script src="js/hexagon.js"></script>
+    <script src="js/regionMap.js"></script>
 </body>
 </html>
