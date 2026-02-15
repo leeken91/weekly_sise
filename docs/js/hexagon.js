@@ -45,21 +45,21 @@ const hexagonLayout = {
     // row 7
     'Jung-gu.2': { row: 7, col: 2 }, 'Seo-gu.1': { row: 7, col: 3 }, 'Gyeyang-gu': { row: 7, col: 4 }, 'Bupyeong-gu': { row: 7, col: 5 },
     'Guro-gu': { row: 7, col: 6 }, 'Geumcheon-gu': { row: 7, col: 7 }, 'Gwangmyeong': { row: 7, col: 8 }, 'Gwacheon': { row: 7, col: 9 },
-    'Bundang-gu': { row: 7, col: 10 }, 'Sujeong-gu': { row: 7, col: 11 }, 'Jungwon-gu': { row: 7, col: 12 }, 'Gwangju.1': { row: 7, col: 13 }, 'Icheon': { row: 7, col: 14 },
+    'Bundang-gu': { row: 7, col: 10 }, 'Sujeong-gu': { row: 7, col: 11 }, 'Jungwon-gu': { row: 7, col: 12 },
     
     // row 8
-    'Michuhol-gu': { row: 8, col: 3 }, 'Yeonsu-gu': { row: 8, col: 4 }, 'Namdong-gu': { row: 8, col: 5 }, 'Ojeong': { row: 8, col: 6 },
-    'Wonmi': { row: 8, col: 7 }, 'Sosa': { row: 8, col: 8 }, 'Manan-gu': { row: 8, col: 9 }, 'Dongan-gu': { row: 8, col: 10 },
-    'Gunpo': { row: 8, col: 11 }, 'Uiwang': { row: 8, col: 12 }, 'Suji-gu': { row: 8, col: 13 },
+    'Michuhol-gu': { row: 8, col: 3 }, 'Yeonsu-gu': { row: 8, col: 4 }, 'Namdong-gu': { row: 8, col: 5 }, 'Ojeong-gu': { row: 8, col: 6 },
+    'Wonmi-gu': { row: 8, col: 7 }, 'Sosa-gu': { row: 8, col: 8 }, 'Manan-gu': { row: 8, col: 9 }, 'Dongan-gu': { row: 8, col: 10 },
+    'Gunpo': { row: 8, col: 11 }, 'Uiwang': { row: 8, col: 12 }, 'Suji-gu': { row: 8, col: 13 }, 'Gwangju.1': { row: 8, col: 14 },
     
     // row 9
-    'Siheung': { row: 9, col: 5 }, 'Danwon-gu': { row: 9, col: 6 }, 'Sangrok-gu': { row: 9, col: 7 }, 'Jangan-gu': { row: 9, col: 8 },
-    'Paldal-gu': { row: 9, col: 9 }, 'Yeongtong-gu': { row: 9, col: 10 }, 'Gwonseon-gu': { row: 9, col: 11 }, 'Giheung-gu': { row: 9, col: 12 },
-    'Cheoin-gu': { row: 9, col: 13 },
+    'Siheung': { row: 9, col: 4 }, 'Danwon-gu': { row: 9, col: 5 }, 'Sangrok-gu': { row: 9, col: 6 }, 'Jangan-gu': { row: 9, col: 7 },
+    'Paldal-gu': { row: 9, col: 8 }, 'Yeongtong-gu': { row: 9, col: 9 }, 'Gwonseon-gu': { row: 9, col: 10 }, 'Giheung-gu': { row: 9, col: 11 },
+    'Cheoin-gu': { row: 9, col: 12 }, 'Icheon': { row: 9, col: 13 },
     
     // row 10
-    'Manse-gu': {row: 10, col: 7 }, 'Hyohaeng-gu': {row: 10, col: 8 }, 'Byeongjeom-gu': {row: 10, col: 9 }, 'Dongtan-gu': {row: 10, col: 10 },
-    'Osan': { row: 10, col: 11 }, 'Pyeongtaek': { row: 10, col: 12 }, 'Anseong': { row: 10, col: 13 },
+    'Manse-gu': {row: 10, col: 5 }, 'Hyohaeng-gu': {row: 10, col: 6 }, 'Byeongjeom-gu': {row: 10, col: 7 }, 'Dongtan-gu': {row: 10, col: 8 },
+    'Osan': { row: 10, col: 9 }, 'Pyeongtaek': { row: 10, col: 10 }, 'Anseong': { row: 10, col: 11 },
 
     // row 11
     'Seosan': { row: 11, col: 2 }, 'Dangjin': { row: 11, col: 3 }, 'Asan': { row: 11, col: 4 }, 'Seobuk-gu': { row: 11, col: 5 },
