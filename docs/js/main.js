@@ -20,7 +20,7 @@ const errorMessage = document.getElementById('errorMessage');
 // =============================================================================
 const updateHistory = [
     {
-        version: 'v2.0.0',
+        version: 'v1.0.0',
         date: '2026-02-15',
         title: '지역별 지도 GeoJSON 차트 추가 및 차트/지도 이미지 다운로드 기능 추가',
         changes: [
