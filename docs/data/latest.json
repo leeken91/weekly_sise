@@ -1,45 +1,45 @@
 {
   "success": true,
-  "survey_date": "2026-04-06",
+  "survey_date": "2026-04-13",
   "national": {
     "trade": {
-      "current": 0.08099133150723024,
-      "change": -0.0028983449437583325
+      "current": 0.06420511466625466,
+      "change": -0.016786216840975587
     },
     "jeonse": {
-      "current": 0.09890146943453595,
-      "change": -0.014512698781917716
+      "current": 0.10801884561165058,
+      "change": 0.009117376177114625
     }
   },
   "regional": {
     "capital": {
       "trade": {
-        "current": 0.25002133452059633,
-        "change": -0.01755737149092973
+        "current": 0.19318069700987817,
+        "change": -0.05684063751071816
       },
       "jeonse": {
-        "current": 0.18488491773818921,
-        "change": -0.04915037710155673
+        "current": 0.20278086892477568,
+        "change": 0.017895951186586462
       }
     },
     "metro": {
       "trade": {
-        "current": 0.015196619754275165,
-        "change": 0.002542426471215215
+        "current": 0.006166807145576746,
+        "change": -0.00902981260869842
       },
       "jeonse": {
-        "current": 0.06581862765032949,
-        "change": -0.010969628104075216
+        "current": 0.07193024194700873,
+        "change": 0.006111614296679238
       }
     },
     "other": {
       "trade": {
-        "current": 0.08099133150723024,
-        "change": -0.0028983449437583325
+        "current": 0.06420511466625466,
+        "change": -0.016786216840975587
       },
       "jeonse": {
-        "current": 0.09890146943453595,
-        "change": -0.014512698781917716
+        "current": 0.10801884561165058,
+        "change": 0.009117376177114625
       }
     }
   },
@@ -47,105 +47,105 @@
     "rising": [
       {
         "rank": 1,
-        "region": "동대문구",
-        "rate": 0.6298591051896105
+        "region": "구리",
+        "rate": 0.5413108832666588
       },
       {
         "rank": 2,
-        "region": "서대문구",
-        "rate": 0.6227822346825826
+        "region": "강서구",
+        "rate": 0.4556899205670038
       },
       {
         "rank": 3,
         "region": "성남 중원구",
-        "rate": 0.5863362889882222
+        "rate": 0.4366754235607514
       },
       {
         "rank": 4,
-        "region": "광명",
-        "rate": 0.5373306554254378
+        "region": "용인 수지구",
+        "rate": 0.4135957644231628
       },
       {
         "rank": 5,
-        "region": "성북구",
-        "rate": 0.5151611910633963
+        "region": "진주",
+        "rate": 0.340799409725504
       },
       {
         "rank": 6,
-        "region": "용인 수지구",
-        "rate": 0.49932265528134423
+        "region": "은평구",
+        "rate": 0.3400321109408066
       },
       {
         "rank": 7,
-        "region": "하남",
-        "rate": 0.41151461313796234
+        "region": "마포구",
+        "rate": 0.32856429981853424
       },
       {
         "rank": 8,
-        "region": "동작구",
-        "rate": 0.4029407523131615
+        "region": "수원 팔달구",
+        "rate": 0.3256055476506757
       },
       {
         "rank": 9,
-        "region": "강서구",
-        "rate": 0.3962711357771575
+        "region": "동대문구",
+        "rate": 0.3200832609448174
       },
       {
         "rank": 10,
-        "region": "중랑구",
-        "rate": 0.3533969213068167
+        "region": "동작구",
+        "rate": 0.3083393640634071
       }
     ],
     "falling": [
       {
         "rank": 1,
-        "region": "광주 서구",
-        "rate": -0.2623567756599906
+        "region": "이천",
+        "rate": -0.31642255760196714
       },
       {
         "rank": 2,
-        "region": "이천",
-        "rate": -0.16041952278108934
+        "region": "광주 남구",
+        "rate": -0.22147405624401553
       },
       {
         "rank": 3,
-        "region": "여수",
-        "rate": -0.14062305178588394
+        "region": "광주 동구",
+        "rate": -0.19003384602750734
       },
       {
         "rank": 4,
-        "region": "평택",
-        "rate": -0.1192339135753509
+        "region": "포항 남구",
+        "rate": -0.14114972542318738
       },
       {
         "rank": 5,
-        "region": "부산 영도구",
-        "rate": -0.11835363834506495
+        "region": "광주 서구",
+        "rate": -0.09522077827647313
       },
       {
         "rank": 6,
-        "region": "안성",
-        "rate": -0.1146538524603982
+        "region": "고양 일산동구",
+        "rate": -0.08632167934582125
       },
       {
         "rank": 7,
-        "region": "천안 동남구",
-        "rate": -0.0929899185272886
+        "region": "평택",
+        "rate": -0.08134896407976583
       },
       {
         "rank": 8,
-        "region": "포항 남구",
-        "rate": -0.08594324958348029
+        "region": "목포",
+        "rate": -0.0741482231865771
       },
       {
         "rank": 9,
-        "region": "부산 연제구",
-        "rate": -0.07534238627299514
+        "region": "포항 북구",
+        "rate": -0.07239318091597106
       },
       {
         "rank": 10,
-        "region": "포항 북구",
-        "rate": -0.07056953869600804
+        "region": "과천",
+        "rate": -0.06926499749879568
       }
     ]
   },
@@ -21253,498 +21253,6 @@
       "type": "trade"
     },
     {
-      "region": "Seoul",
-      "week": "2025-09-29",
-      "rate": 0.43367102489740295,
-      "type": "trade"
-    },
-    {
-      "region": "Northern seoul",
-      "week": "2025-09-29",
-      "rate": 0.3428501145632412,
-      "type": "trade"
-    },
-    {
-      "region": "Gangbuk-gu",
-      "week": "2025-09-29",
-      "rate": 0.02227327323889053,
-      "type": "trade"
-    },
-    {
-      "region": "Gwangjin-gu",
-      "week": "2025-09-29",
-      "rate": 1.407925409858733,
-      "type": "trade"
-    },
-    {
-      "region": "Nowon-gu",
-      "week": "2025-09-29",
-      "rate": 0.06256544424460488,
-      "type": "trade"
-    },
-    {
-      "region": "Dobong-gu",
-      "week": "2025-09-29",
-      "rate": 0.0541762471316212,
-      "type": "trade"
-    },
-    {
-      "region": "Dongdaemun-gu",
-      "week": "2025-09-29",
-      "rate": 0.21622438084981285,
-      "type": "trade"
-    },
-    {
-      "region": "Mapo-gu",
-      "week": "2025-09-29",
-      "rate": 0.7184392636643018,
-      "type": "trade"
-    },
-    {
-      "region": "Seodaemun-gu",
-      "week": "2025-09-29",
-      "rate": 0.3271308819410797,
-      "type": "trade"
-    },
-    {
-      "region": "Seongdong-gu",
-      "week": "2025-09-29",
-      "rate": 1.2669727058948235,
-      "type": "trade"
-    },
-    {
-      "region": "Seongbuk-gu",
-      "week": "2025-09-29",
-      "rate": 0.20306500474631084,
-      "type": "trade"
-    },
-    {
-      "region": "Yongsan-gu",
-      "week": "2025-09-29",
-      "rate": 0.173258511590059,
-      "type": "trade"
-    },
-    {
-      "region": "Eunpyeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.04154860195580269,
-      "type": "trade"
-    },
-    {
-      "region": "Jongno-gu",
-      "week": "2025-09-29",
-      "rate": 0.118435325755937,
-      "type": "trade"
-    },
-    {
-      "region": "Jung-gu",
-      "week": "2025-09-29",
-      "rate": 0.8478006216956374,
-      "type": "trade"
-    },
-    {
-      "region": "Jungnang-gu",
-      "week": "2025-09-29",
-      "rate": 0.11853914105473351,
-      "type": "trade"
-    },
-    {
-      "region": "Southern Seoul",
-      "week": "2025-09-29",
-      "rate": 0.5150120283152774,
-      "type": "trade"
-    },
-    {
-      "region": "Gangnam-gu",
-      "week": "2025-09-29",
-      "rate": 0.374923737886622,
-      "type": "trade"
-    },
-    {
-      "region": "Gangdong-gu",
-      "week": "2025-09-29",
-      "rate": 1.3567931968578888,
-      "type": "trade"
-    },
-    {
-      "region": "Gangseo-gu",
-      "week": "2025-09-29",
-      "rate": 0.35283869375406834,
-      "type": "trade"
-    },
-    {
-      "region": "Gwanak-gu",
-      "week": "2025-09-29",
-      "rate": 0.18872840010664887,
-      "type": "trade"
-    },
-    {
-      "region": "Guro-gu",
-      "week": "2025-09-29",
-      "rate": 0.18527734350327374,
-      "type": "trade"
-    },
-    {
-      "region": "Geumcheon-gu",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "trade"
-    },
-    {
-      "region": "Dongjak-gu",
-      "week": "2025-09-29",
-      "rate": 0.47504694081865795,
-      "type": "trade"
-    },
-    {
-      "region": "Seocho-gu",
-      "week": "2025-09-29",
-      "rate": 0.1167927761232568,
-      "type": "trade"
-    },
-    {
-      "region": "Songpa-gu",
-      "week": "2025-09-29",
-      "rate": 0.8687584849448318,
-      "type": "trade"
-    },
-    {
-      "region": "Yangcheon-gu",
-      "week": "2025-09-29",
-      "rate": 0.49829171215605617,
-      "type": "trade"
-    },
-    {
-      "region": "Yeongdeungpo-gu",
-      "week": "2025-09-29",
-      "rate": 0.6857784333124292,
-      "type": "trade"
-    },
-    {
-      "region": "6 Large Cities",
-      "week": "2025-09-29",
-      "rate": -0.012888346787106751,
-      "type": "trade"
-    },
-    {
-      "region": "Busan",
-      "week": "2025-09-29",
-      "rate": -0.0007379261823436807,
-      "type": "trade"
-    },
-    {
-      "region": "Jung-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "trade"
-    },
-    {
-      "region": "Seo-gu",
-      "week": "2025-09-29",
-      "rate": -0.08881425101755042,
-      "type": "trade"
-    },
-    {
-      "region": "Dong-gu",
-      "week": "2025-09-29",
-      "rate": -0.05118092265756215,
-      "type": "trade"
-    },
-    {
-      "region": "Yeongdo-gu",
-      "week": "2025-09-29",
-      "rate": -0.025469218508702596,
-      "type": "trade"
-    },
-    {
-      "region": "Busanjin-gu",
-      "week": "2025-09-29",
-      "rate": -0.039277987265915054,
-      "type": "trade"
-    },
-    {
-      "region": "Dongnae-gu",
-      "week": "2025-09-29",
-      "rate": 0.07169487993741411,
-      "type": "trade"
-    },
-    {
-      "region": "Nam-gu",
-      "week": "2025-09-29",
-      "rate": 0.041004308197826786,
-      "type": "trade"
-    },
-    {
-      "region": "Buk-gu",
-      "week": "2025-09-29",
-      "rate": -0.016256394764585843,
-      "type": "trade"
-    },
-    {
-      "region": "Haeundae-gu",
-      "week": "2025-09-29",
-      "rate": -0.017334949267148535,
-      "type": "trade"
-    },
-    {
-      "region": "Saha-gu",
-      "week": "2025-09-29",
-      "rate": -0.020792056123805223,
-      "type": "trade"
-    },
-    {
-      "region": "Geumjeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.01994581483265703,
-      "type": "trade"
-    },
-    {
-      "region": "Yeonje-gu",
-      "week": "2025-09-29",
-      "rate": 0.07330890262475717,
-      "type": "trade"
-    },
-    {
-      "region": "Suyeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.0931307083972057,
-      "type": "trade"
-    },
-    {
-      "region": "Sasang-gu",
-      "week": "2025-09-29",
-      "rate": -0.02029657587209191,
-      "type": "trade"
-    },
-    {
-      "region": "Gijang-gun",
-      "week": "2025-09-29",
-      "rate": -0.00035443881848860534,
-      "type": "trade"
-    },
-    {
-      "region": "Gangseo-gu.1",
-      "week": "2025-09-29",
-      "rate": -0.12442682396388142,
-      "type": "trade"
-    },
-    {
-      "region": "Daegu",
-      "week": "2025-09-29",
-      "rate": -0.029824051105028723,
-      "type": "trade"
-    },
-    {
-      "region": "Jung-gu ",
-      "week": "2025-09-29",
-      "rate": 2.3897995569385376e-11,
-      "type": "trade"
-    },
-    {
-      "region": "Dong-gu ",
-      "week": "2025-09-29",
-      "rate": -0.07452896844777769,
-      "type": "trade"
-    },
-    {
-      "region": "Seo-gu ",
-      "week": "2025-09-29",
-      "rate": -0.01098148724107579,
-      "type": "trade"
-    },
-    {
-      "region": "Nam-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.0012735354384854527,
-      "type": "trade"
-    },
-    {
-      "region": "Buk-gu ",
-      "week": "2025-09-29",
-      "rate": -0.03798338804822973,
-      "type": "trade"
-    },
-    {
-      "region": "Suseong-gu ",
-      "week": "2025-09-29",
-      "rate": 0.007177975366026382,
-      "type": "trade"
-    },
-    {
-      "region": "Dalseo-gu ",
-      "week": "2025-09-29",
-      "rate": -0.050397629152892975,
-      "type": "trade"
-    },
-    {
-      "region": "Dalseong-gun ",
-      "week": "2025-09-29",
-      "rate": -0.006421638317458002,
-      "type": "trade"
-    },
-    {
-      "region": "Incheon",
-      "week": "2025-09-29",
-      "rate": -0.011251283675691608,
-      "type": "trade"
-    },
-    {
-      "region": "Jung-gu.2",
-      "week": "2025-09-29",
-      "rate": -0.028766887620729518,
-      "type": "trade"
-    },
-    {
-      "region": "Dong-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.060421566283260376,
-      "type": "trade"
-    },
-    {
-      "region": "Michuhol-gu",
-      "week": "2025-09-29",
-      "rate": 0.01622873263114816,
-      "type": "trade"
-    },
-    {
-      "region": "Yeonsu-gu",
-      "week": "2025-09-29",
-      "rate": -0.008757777990548206,
-      "type": "trade"
-    },
-    {
-      "region": "Namdong-gu",
-      "week": "2025-09-29",
-      "rate": 0.017315421312926876,
-      "type": "trade"
-    },
-    {
-      "region": "Bupyeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.005000100988770656,
-      "type": "trade"
-    },
-    {
-      "region": "Gyeyang-gu",
-      "week": "2025-09-29",
-      "rate": 9.65235384534605e-05,
-      "type": "trade"
-    },
-    {
-      "region": "Seo-gu.1",
-      "week": "2025-09-29",
-      "rate": -0.06463900910349718,
-      "type": "trade"
-    },
-    {
-      "region": "Gwangju",
-      "week": "2025-09-29",
-      "rate": -0.06933121179613248,
-      "type": "trade"
-    },
-    {
-      "region": "Dong-gu.2",
-      "week": "2025-09-29",
-      "rate": 0.0011847370109446596,
-      "type": "trade"
-    },
-    {
-      "region": "Seo-gu.2",
-      "week": "2025-09-29",
-      "rate": -0.1136220938087638,
-      "type": "trade"
-    },
-    {
-      "region": "Nam-gu.2",
-      "week": "2025-09-29",
-      "rate": -0.27399073914518324,
-      "type": "trade"
-    },
-    {
-      "region": "Buk-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.0028555464467784884,
-      "type": "trade"
-    },
-    {
-      "region": "Gwangsan-gu",
-      "week": "2025-09-29",
-      "rate": -0.025576733806544478,
-      "type": "trade"
-    },
-    {
-      "region": "Daejeon",
-      "week": "2025-09-29",
-      "rate": -0.018585895383037156,
-      "type": "trade"
-    },
-    {
-      "region": "Dong-gu.3",
-      "week": "2025-09-29",
-      "rate": -0.0027532116192782556,
-      "type": "trade"
-    },
-    {
-      "region": "Jung-gu.3",
-      "week": "2025-09-29",
-      "rate": -0.034021526214992805,
-      "type": "trade"
-    },
-    {
-      "region": "Seo-gu.3",
-      "week": "2025-09-29",
-      "rate": -0.039442719842752924,
-      "type": "trade"
-    },
-    {
-      "region": "Yuseong-gu",
-      "week": "2025-09-29",
-      "rate": 0.0008160874669421641,
-      "type": "trade"
-    },
-    {
-      "region": "Daedeok-gu",
-      "week": "2025-09-29",
-      "rate": 4.822179705394626e-11,
-      "type": "trade"
-    },
-    {
-      "region": "Ulsan",
-      "week": "2025-09-29",
-      "rate": 0.07964646516069537,
-      "type": "trade"
-    },
-    {
-      "region": "Jung-gu.4",
-      "week": "2025-09-29",
-      "rate": 0.04055949794761327,
-      "type": "trade"
-    },
-    {
-      "region": "Nam-gu.3",
-      "week": "2025-09-29",
-      "rate": 0.15018323321115226,
-      "type": "trade"
-    },
-    {
-      "region": "Dong-gu.4",
-      "week": "2025-09-29",
-      "rate": 0.05600208199041945,
-      "type": "trade"
-    },
-    {
-      "region": "Buk-gu.2",
-      "week": "2025-09-29",
-      "rate": 0.06011541664711501,
-      "type": "trade"
-    },
-    {
-      "region": "Ulju-gun",
-      "week": "2025-09-29",
-      "rate": 0.04575972763682667,
-      "type": "trade"
-    },
-    {
       "region": "5 Large Cities",
       "week": "2025-09-29",
       "rate": -0.013361854348184883,
@@ -21754,618 +21262,6 @@
       "region": "Seoul Metropolitan Area",
       "week": "2025-09-29",
       "rate": 0.18106666695588625,
-      "type": "trade"
-    },
-    {
-      "region": "Sejong",
-      "week": "2025-09-29",
-      "rate": 0.05288902165756452,
-      "type": "trade"
-    },
-    {
-      "region": "Gyeonggi-do",
-      "week": "2025-09-29",
-      "rate": 0.09684433087374947,
-      "type": "trade"
-    },
-    {
-      "region": "Suwon",
-      "week": "2025-09-29",
-      "rate": 0.0757235787976029,
-      "type": "trade"
-    },
-    {
-      "region": "Jangan-gu",
-      "week": "2025-09-29",
-      "rate": 0.04459345146700867,
-      "type": "trade"
-    },
-    {
-      "region": "Gwonseon-gu",
-      "week": "2025-09-29",
-      "rate": 0.0011567193960327507,
-      "type": "trade"
-    },
-    {
-      "region": "Paldal-gu",
-      "week": "2025-09-29",
-      "rate": 0.15155819635751935,
-      "type": "trade"
-    },
-    {
-      "region": "Yeongtong-gu",
-      "week": "2025-09-29",
-      "rate": 0.12350164216864296,
-      "type": "trade"
-    },
-    {
-      "region": "Seongnam",
-      "week": "2025-09-29",
-      "rate": 1.0624077357788955,
-      "type": "trade"
-    },
-    {
-      "region": "Sujeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.6347579110055152,
-      "type": "trade"
-    },
-    {
-      "region": "Jungwon-gu",
-      "week": "2025-09-29",
-      "rate": 0.3569526652106941,
-      "type": "trade"
-    },
-    {
-      "region": "Bundang-gu",
-      "week": "2025-09-29",
-      "rate": 1.3471188017888953,
-      "type": "trade"
-    },
-    {
-      "region": "Goyang",
-      "week": "2025-09-29",
-      "rate": -0.013867613892436804,
-      "type": "trade"
-    },
-    {
-      "region": "Deogyang-gu",
-      "week": "2025-09-29",
-      "rate": -0.014686940600763828,
-      "type": "trade"
-    },
-    {
-      "region": "Ilsandong-gu",
-      "week": "2025-09-29",
-      "rate": -0.001993624957872342,
-      "type": "trade"
-    },
-    {
-      "region": "Ilsanseo-gu",
-      "week": "2025-09-29",
-      "rate": -0.021081101657790428,
-      "type": "trade"
-    },
-    {
-      "region": "Anyang",
-      "week": "2025-09-29",
-      "rate": 0.2995011175836437,
-      "type": "trade"
-    },
-    {
-      "region": "Manan-gu",
-      "week": "2025-09-29",
-      "rate": 0.08158241968595341,
-      "type": "trade"
-    },
-    {
-      "region": "Dongan-gu",
-      "week": "2025-09-29",
-      "rate": 0.40360975472046867,
-      "type": "trade"
-    },
-    {
-      "region": "Bucheon",
-      "week": "2025-09-29",
-      "rate": -0.0028027242940685416,
-      "type": "trade"
-    },
-    {
-      "region": "Wonmi-gu",
-      "week": "2025-09-29",
-      "rate": 0.013349328838682764,
-      "type": "trade"
-    },
-    {
-      "region": "Sosa-gu",
-      "week": "2025-09-29",
-      "rate": -0.020346682157845193,
-      "type": "trade"
-    },
-    {
-      "region": "Ojeong-gu",
-      "week": "2025-09-29",
-      "rate": -0.03190699746482,
-      "type": "trade"
-    },
-    {
-      "region": "Uijeongbu",
-      "week": "2025-09-29",
-      "rate": 0.0026538454029401636,
-      "type": "trade"
-    },
-    {
-      "region": "Gwangmyeong",
-      "week": "2025-09-29",
-      "rate": 0.353040999690029,
-      "type": "trade"
-    },
-    {
-      "region": "Pyeongtaek",
-      "week": "2025-09-29",
-      "rate": -0.21197020643125616,
-      "type": "trade"
-    },
-    {
-      "region": "Ansan",
-      "week": "2025-09-29",
-      "rate": 0.0024636187909394206,
-      "type": "trade"
-    },
-    {
-      "region": "Danwon-gu",
-      "week": "2025-09-29",
-      "rate": 0.00951420572997899,
-      "type": "trade"
-    },
-    {
-      "region": "Sangrok-gu",
-      "week": "2025-09-29",
-      "rate": -0.0074198957005156205,
-      "type": "trade"
-    },
-    {
-      "region": "Gwacheon",
-      "week": "2025-09-29",
-      "rate": 1.0334980376726735,
-      "type": "trade"
-    },
-    {
-      "region": "Guri",
-      "week": "2025-09-29",
-      "rate": 0.012635931079430217,
-      "type": "trade"
-    },
-    {
-      "region": "Namyangju",
-      "week": "2025-09-29",
-      "rate": -0.007333159760759388,
-      "type": "trade"
-    },
-    {
-      "region": "Yongin",
-      "week": "2025-09-29",
-      "rate": 0.12947259292542865,
-      "type": "trade"
-    },
-    {
-      "region": "Cheoin-gu",
-      "week": "2025-09-29",
-      "rate": 0.0010575929373909056,
-      "type": "trade"
-    },
-    {
-      "region": "Giheung-gu",
-      "week": "2025-09-29",
-      "rate": 0.0659619027608503,
-      "type": "trade"
-    },
-    {
-      "region": "Suji-gu",
-      "week": "2025-09-29",
-      "rate": 0.2406409268448753,
-      "type": "trade"
-    },
-    {
-      "region": "Siheung",
-      "week": "2025-09-29",
-      "rate": -0.13933765922629998,
-      "type": "trade"
-    },
-    {
-      "region": "Gunpo",
-      "week": "2025-09-29",
-      "rate": -0.032980742071477824,
-      "type": "trade"
-    },
-    {
-      "region": "Uiwang",
-      "week": "2025-09-29",
-      "rate": 0.03044968509453935,
-      "type": "trade"
-    },
-    {
-      "region": "Hanam",
-      "week": "2025-09-29",
-      "rate": 0.5660947210099525,
-      "type": "trade"
-    },
-    {
-      "region": "Osan",
-      "week": "2025-09-29",
-      "rate": -0.11176760967473945,
-      "type": "trade"
-    },
-    {
-      "region": "Paju",
-      "week": "2025-09-29",
-      "rate": -0.09834084042289988,
-      "type": "trade"
-    },
-    {
-      "region": "Icheon",
-      "week": "2025-09-29",
-      "rate": -0.0909355045430346,
-      "type": "trade"
-    },
-    {
-      "region": "Anseong",
-      "week": "2025-09-29",
-      "rate": -0.07207897336499991,
-      "type": "trade"
-    },
-    {
-      "region": "Gimpo",
-      "week": "2025-09-29",
-      "rate": -0.009867106566810398,
-      "type": "trade"
-    },
-    {
-      "region": "Yangju",
-      "week": "2025-09-29",
-      "rate": -0.02747535922353123,
-      "type": "trade"
-    },
-    {
-      "region": "Dongducheon",
-      "week": "2025-09-29",
-      "rate": -0.1102843480099255,
-      "type": "trade"
-    },
-    {
-      "region": "Gwangju.1",
-      "week": "2025-09-29",
-      "rate": 0.0437948864907098,
-      "type": "trade"
-    },
-    {
-      "region": "Hwaseong",
-      "week": "2025-09-29",
-      "rate": 0.018060981595346623,
-      "type": "trade"
-    },
-    {
-      "region": "Gangwon-do",
-      "week": "2025-09-29",
-      "rate": 0.019179607669063972,
-      "type": "trade"
-    },
-    {
-      "region": "Chuncheon",
-      "week": "2025-09-29",
-      "rate": -0.006184266789748886,
-      "type": "trade"
-    },
-    {
-      "region": "Gangneung",
-      "week": "2025-09-29",
-      "rate": -0.010452714424803836,
-      "type": "trade"
-    },
-    {
-      "region": "Wonju",
-      "week": "2025-09-29",
-      "rate": 0.00559217718091872,
-      "type": "trade"
-    },
-    {
-      "region": "Chungcheongbuk-do",
-      "week": "2025-09-29",
-      "rate": -0.004274659688770838,
-      "type": "trade"
-    },
-    {
-      "region": "Cheongju",
-      "week": "2025-09-29",
-      "rate": 0.00045314837269489746,
-      "type": "trade"
-    },
-    {
-      "region": "Sangdang-gu",
-      "week": "2025-09-29",
-      "rate": -0.007562763766638575,
-      "type": "trade"
-    },
-    {
-      "region": "Seowon-gu",
-      "week": "2025-09-29",
-      "rate": 0.0013801857290170667,
-      "type": "trade"
-    },
-    {
-      "region": "Cheongwon-gu",
-      "week": "2025-09-29",
-      "rate": 0.00893010772307262,
-      "type": "trade"
-    },
-    {
-      "region": "Heungdeok-gu",
-      "week": "2025-09-29",
-      "rate": -5.845129509626896e-05,
-      "type": "trade"
-    },
-    {
-      "region": "Chungju",
-      "week": "2025-09-29",
-      "rate": -0.00927264529670571,
-      "type": "trade"
-    },
-    {
-      "region": "Jecheon",
-      "week": "2025-09-29",
-      "rate": 0.02044224964733988,
-      "type": "trade"
-    },
-    {
-      "region": "Chungcheongnam-do ",
-      "week": "2025-09-29",
-      "rate": -0.03268577181977532,
-      "type": "trade"
-    },
-    {
-      "region": "Cheonan",
-      "week": "2025-09-29",
-      "rate": -0.057276970315299644,
-      "type": "trade"
-    },
-    {
-      "region": "Dongnam-gu",
-      "week": "2025-09-29",
-      "rate": -0.052141355020588726,
-      "type": "trade"
-    },
-    {
-      "region": "Seobuk-gu",
-      "week": "2025-09-29",
-      "rate": -0.06060739496461913,
-      "type": "trade"
-    },
-    {
-      "region": "Gongju",
-      "week": "2025-09-29",
-      "rate": 0.01846022363332609,
-      "type": "trade"
-    },
-    {
-      "region": "Asan",
-      "week": "2025-09-29",
-      "rate": -0.12116268894910465,
-      "type": "trade"
-    },
-    {
-      "region": "Nonsan",
-      "week": "2025-09-29",
-      "rate": 0.11436070517454602,
-      "type": "trade"
-    },
-    {
-      "region": "Gyeryong",
-      "week": "2025-09-29",
-      "rate": 0.1710561327540776,
-      "type": "trade"
-    },
-    {
-      "region": "Dangjin",
-      "week": "2025-09-29",
-      "rate": 0.05533612132361447,
-      "type": "trade"
-    },
-    {
-      "region": "Seosan",
-      "week": "2025-09-29",
-      "rate": 0.020056803579732007,
-      "type": "trade"
-    },
-    {
-      "region": "Jeollabuk-do",
-      "week": "2025-09-29",
-      "rate": 0.011833602682811155,
-      "type": "trade"
-    },
-    {
-      "region": "Jeonju",
-      "week": "2025-09-29",
-      "rate": 0.07404176990531458,
-      "type": "trade"
-    },
-    {
-      "region": "Wansan-gu",
-      "week": "2025-09-29",
-      "rate": 0.11502494240759963,
-      "type": "trade"
-    },
-    {
-      "region": "Deokjin-gu",
-      "week": "2025-09-29",
-      "rate": 0.030322929061341368,
-      "type": "trade"
-    },
-    {
-      "region": "Iksan-si",
-      "week": "2025-09-29",
-      "rate": -0.06579135033562639,
-      "type": "trade"
-    },
-    {
-      "region": "Gunsan",
-      "week": "2025-09-29",
-      "rate": -0.12057977475894274,
-      "type": "trade"
-    },
-    {
-      "region": "Jeollanam-do",
-      "week": "2025-09-29",
-      "rate": -0.018194197813012618,
-      "type": "trade"
-    },
-    {
-      "region": "Mokpo",
-      "week": "2025-09-29",
-      "rate": 0.010460838902789735,
-      "type": "trade"
-    },
-    {
-      "region": "Suncheon",
-      "week": "2025-09-29",
-      "rate": -0.012397881750989142,
-      "type": "trade"
-    },
-    {
-      "region": "Gwangyang",
-      "week": "2025-09-29",
-      "rate": -0.00946711217782683,
-      "type": "trade"
-    },
-    {
-      "region": "Yeosu",
-      "week": "2025-09-29",
-      "rate": -0.06486302167160458,
-      "type": "trade"
-    },
-    {
-      "region": "Gyeongsangbuk-do",
-      "week": "2025-09-29",
-      "rate": -0.0043934278821310515,
-      "type": "trade"
-    },
-    {
-      "region": "Pohang",
-      "week": "2025-09-29",
-      "rate": -0.04488425569221555,
-      "type": "trade"
-    },
-    {
-      "region": "Nam-gu.4",
-      "week": "2025-09-29",
-      "rate": 0.00373601860668071,
-      "type": "trade"
-    },
-    {
-      "region": "Buk-gu .1",
-      "week": "2025-09-29",
-      "rate": -0.06962981043188865,
-      "type": "trade"
-    },
-    {
-      "region": "Gumi",
-      "week": "2025-09-29",
-      "rate": -0.013520138388432669,
-      "type": "trade"
-    },
-    {
-      "region": "Gyeongsan",
-      "week": "2025-09-29",
-      "rate": -0.0064595054480381525,
-      "type": "trade"
-    },
-    {
-      "region": "Andong",
-      "week": "2025-09-29",
-      "rate": 0.042686094418779526,
-      "type": "trade"
-    },
-    {
-      "region": "Gimcheon",
-      "week": "2025-09-29",
-      "rate": 0.02090449271341649,
-      "type": "trade"
-    },
-    {
-      "region": "Gyeongsangnam-do",
-      "week": "2025-09-29",
-      "rate": -0.0015984860675007611,
-      "type": "trade"
-    },
-    {
-      "region": "Changwon",
-      "week": "2025-09-29",
-      "rate": 0.02383443547760121,
-      "type": "trade"
-    },
-    {
-      "region": "Masan happo-gu",
-      "week": "2025-09-29",
-      "rate": -0.013731938780178518,
-      "type": "trade"
-    },
-    {
-      "region": "Masan hoiwon-gu",
-      "week": "2025-09-29",
-      "rate": -0.005438874666149684,
-      "type": "trade"
-    },
-    {
-      "region": "Sungsan-gu",
-      "week": "2025-09-29",
-      "rate": 0.07688852835974941,
-      "type": "trade"
-    },
-    {
-      "region": "Uichang-gu",
-      "week": "2025-09-29",
-      "rate": 0.020563960643935456,
-      "type": "trade"
-    },
-    {
-      "region": "Jinhae-gu",
-      "week": "2025-09-29",
-      "rate": -0.005235557640130117,
-      "type": "trade"
-    },
-    {
-      "region": "Yangsan",
-      "week": "2025-09-29",
-      "rate": -0.023934213729207177,
-      "type": "trade"
-    },
-    {
-      "region": "Geoje",
-      "week": "2025-09-29",
-      "rate": -0.09021328292374665,
-      "type": "trade"
-    },
-    {
-      "region": "Jinju",
-      "week": "2025-09-29",
-      "rate": 0.04066709967348407,
-      "type": "trade"
-    },
-    {
-      "region": "Gimhae",
-      "week": "2025-09-29",
-      "rate": -0.004882198716159963,
-      "type": "trade"
-    },
-    {
-      "region": "Tongyeong",
-      "week": "2025-09-29",
-      "rate": -0.054317042960844726,
-      "type": "trade"
-    },
-    {
-      "region": "Jeju/ Seogwipo",
-      "week": "2025-09-29",
-      "rate": -0.062227575382634036,
       "type": "trade"
     },
     {
@@ -50768,6 +49664,1158 @@
     },
     {
       "region": "Total",
+      "week": "2026-04-13",
+      "rate": 0.06420511466625466,
+      "type": "trade"
+    },
+    {
+      "region": "Seoul",
+      "week": "2026-04-13",
+      "rate": 0.19318069700987817,
+      "type": "trade"
+    },
+    {
+      "region": "Northern seoul",
+      "week": "2026-04-13",
+      "rate": 0.2205526125853744,
+      "type": "trade"
+    },
+    {
+      "region": "Gangbuk-gu",
+      "week": "2026-04-13",
+      "rate": 0.20097353202260929,
+      "type": "trade"
+    },
+    {
+      "region": "Gwangjin-gu",
+      "week": "2026-04-13",
+      "rate": 0.2451504770556755,
+      "type": "trade"
+    },
+    {
+      "region": "Nowon-gu",
+      "week": "2026-04-13",
+      "rate": 0.21030043350830477,
+      "type": "trade"
+    },
+    {
+      "region": "Dobong-gu",
+      "week": "2026-04-13",
+      "rate": 0.18433200177733972,
+      "type": "trade"
+    },
+    {
+      "region": "Dongdaemun-gu",
+      "week": "2026-04-13",
+      "rate": 0.3200832609448174,
+      "type": "trade"
+    },
+    {
+      "region": "Mapo-gu",
+      "week": "2026-04-13",
+      "rate": 0.32856429981853424,
+      "type": "trade"
+    },
+    {
+      "region": "Seodaemun-gu",
+      "week": "2026-04-13",
+      "rate": 0.0926038832794041,
+      "type": "trade"
+    },
+    {
+      "region": "Seongdong-gu",
+      "week": "2026-04-13",
+      "rate": 0.18601685684575314,
+      "type": "trade"
+    },
+    {
+      "region": "Seongbuk-gu",
+      "week": "2026-04-13",
+      "rate": 0.26918719439159444,
+      "type": "trade"
+    },
+    {
+      "region": "Yongsan-gu",
+      "week": "2026-04-13",
+      "rate": 0.06583836452798526,
+      "type": "trade"
+    },
+    {
+      "region": "Eunpyeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.3400321109408066,
+      "type": "trade"
+    },
+    {
+      "region": "Jongno-gu",
+      "week": "2026-04-13",
+      "rate": 0.07785843782808506,
+      "type": "trade"
+    },
+    {
+      "region": "Jung-gu",
+      "week": "2026-04-13",
+      "rate": 0.11256442757120258,
+      "type": "trade"
+    },
+    {
+      "region": "Jungnang-gu",
+      "week": "2026-04-13",
+      "rate": 0.1788879500463577,
+      "type": "trade"
+    },
+    {
+      "region": "Southern Seoul",
+      "week": "2026-04-13",
+      "rate": 0.16867848274445485,
+      "type": "trade"
+    },
+    {
+      "region": "Gangnam-gu",
+      "week": "2026-04-13",
+      "rate": -0.014273260909162389,
+      "type": "trade"
+    },
+    {
+      "region": "Gangdong-gu",
+      "week": "2026-04-13",
+      "rate": 0.2717390334459789,
+      "type": "trade"
+    },
+    {
+      "region": "Gangseo-gu",
+      "week": "2026-04-13",
+      "rate": 0.4556899205670038,
+      "type": "trade"
+    },
+    {
+      "region": "Gwanak-gu",
+      "week": "2026-04-13",
+      "rate": 0.29964716193961527,
+      "type": "trade"
+    },
+    {
+      "region": "Guro-gu",
+      "week": "2026-04-13",
+      "rate": 0.2373076514693023,
+      "type": "trade"
+    },
+    {
+      "region": "Geumcheon-gu",
+      "week": "2026-04-13",
+      "rate": 0.06458859647030209,
+      "type": "trade"
+    },
+    {
+      "region": "Dongjak-gu",
+      "week": "2026-04-13",
+      "rate": 0.3083393640634071,
+      "type": "trade"
+    },
+    {
+      "region": "Seocho-gu",
+      "week": "2026-04-13",
+      "rate": 0.03900673308155574,
+      "type": "trade"
+    },
+    {
+      "region": "Songpa-gu",
+      "week": "2026-04-13",
+      "rate": 0.04802121143556436,
+      "type": "trade"
+    },
+    {
+      "region": "Yangcheon-gu",
+      "week": "2026-04-13",
+      "rate": 0.07365218045421452,
+      "type": "trade"
+    },
+    {
+      "region": "Yeongdeungpo-gu",
+      "week": "2026-04-13",
+      "rate": 0.251878664711057,
+      "type": "trade"
+    },
+    {
+      "region": "6 Large Cities",
+      "week": "2026-04-13",
+      "rate": 0.004031808822404819,
+      "type": "trade"
+    },
+    {
+      "region": "Busan",
+      "week": "2026-04-13",
+      "rate": 0.019471270770038098,
+      "type": "trade"
+    },
+    {
+      "region": "Jung-gu.1",
+      "week": "2026-04-13",
+      "rate": 0.0,
+      "type": "trade"
+    },
+    {
+      "region": "Seo-gu",
+      "week": "2026-04-13",
+      "rate": -0.031287763294022254,
+      "type": "trade"
+    },
+    {
+      "region": "Dong-gu",
+      "week": "2026-04-13",
+      "rate": 0.022639294510376357,
+      "type": "trade"
+    },
+    {
+      "region": "Yeongdo-gu",
+      "week": "2026-04-13",
+      "rate": -0.03055313163760673,
+      "type": "trade"
+    },
+    {
+      "region": "Busanjin-gu",
+      "week": "2026-04-13",
+      "rate": 0.051262841614247726,
+      "type": "trade"
+    },
+    {
+      "region": "Dongnae-gu",
+      "week": "2026-04-13",
+      "rate": 0.13286926410257197,
+      "type": "trade"
+    },
+    {
+      "region": "Nam-gu",
+      "week": "2026-04-13",
+      "rate": 0.02392279305898254,
+      "type": "trade"
+    },
+    {
+      "region": "Buk-gu",
+      "week": "2026-04-13",
+      "rate": 0.04093509075290728,
+      "type": "trade"
+    },
+    {
+      "region": "Haeundae-gu",
+      "week": "2026-04-13",
+      "rate": 0.03540974451458948,
+      "type": "trade"
+    },
+    {
+      "region": "Saha-gu",
+      "week": "2026-04-13",
+      "rate": -0.052945157068687854,
+      "type": "trade"
+    },
+    {
+      "region": "Geumjeong-gu",
+      "week": "2026-04-13",
+      "rate": -0.012664018195504773,
+      "type": "trade"
+    },
+    {
+      "region": "Yeonje-gu",
+      "week": "2026-04-13",
+      "rate": -0.046923485044830474,
+      "type": "trade"
+    },
+    {
+      "region": "Suyeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.06358227519313067,
+      "type": "trade"
+    },
+    {
+      "region": "Sasang-gu",
+      "week": "2026-04-13",
+      "rate": -0.027444156907353898,
+      "type": "trade"
+    },
+    {
+      "region": "Gijang-gun",
+      "week": "2026-04-13",
+      "rate": 0.005165563765959992,
+      "type": "trade"
+    },
+    {
+      "region": "Gangseo-gu.1",
+      "week": "2026-04-13",
+      "rate": 0.0,
+      "type": "trade"
+    },
+    {
+      "region": "Daegu",
+      "week": "2026-04-13",
+      "rate": -0.011240528770445408,
+      "type": "trade"
+    },
+    {
+      "region": "Jung-gu ",
+      "week": "2026-04-13",
+      "rate": 0.06664711255218171,
+      "type": "trade"
+    },
+    {
+      "region": "Dong-gu ",
+      "week": "2026-04-13",
+      "rate": -0.000998689651972978,
+      "type": "trade"
+    },
+    {
+      "region": "Seo-gu ",
+      "week": "2026-04-13",
+      "rate": 0.026322603676237948,
+      "type": "trade"
+    },
+    {
+      "region": "Nam-gu.1",
+      "week": "2026-04-13",
+      "rate": -0.042836754197689356,
+      "type": "trade"
+    },
+    {
+      "region": "Buk-gu ",
+      "week": "2026-04-13",
+      "rate": -0.01491561675033658,
+      "type": "trade"
+    },
+    {
+      "region": "Suseong-gu ",
+      "week": "2026-04-13",
+      "rate": -0.002722833639159119,
+      "type": "trade"
+    },
+    {
+      "region": "Dalseo-gu ",
+      "week": "2026-04-13",
+      "rate": -0.031315242960458296,
+      "type": "trade"
+    },
+    {
+      "region": "Dalseong-gun ",
+      "week": "2026-04-13",
+      "rate": -0.01902542494614036,
+      "type": "trade"
+    },
+    {
+      "region": "Incheon",
+      "week": "2026-04-13",
+      "rate": 0.006532024826123572,
+      "type": "trade"
+    },
+    {
+      "region": "Jung-gu.2",
+      "week": "2026-04-13",
+      "rate": -0.024880987929165172,
+      "type": "trade"
+    },
+    {
+      "region": "Dong-gu.1",
+      "week": "2026-04-13",
+      "rate": 0.014139458936130988,
+      "type": "trade"
+    },
+    {
+      "region": "Michuhol-gu",
+      "week": "2026-04-13",
+      "rate": 0.04504032645448522,
+      "type": "trade"
+    },
+    {
+      "region": "Yeonsu-gu",
+      "week": "2026-04-13",
+      "rate": 0.006203101045883294,
+      "type": "trade"
+    },
+    {
+      "region": "Namdong-gu",
+      "week": "2026-04-13",
+      "rate": 0.0333183017958867,
+      "type": "trade"
+    },
+    {
+      "region": "Bupyeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.05740612497017962,
+      "type": "trade"
+    },
+    {
+      "region": "Gyeyang-gu",
+      "week": "2026-04-13",
+      "rate": -0.029175858420253394,
+      "type": "trade"
+    },
+    {
+      "region": "Seo-gu.1",
+      "week": "2026-04-13",
+      "rate": -0.031388071216639044,
+      "type": "trade"
+    },
+    {
+      "region": "Gwangju",
+      "week": "2026-04-13",
+      "rate": -0.05999628162937158,
+      "type": "trade"
+    },
+    {
+      "region": "Dong-gu.2",
+      "week": "2026-04-13",
+      "rate": -0.19003384602750734,
+      "type": "trade"
+    },
+    {
+      "region": "Seo-gu.2",
+      "week": "2026-04-13",
+      "rate": -0.09522077827647313,
+      "type": "trade"
+    },
+    {
+      "region": "Nam-gu.2",
+      "week": "2026-04-13",
+      "rate": -0.22147405624401553,
+      "type": "trade"
+    },
+    {
+      "region": "Buk-gu.1",
+      "week": "2026-04-13",
+      "rate": 0.011352634730881583,
+      "type": "trade"
+    },
+    {
+      "region": "Gwangsan-gu",
+      "week": "2026-04-13",
+      "rate": 0.001959722158582289,
+      "type": "trade"
+    },
+    {
+      "region": "Daejeon",
+      "week": "2026-04-13",
+      "rate": 0.021354696101189112,
+      "type": "trade"
+    },
+    {
+      "region": "Dong-gu.3",
+      "week": "2026-04-13",
+      "rate": -4.161294418725534e-12,
+      "type": "trade"
+    },
+    {
+      "region": "Jung-gu.3",
+      "week": "2026-04-13",
+      "rate": -0.006656034987309834,
+      "type": "trade"
+    },
+    {
+      "region": "Seo-gu.3",
+      "week": "2026-04-13",
+      "rate": 0.07403154968867974,
+      "type": "trade"
+    },
+    {
+      "region": "Yuseong-gu",
+      "week": "2026-04-13",
+      "rate": -0.007253046081977798,
+      "type": "trade"
+    },
+    {
+      "region": "Daedeok-gu",
+      "week": "2026-04-13",
+      "rate": -0.008369287204351102,
+      "type": "trade"
+    },
+    {
+      "region": "Ulsan",
+      "week": "2026-04-13",
+      "rate": 0.06087966157592668,
+      "type": "trade"
+    },
+    {
+      "region": "Jung-gu.4",
+      "week": "2026-04-13",
+      "rate": 0.06291048292342706,
+      "type": "trade"
+    },
+    {
+      "region": "Nam-gu.3",
+      "week": "2026-04-13",
+      "rate": 0.12120736165794795,
+      "type": "trade"
+    },
+    {
+      "region": "Dong-gu.4",
+      "week": "2026-04-13",
+      "rate": 0.0030464357379549685,
+      "type": "trade"
+    },
+    {
+      "region": "Buk-gu.2",
+      "week": "2026-04-13",
+      "rate": 0.05470230756951206,
+      "type": "trade"
+    },
+    {
+      "region": "Ulju-gun",
+      "week": "2026-04-13",
+      "rate": 0.018971655911950856,
+      "type": "trade"
+    },
+    {
+      "region": "5 Large Cities",
+      "week": "2026-04-13",
+      "rate": 0.0033008344125096977,
+      "type": "trade"
+    },
+    {
+      "region": "Seoul Metropolitan Area",
+      "week": "2026-04-13",
+      "rate": 0.10623066219012367,
+      "type": "trade"
+    },
+    {
+      "region": "Sejong",
+      "week": "2026-04-13",
+      "rate": 0.025680447594531176,
+      "type": "trade"
+    },
+    {
+      "region": "Gyeonggi-do",
+      "week": "2026-04-13",
+      "rate": 0.08529867879663998,
+      "type": "trade"
+    },
+    {
+      "region": "Suwon",
+      "week": "2026-04-13",
+      "rate": 0.18382987108299065,
+      "type": "trade"
+    },
+    {
+      "region": "Jangan-gu",
+      "week": "2026-04-13",
+      "rate": 0.12652427195722069,
+      "type": "trade"
+    },
+    {
+      "region": "Gwonseon-gu",
+      "week": "2026-04-13",
+      "rate": 0.1161362856952806,
+      "type": "trade"
+    },
+    {
+      "region": "Paldal-gu",
+      "week": "2026-04-13",
+      "rate": 0.3256055476506757,
+      "type": "trade"
+    },
+    {
+      "region": "Yeongtong-gu",
+      "week": "2026-04-13",
+      "rate": 0.21627546433740388,
+      "type": "trade"
+    },
+    {
+      "region": "Seongnam",
+      "week": "2026-04-13",
+      "rate": 0.2100470412591922,
+      "type": "trade"
+    },
+    {
+      "region": "Sujeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.20938957343512613,
+      "type": "trade"
+    },
+    {
+      "region": "Jungwon-gu",
+      "week": "2026-04-13",
+      "rate": 0.4366754235607514,
+      "type": "trade"
+    },
+    {
+      "region": "Bundang-gu",
+      "week": "2026-04-13",
+      "rate": 0.15008887692378195,
+      "type": "trade"
+    },
+    {
+      "region": "Goyang",
+      "week": "2026-04-13",
+      "rate": -0.01813845724479269,
+      "type": "trade"
+    },
+    {
+      "region": "Deogyang-gu",
+      "week": "2026-04-13",
+      "rate": 0.048314923149522786,
+      "type": "trade"
+    },
+    {
+      "region": "Ilsandong-gu",
+      "week": "2026-04-13",
+      "rate": -0.08632167934582125,
+      "type": "trade"
+    },
+    {
+      "region": "Ilsanseo-gu",
+      "week": "2026-04-13",
+      "rate": -0.05225571632942838,
+      "type": "trade"
+    },
+    {
+      "region": "Anyang",
+      "week": "2026-04-13",
+      "rate": 0.22760000127470997,
+      "type": "trade"
+    },
+    {
+      "region": "Manan-gu",
+      "week": "2026-04-13",
+      "rate": 0.10864864369750965,
+      "type": "trade"
+    },
+    {
+      "region": "Dongan-gu",
+      "week": "2026-04-13",
+      "rate": 0.28428387305676733,
+      "type": "trade"
+    },
+    {
+      "region": "Bucheon",
+      "week": "2026-04-13",
+      "rate": 0.040950069568078534,
+      "type": "trade"
+    },
+    {
+      "region": "Wonmi-gu",
+      "week": "2026-04-13",
+      "rate": 0.08147056222972775,
+      "type": "trade"
+    },
+    {
+      "region": "Sosa-gu",
+      "week": "2026-04-13",
+      "rate": -0.004583437907661912,
+      "type": "trade"
+    },
+    {
+      "region": "Ojeong-gu",
+      "week": "2026-04-13",
+      "rate": -0.026532472684684113,
+      "type": "trade"
+    },
+    {
+      "region": "Uijeongbu",
+      "week": "2026-04-13",
+      "rate": -0.019600075446216843,
+      "type": "trade"
+    },
+    {
+      "region": "Gwangmyeong",
+      "week": "2026-04-13",
+      "rate": 0.3073543859115372,
+      "type": "trade"
+    },
+    {
+      "region": "Pyeongtaek",
+      "week": "2026-04-13",
+      "rate": -0.08134896407976583,
+      "type": "trade"
+    },
+    {
+      "region": "Ansan",
+      "week": "2026-04-13",
+      "rate": 0.04159118537920786,
+      "type": "trade"
+    },
+    {
+      "region": "Danwon-gu",
+      "week": "2026-04-13",
+      "rate": 0.026111465437592157,
+      "type": "trade"
+    },
+    {
+      "region": "Sangrok-gu",
+      "week": "2026-04-13",
+      "rate": 0.06341573277506783,
+      "type": "trade"
+    },
+    {
+      "region": "Gwacheon",
+      "week": "2026-04-13",
+      "rate": -0.06926499749879568,
+      "type": "trade"
+    },
+    {
+      "region": "Guri",
+      "week": "2026-04-13",
+      "rate": 0.5413108832666588,
+      "type": "trade"
+    },
+    {
+      "region": "Namyangju",
+      "week": "2026-04-13",
+      "rate": 0.0462759869967857,
+      "type": "trade"
+    },
+    {
+      "region": "Yongin",
+      "week": "2026-04-13",
+      "rate": 0.24325612338817565,
+      "type": "trade"
+    },
+    {
+      "region": "Cheoin-gu",
+      "week": "2026-04-13",
+      "rate": 0.08753701611123137,
+      "type": "trade"
+    },
+    {
+      "region": "Giheung-gu",
+      "week": "2026-04-13",
+      "rate": 0.13852941478638356,
+      "type": "trade"
+    },
+    {
+      "region": "Suji-gu",
+      "week": "2026-04-13",
+      "rate": 0.4135957644231628,
+      "type": "trade"
+    },
+    {
+      "region": "Siheung",
+      "week": "2026-04-13",
+      "rate": -0.023213261753342034,
+      "type": "trade"
+    },
+    {
+      "region": "Gunpo",
+      "week": "2026-04-13",
+      "rate": 0.05600458858282017,
+      "type": "trade"
+    },
+    {
+      "region": "Uiwang",
+      "week": "2026-04-13",
+      "rate": 0.2328571583353865,
+      "type": "trade"
+    },
+    {
+      "region": "Hanam",
+      "week": "2026-04-13",
+      "rate": 0.2627820865167061,
+      "type": "trade"
+    },
+    {
+      "region": "Osan",
+      "week": "2026-04-13",
+      "rate": 0.04907003264653136,
+      "type": "trade"
+    },
+    {
+      "region": "Paju",
+      "week": "2026-04-13",
+      "rate": -0.02526360594457142,
+      "type": "trade"
+    },
+    {
+      "region": "Icheon",
+      "week": "2026-04-13",
+      "rate": -0.31642255760196714,
+      "type": "trade"
+    },
+    {
+      "region": "Anseong",
+      "week": "2026-04-13",
+      "rate": -0.034196719955723306,
+      "type": "trade"
+    },
+    {
+      "region": "Gimpo",
+      "week": "2026-04-13",
+      "rate": -0.004168078815018757,
+      "type": "trade"
+    },
+    {
+      "region": "Yangju",
+      "week": "2026-04-13",
+      "rate": 0.004321909136240698,
+      "type": "trade"
+    },
+    {
+      "region": "Dongducheon",
+      "week": "2026-04-13",
+      "rate": 0.005783997719497876,
+      "type": "trade"
+    },
+    {
+      "region": "Gwangju.1",
+      "week": "2026-04-13",
+      "rate": 0.004026220613973777,
+      "type": "trade"
+    },
+    {
+      "region": "Hwaseong",
+      "week": "2026-04-13",
+      "rate": 0.06917011028957545,
+      "type": "trade"
+    },
+    {
+      "region": "Manse-gu",
+      "week": "2026-04-13",
+      "rate": -0.025514003844184497,
+      "type": "trade"
+    },
+    {
+      "region": "Hyohaeng-gu",
+      "week": "2026-04-13",
+      "rate": 0.1240925764726534,
+      "type": "trade"
+    },
+    {
+      "region": "Byeongjeom-gu",
+      "week": "2026-04-13",
+      "rate": -0.042731365457460015,
+      "type": "trade"
+    },
+    {
+      "region": "Dongtan-gu",
+      "week": "2026-04-13",
+      "rate": 0.13699725923357675,
+      "type": "trade"
+    },
+    {
+      "region": "Gangwon-do",
+      "week": "2026-04-13",
+      "rate": 0.06310214832869686,
+      "type": "trade"
+    },
+    {
+      "region": "Chuncheon",
+      "week": "2026-04-13",
+      "rate": 0.012531866012323721,
+      "type": "trade"
+    },
+    {
+      "region": "Gangneung",
+      "week": "2026-04-13",
+      "rate": 0.009799276543193899,
+      "type": "trade"
+    },
+    {
+      "region": "Wonju",
+      "week": "2026-04-13",
+      "rate": -0.06148980169334296,
+      "type": "trade"
+    },
+    {
+      "region": "Chungcheongbuk-do",
+      "week": "2026-04-13",
+      "rate": 0.01059217820664101,
+      "type": "trade"
+    },
+    {
+      "region": "Cheongju",
+      "week": "2026-04-13",
+      "rate": 0.010207587248841195,
+      "type": "trade"
+    },
+    {
+      "region": "Sangdang-gu",
+      "week": "2026-04-13",
+      "rate": -0.00014761018544718328,
+      "type": "trade"
+    },
+    {
+      "region": "Seowon-gu",
+      "week": "2026-04-13",
+      "rate": -0.0214877272288567,
+      "type": "trade"
+    },
+    {
+      "region": "Cheongwon-gu",
+      "week": "2026-04-13",
+      "rate": -0.009104237290130006,
+      "type": "trade"
+    },
+    {
+      "region": "Heungdeok-gu",
+      "week": "2026-04-13",
+      "rate": 0.05053748116388896,
+      "type": "trade"
+    },
+    {
+      "region": "Chungju",
+      "week": "2026-04-13",
+      "rate": 0.04617313233371528,
+      "type": "trade"
+    },
+    {
+      "region": "Jecheon",
+      "week": "2026-04-13",
+      "rate": 0.007350082925914717,
+      "type": "trade"
+    },
+    {
+      "region": "Chungcheongnam-do ",
+      "week": "2026-04-13",
+      "rate": 0.010923048210431868,
+      "type": "trade"
+    },
+    {
+      "region": "Cheonan",
+      "week": "2026-04-13",
+      "rate": -0.02100934600751951,
+      "type": "trade"
+    },
+    {
+      "region": "Dongnam-gu",
+      "week": "2026-04-13",
+      "rate": -0.011579460482249901,
+      "type": "trade"
+    },
+    {
+      "region": "Seobuk-gu",
+      "week": "2026-04-13",
+      "rate": -0.027033242274122068,
+      "type": "trade"
+    },
+    {
+      "region": "Gongju",
+      "week": "2026-04-13",
+      "rate": 0.07063618237396414,
+      "type": "trade"
+    },
+    {
+      "region": "Asan",
+      "week": "2026-04-13",
+      "rate": -0.005718741320308674,
+      "type": "trade"
+    },
+    {
+      "region": "Nonsan",
+      "week": "2026-04-13",
+      "rate": 0.11026933833157748,
+      "type": "trade"
+    },
+    {
+      "region": "Gyeryong",
+      "week": "2026-04-13",
+      "rate": 0.0,
+      "type": "trade"
+    },
+    {
+      "region": "Dangjin",
+      "week": "2026-04-13",
+      "rate": 0.04018249145144258,
+      "type": "trade"
+    },
+    {
+      "region": "Seosan",
+      "week": "2026-04-13",
+      "rate": 0.018186543943696683,
+      "type": "trade"
+    },
+    {
+      "region": "Jeollabuk-do",
+      "week": "2026-04-13",
+      "rate": 0.10755882245507059,
+      "type": "trade"
+    },
+    {
+      "region": "Jeonju",
+      "week": "2026-04-13",
+      "rate": 0.20962699047269223,
+      "type": "trade"
+    },
+    {
+      "region": "Wansan-gu",
+      "week": "2026-04-13",
+      "rate": 0.21308537915058065,
+      "type": "trade"
+    },
+    {
+      "region": "Deokjin-gu",
+      "week": "2026-04-13",
+      "rate": 0.20593853584956798,
+      "type": "trade"
+    },
+    {
+      "region": "Iksan-si",
+      "week": "2026-04-13",
+      "rate": -0.024846730562923133,
+      "type": "trade"
+    },
+    {
+      "region": "Gunsan",
+      "week": "2026-04-13",
+      "rate": 0.0028047825690737946,
+      "type": "trade"
+    },
+    {
+      "region": "Jeollanam-do",
+      "week": "2026-04-13",
+      "rate": 0.0703711874944149,
+      "type": "trade"
+    },
+    {
+      "region": "Mokpo",
+      "week": "2026-04-13",
+      "rate": -0.0741482231865771,
+      "type": "trade"
+    },
+    {
+      "region": "Suncheon",
+      "week": "2026-04-13",
+      "rate": 0.15732081015109842,
+      "type": "trade"
+    },
+    {
+      "region": "Gwangyang",
+      "week": "2026-04-13",
+      "rate": 0.0164589264685405,
+      "type": "trade"
+    },
+    {
+      "region": "Yeosu",
+      "week": "2026-04-13",
+      "rate": -0.06039473285892281,
+      "type": "trade"
+    },
+    {
+      "region": "Gyeongsangbuk-do",
+      "week": "2026-04-13",
+      "rate": 0.00622206178135264,
+      "type": "trade"
+    },
+    {
+      "region": "Pohang",
+      "week": "2026-04-13",
+      "rate": -0.09431275378533624,
+      "type": "trade"
+    },
+    {
+      "region": "Nam-gu.4",
+      "week": "2026-04-13",
+      "rate": -0.14114972542318738,
+      "type": "trade"
+    },
+    {
+      "region": "Buk-gu .1",
+      "week": "2026-04-13",
+      "rate": -0.07239318091597106,
+      "type": "trade"
+    },
+    {
+      "region": "Gumi",
+      "week": "2026-04-13",
+      "rate": 0.00013517711724470035,
+      "type": "trade"
+    },
+    {
+      "region": "Gyeongsan",
+      "week": "2026-04-13",
+      "rate": 0.02522522221844396,
+      "type": "trade"
+    },
+    {
+      "region": "Andong",
+      "week": "2026-04-13",
+      "rate": 0.14023265346740926,
+      "type": "trade"
+    },
+    {
+      "region": "Gimcheon",
+      "week": "2026-04-13",
+      "rate": 0.0007056690881860364,
+      "type": "trade"
+    },
+    {
+      "region": "Gyeongsangnam-do",
+      "week": "2026-04-13",
+      "rate": 0.03638734240233369,
+      "type": "trade"
+    },
+    {
+      "region": "Changwon",
+      "week": "2026-04-13",
+      "rate": 0.027314772611641825,
+      "type": "trade"
+    },
+    {
+      "region": "Masan happo-gu",
+      "week": "2026-04-13",
+      "rate": -0.011569002023594125,
+      "type": "trade"
+    },
+    {
+      "region": "Masan hoiwon-gu",
+      "week": "2026-04-13",
+      "rate": 0.08013452792195758,
+      "type": "trade"
+    },
+    {
+      "region": "Sungsan-gu",
+      "week": "2026-04-13",
+      "rate": 0.054345909107342855,
+      "type": "trade"
+    },
+    {
+      "region": "Uichang-gu",
+      "week": "2026-04-13",
+      "rate": 0.01899916371016882,
+      "type": "trade"
+    },
+    {
+      "region": "Jinhae-gu",
+      "week": "2026-04-13",
+      "rate": -0.03119897901310927,
+      "type": "trade"
+    },
+    {
+      "region": "Yangsan",
+      "week": "2026-04-13",
+      "rate": -0.015450989965657075,
+      "type": "trade"
+    },
+    {
+      "region": "Geoje",
+      "week": "2026-04-13",
+      "rate": -0.04700407419841774,
+      "type": "trade"
+    },
+    {
+      "region": "Jinju",
+      "week": "2026-04-13",
+      "rate": 0.340799409725504,
+      "type": "trade"
+    },
+    {
+      "region": "Gimhae",
+      "week": "2026-04-13",
+      "rate": -0.023065356699572798,
+      "type": "trade"
+    },
+    {
+      "region": "Tongyeong",
+      "week": "2026-04-13",
+      "rate": -0.046568414145111155,
+      "type": "trade"
+    },
+    {
+      "region": "Jeju/ Seogwipo",
+      "week": "2026-04-13",
+      "rate": 0.03374500661059585,
+      "type": "trade"
+    },
+    {
+      "region": "Non-Metropolitan Area",
+      "week": "2026-04-13",
+      "rate": 0.038982967047940006,
+      "type": "trade"
+    },
+    {
+      "region": "Total",
       "week": "2008-04-14",
       "rate": 0.07868579535318972,
       "type": "jeonse"
@@ -71869,498 +71917,6 @@
       "type": "jeonse"
     },
     {
-      "region": "Seoul",
-      "week": "2025-09-29",
-      "rate": 0.1539449152788144,
-      "type": "jeonse"
-    },
-    {
-      "region": "Northern seoul",
-      "week": "2025-09-29",
-      "rate": 0.06470246392364358,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gangbuk-gu",
-      "week": "2025-09-29",
-      "rate": 0.01981705439586646,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwangjin-gu",
-      "week": "2025-09-29",
-      "rate": 0.3413260370590393,
-      "type": "jeonse"
-    },
-    {
-      "region": "Nowon-gu",
-      "week": "2025-09-29",
-      "rate": 0.028304617194597016,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dobong-gu",
-      "week": "2025-09-29",
-      "rate": 0.04126305498871448,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dongdaemun-gu",
-      "week": "2025-09-29",
-      "rate": 0.0430276633591313,
-      "type": "jeonse"
-    },
-    {
-      "region": "Mapo-gu",
-      "week": "2025-09-29",
-      "rate": 0.030684296397275285,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seodaemun-gu",
-      "week": "2025-09-29",
-      "rate": 0.05230386898229483,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seongdong-gu",
-      "week": "2025-09-29",
-      "rate": 0.05564466870576967,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seongbuk-gu",
-      "week": "2025-09-29",
-      "rate": 0.08136277846082098,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yongsan-gu",
-      "week": "2025-09-29",
-      "rate": 0.13941291473554357,
-      "type": "jeonse"
-    },
-    {
-      "region": "Eunpyeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.05319843336166577,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jongno-gu",
-      "week": "2025-09-29",
-      "rate": 0.05048251618887792,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jung-gu",
-      "week": "2025-09-29",
-      "rate": 0.055832162248258446,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jungnang-gu",
-      "week": "2025-09-29",
-      "rate": 0.08877198473709746,
-      "type": "jeonse"
-    },
-    {
-      "region": "Southern Seoul",
-      "week": "2025-09-29",
-      "rate": 0.23400372488857255,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gangnam-gu",
-      "week": "2025-09-29",
-      "rate": 0.1905598153166464,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gangdong-gu",
-      "week": "2025-09-29",
-      "rate": 0.48207208739130286,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gangseo-gu",
-      "week": "2025-09-29",
-      "rate": 0.17735043699538341,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwanak-gu",
-      "week": "2025-09-29",
-      "rate": 0.10469158009842082,
-      "type": "jeonse"
-    },
-    {
-      "region": "Guro-gu",
-      "week": "2025-09-29",
-      "rate": 0.08986125577413778,
-      "type": "jeonse"
-    },
-    {
-      "region": "Geumcheon-gu",
-      "week": "2025-09-29",
-      "rate": 0.01819502823793007,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dongjak-gu",
-      "week": "2025-09-29",
-      "rate": 0.09508167717002125,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seocho-gu",
-      "week": "2025-09-29",
-      "rate": 0.03311753348733262,
-      "type": "jeonse"
-    },
-    {
-      "region": "Songpa-gu",
-      "week": "2025-09-29",
-      "rate": 0.7672926309469791,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yangcheon-gu",
-      "week": "2025-09-29",
-      "rate": 0.07564159695320014,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yeongdeungpo-gu",
-      "week": "2025-09-29",
-      "rate": 0.04431160666312926,
-      "type": "jeonse"
-    },
-    {
-      "region": "6 Large Cities",
-      "week": "2025-09-29",
-      "rate": 0.028203124777513133,
-      "type": "jeonse"
-    },
-    {
-      "region": "Busan",
-      "week": "2025-09-29",
-      "rate": 0.031571418117695066,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jung-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seo-gu",
-      "week": "2025-09-29",
-      "rate": 0.10763377677670738,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dong-gu",
-      "week": "2025-09-29",
-      "rate": 0.05927875863285144,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yeongdo-gu",
-      "week": "2025-09-29",
-      "rate": -6.600940033200056e-12,
-      "type": "jeonse"
-    },
-    {
-      "region": "Busanjin-gu",
-      "week": "2025-09-29",
-      "rate": 0.11393402267870231,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dongnae-gu",
-      "week": "2025-09-29",
-      "rate": 0.04557323234828211,
-      "type": "jeonse"
-    },
-    {
-      "region": "Nam-gu",
-      "week": "2025-09-29",
-      "rate": 0.0654152035717537,
-      "type": "jeonse"
-    },
-    {
-      "region": "Buk-gu",
-      "week": "2025-09-29",
-      "rate": 0.012844257157191391,
-      "type": "jeonse"
-    },
-    {
-      "region": "Haeundae-gu",
-      "week": "2025-09-29",
-      "rate": 0.07972807786337568,
-      "type": "jeonse"
-    },
-    {
-      "region": "Saha-gu",
-      "week": "2025-09-29",
-      "rate": -0.011655332998789642,
-      "type": "jeonse"
-    },
-    {
-      "region": "Geumjeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.1029512668177162,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yeonje-gu",
-      "week": "2025-09-29",
-      "rate": 0.06611155721463491,
-      "type": "jeonse"
-    },
-    {
-      "region": "Suyeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.0700638021395001,
-      "type": "jeonse"
-    },
-    {
-      "region": "Sasang-gu",
-      "week": "2025-09-29",
-      "rate": -0.012243891173525666,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gijang-gun",
-      "week": "2025-09-29",
-      "rate": 0.019935526611066675,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gangseo-gu.1",
-      "week": "2025-09-29",
-      "rate": -0.44801936679500926,
-      "type": "jeonse"
-    },
-    {
-      "region": "Daegu",
-      "week": "2025-09-29",
-      "rate": 0.039215230540450986,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jung-gu ",
-      "week": "2025-09-29",
-      "rate": 0.0283262097297365,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dong-gu ",
-      "week": "2025-09-29",
-      "rate": 0.04393344851684761,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seo-gu ",
-      "week": "2025-09-29",
-      "rate": 0.04853558519240426,
-      "type": "jeonse"
-    },
-    {
-      "region": "Nam-gu.1",
-      "week": "2025-09-29",
-      "rate": -0.04714487771104456,
-      "type": "jeonse"
-    },
-    {
-      "region": "Buk-gu ",
-      "week": "2025-09-29",
-      "rate": -0.010779415651317565,
-      "type": "jeonse"
-    },
-    {
-      "region": "Suseong-gu ",
-      "week": "2025-09-29",
-      "rate": 0.07025053430135979,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dalseo-gu ",
-      "week": "2025-09-29",
-      "rate": 0.021268631761418914,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dalseong-gun ",
-      "week": "2025-09-29",
-      "rate": 0.12089181245646766,
-      "type": "jeonse"
-    },
-    {
-      "region": "Incheon",
-      "week": "2025-09-29",
-      "rate": 0.025500918959489458,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jung-gu.2",
-      "week": "2025-09-29",
-      "rate": 0.010793691381120742,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dong-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "jeonse"
-    },
-    {
-      "region": "Michuhol-gu",
-      "week": "2025-09-29",
-      "rate": 0.10094584912957512,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yeonsu-gu",
-      "week": "2025-09-29",
-      "rate": 0.006722519375650888,
-      "type": "jeonse"
-    },
-    {
-      "region": "Namdong-gu",
-      "week": "2025-09-29",
-      "rate": 0.01516387326700489,
-      "type": "jeonse"
-    },
-    {
-      "region": "Bupyeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.016632228820116116,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gyeyang-gu",
-      "week": "2025-09-29",
-      "rate": 0.005666599183679547,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seo-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.03681905110111892,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwangju",
-      "week": "2025-09-29",
-      "rate": 0.02141859835783802,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dong-gu.2",
-      "week": "2025-09-29",
-      "rate": 0.17806542025220004,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seo-gu.2",
-      "week": "2025-09-29",
-      "rate": 0.007237819765088668,
-      "type": "jeonse"
-    },
-    {
-      "region": "Nam-gu.2",
-      "week": "2025-09-29",
-      "rate": 0.007782551054370544,
-      "type": "jeonse"
-    },
-    {
-      "region": "Buk-gu.1",
-      "week": "2025-09-29",
-      "rate": 0.022953417757208033,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwangsan-gu",
-      "week": "2025-09-29",
-      "rate": -5.194454526087919e-11,
-      "type": "jeonse"
-    },
-    {
-      "region": "Daejeon",
-      "week": "2025-09-29",
-      "rate": -0.017617546625122965,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dong-gu.3",
-      "week": "2025-09-29",
-      "rate": -0.05473513745689795,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jung-gu.3",
-      "week": "2025-09-29",
-      "rate": -0.11593418519715278,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seo-gu.3",
-      "week": "2025-09-29",
-      "rate": 0.008268080005718081,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yuseong-gu",
-      "week": "2025-09-29",
-      "rate": 0.014198977019550727,
-      "type": "jeonse"
-    },
-    {
-      "region": "Daedeok-gu",
-      "week": "2025-09-29",
-      "rate": -2.5219622835046415e-11,
-      "type": "jeonse"
-    },
-    {
-      "region": "Ulsan",
-      "week": "2025-09-29",
-      "rate": 0.0716982628985827,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jung-gu.4",
-      "week": "2025-09-29",
-      "rate": 0.09455165819979235,
-      "type": "jeonse"
-    },
-    {
-      "region": "Nam-gu.3",
-      "week": "2025-09-29",
-      "rate": 0.12562368292376025,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dong-gu.4",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "jeonse"
-    },
-    {
-      "region": "Buk-gu.2",
-      "week": "2025-09-29",
-      "rate": 0.09144433625461375,
-      "type": "jeonse"
-    },
-    {
-      "region": "Ulju-gun",
-      "week": "2025-09-29",
-      "rate": 0.003911800034979998,
-      "type": "jeonse"
-    },
-    {
       "region": "5 Large Cities",
       "week": "2025-09-29",
       "rate": 0.02898302082651054,
@@ -72370,618 +71926,6 @@
       "region": "Seoul Metropolitan Area",
       "week": "2025-09-29",
       "rate": 0.07057446739174689,
-      "type": "jeonse"
-    },
-    {
-      "region": "Sejong",
-      "week": "2025-09-29",
-      "rate": 0.1771230886483562,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gyeonggi-do",
-      "week": "2025-09-29",
-      "rate": 0.038581811341332185,
-      "type": "jeonse"
-    },
-    {
-      "region": "Suwon",
-      "week": "2025-09-29",
-      "rate": 0.052387627357816234,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jangan-gu",
-      "week": "2025-09-29",
-      "rate": 0.0414641523500037,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwonseon-gu",
-      "week": "2025-09-29",
-      "rate": 0.018621651045595867,
-      "type": "jeonse"
-    },
-    {
-      "region": "Paldal-gu",
-      "week": "2025-09-29",
-      "rate": 0.08313551483453305,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yeongtong-gu",
-      "week": "2025-09-29",
-      "rate": 0.07357940250192152,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seongnam",
-      "week": "2025-09-29",
-      "rate": 0.14728866936757562,
-      "type": "jeonse"
-    },
-    {
-      "region": "Sujeong-gu",
-      "week": "2025-09-29",
-      "rate": 0.22651641917668353,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jungwon-gu",
-      "week": "2025-09-29",
-      "rate": 0.24210698313930995,
-      "type": "jeonse"
-    },
-    {
-      "region": "Bundang-gu",
-      "week": "2025-09-29",
-      "rate": 0.10367730235392957,
-      "type": "jeonse"
-    },
-    {
-      "region": "Goyang",
-      "week": "2025-09-29",
-      "rate": -0.03739632896501373,
-      "type": "jeonse"
-    },
-    {
-      "region": "Deogyang-gu",
-      "week": "2025-09-29",
-      "rate": -0.05887449107704853,
-      "type": "jeonse"
-    },
-    {
-      "region": "Ilsandong-gu",
-      "week": "2025-09-29",
-      "rate": -3.80494155783085e-12,
-      "type": "jeonse"
-    },
-    {
-      "region": "Ilsanseo-gu",
-      "week": "2025-09-29",
-      "rate": -0.037107127954556854,
-      "type": "jeonse"
-    },
-    {
-      "region": "Anyang",
-      "week": "2025-09-29",
-      "rate": 0.12899472237259216,
-      "type": "jeonse"
-    },
-    {
-      "region": "Manan-gu",
-      "week": "2025-09-29",
-      "rate": 0.1719792212766583,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dongan-gu",
-      "week": "2025-09-29",
-      "rate": 0.10832283329637235,
-      "type": "jeonse"
-    },
-    {
-      "region": "Bucheon",
-      "week": "2025-09-29",
-      "rate": -0.01259546843337258,
-      "type": "jeonse"
-    },
-    {
-      "region": "Wonmi-gu",
-      "week": "2025-09-29",
-      "rate": -0.003794186676951598,
-      "type": "jeonse"
-    },
-    {
-      "region": "Sosa-gu",
-      "week": "2025-09-29",
-      "rate": -0.02758218224031546,
-      "type": "jeonse"
-    },
-    {
-      "region": "Ojeong-gu",
-      "week": "2025-09-29",
-      "rate": -0.013192940642779516,
-      "type": "jeonse"
-    },
-    {
-      "region": "Uijeongbu",
-      "week": "2025-09-29",
-      "rate": 0.034668606495079045,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwangmyeong",
-      "week": "2025-09-29",
-      "rate": 0.01772292053447234,
-      "type": "jeonse"
-    },
-    {
-      "region": "Pyeongtaek",
-      "week": "2025-09-29",
-      "rate": -0.19116585735480449,
-      "type": "jeonse"
-    },
-    {
-      "region": "Ansan",
-      "week": "2025-09-29",
-      "rate": 0.0013147347229771943,
-      "type": "jeonse"
-    },
-    {
-      "region": "Danwon-gu",
-      "week": "2025-09-29",
-      "rate": 0.015398227929075603,
-      "type": "jeonse"
-    },
-    {
-      "region": "Sangrok-gu",
-      "week": "2025-09-29",
-      "rate": -0.0182554653049554,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwacheon",
-      "week": "2025-09-29",
-      "rate": -1.6295321249761875e-11,
-      "type": "jeonse"
-    },
-    {
-      "region": "Guri",
-      "week": "2025-09-29",
-      "rate": 0.28028167419370514,
-      "type": "jeonse"
-    },
-    {
-      "region": "Namyangju",
-      "week": "2025-09-29",
-      "rate": 0.06341666863784945,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yongin",
-      "week": "2025-09-29",
-      "rate": 0.12037868280519395,
-      "type": "jeonse"
-    },
-    {
-      "region": "Cheoin-gu",
-      "week": "2025-09-29",
-      "rate": 0.04654186832420031,
-      "type": "jeonse"
-    },
-    {
-      "region": "Giheung-gu",
-      "week": "2025-09-29",
-      "rate": 0.12948168682737823,
-      "type": "jeonse"
-    },
-    {
-      "region": "Suji-gu",
-      "week": "2025-09-29",
-      "rate": 0.1383486790134717,
-      "type": "jeonse"
-    },
-    {
-      "region": "Siheung",
-      "week": "2025-09-29",
-      "rate": -0.08837811126858991,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gunpo",
-      "week": "2025-09-29",
-      "rate": 0.052291299557786705,
-      "type": "jeonse"
-    },
-    {
-      "region": "Uiwang",
-      "week": "2025-09-29",
-      "rate": 0.013056233694077674,
-      "type": "jeonse"
-    },
-    {
-      "region": "Hanam",
-      "week": "2025-09-29",
-      "rate": 0.25086023348001013,
-      "type": "jeonse"
-    },
-    {
-      "region": "Osan",
-      "week": "2025-09-29",
-      "rate": -0.041434078021643034,
-      "type": "jeonse"
-    },
-    {
-      "region": "Paju",
-      "week": "2025-09-29",
-      "rate": -0.04704436717820079,
-      "type": "jeonse"
-    },
-    {
-      "region": "Icheon",
-      "week": "2025-09-29",
-      "rate": -0.02117381680436661,
-      "type": "jeonse"
-    },
-    {
-      "region": "Anseong",
-      "week": "2025-09-29",
-      "rate": -0.04416108236310589,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gimpo",
-      "week": "2025-09-29",
-      "rate": -0.0011860291833275208,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yangju",
-      "week": "2025-09-29",
-      "rate": 0.20419853695626466,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dongducheon",
-      "week": "2025-09-29",
-      "rate": 0.06675727528807934,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwangju.1",
-      "week": "2025-09-29",
-      "rate": 0.11159526795742637,
-      "type": "jeonse"
-    },
-    {
-      "region": "Hwaseong",
-      "week": "2025-09-29",
-      "rate": 0.030819275837773583,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gangwon-do",
-      "week": "2025-09-29",
-      "rate": -0.01613379146227986,
-      "type": "jeonse"
-    },
-    {
-      "region": "Chuncheon",
-      "week": "2025-09-29",
-      "rate": 0.0019469691400413969,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gangneung",
-      "week": "2025-09-29",
-      "rate": -0.0032675832517778144,
-      "type": "jeonse"
-    },
-    {
-      "region": "Wonju",
-      "week": "2025-09-29",
-      "rate": -0.04935085564630608,
-      "type": "jeonse"
-    },
-    {
-      "region": "Chungcheongbuk-do",
-      "week": "2025-09-29",
-      "rate": 0.023227060651919092,
-      "type": "jeonse"
-    },
-    {
-      "region": "Cheongju",
-      "week": "2025-09-29",
-      "rate": 0.03596458265939731,
-      "type": "jeonse"
-    },
-    {
-      "region": "Sangdang-gu",
-      "week": "2025-09-29",
-      "rate": 0.013647948647789598,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seowon-gu",
-      "week": "2025-09-29",
-      "rate": 0.03442454416892361,
-      "type": "jeonse"
-    },
-    {
-      "region": "Cheongwon-gu",
-      "week": "2025-09-29",
-      "rate": 0.0018954776078264452,
-      "type": "jeonse"
-    },
-    {
-      "region": "Heungdeok-gu",
-      "week": "2025-09-29",
-      "rate": 0.07300465150856783,
-      "type": "jeonse"
-    },
-    {
-      "region": "Chungju",
-      "week": "2025-09-29",
-      "rate": -0.006827182628436333,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jecheon",
-      "week": "2025-09-29",
-      "rate": 0.029663602362825905,
-      "type": "jeonse"
-    },
-    {
-      "region": "Chungcheongnam-do ",
-      "week": "2025-09-29",
-      "rate": -0.007186359944336789,
-      "type": "jeonse"
-    },
-    {
-      "region": "Cheonan",
-      "week": "2025-09-29",
-      "rate": -0.03613799808245757,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dongnam-gu",
-      "week": "2025-09-29",
-      "rate": -0.11839424322584277,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seobuk-gu",
-      "week": "2025-09-29",
-      "rate": 0.017204827466789935,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gongju",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "jeonse"
-    },
-    {
-      "region": "Asan",
-      "week": "2025-09-29",
-      "rate": -0.020303224153611923,
-      "type": "jeonse"
-    },
-    {
-      "region": "Nonsan",
-      "week": "2025-09-29",
-      "rate": 0.09397480868958598,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gyeryong",
-      "week": "2025-09-29",
-      "rate": -0.012024702078136962,
-      "type": "jeonse"
-    },
-    {
-      "region": "Dangjin",
-      "week": "2025-09-29",
-      "rate": 0.0882152100052404,
-      "type": "jeonse"
-    },
-    {
-      "region": "Seosan",
-      "week": "2025-09-29",
-      "rate": -1.525250526944983e-11,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jeollabuk-do",
-      "week": "2025-09-29",
-      "rate": 0.0446251991898427,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jeonju",
-      "week": "2025-09-29",
-      "rate": 0.09058870186807347,
-      "type": "jeonse"
-    },
-    {
-      "region": "Wansan-gu",
-      "week": "2025-09-29",
-      "rate": 0.13948561734301665,
-      "type": "jeonse"
-    },
-    {
-      "region": "Deokjin-gu",
-      "week": "2025-09-29",
-      "rate": 0.03861147337573844,
-      "type": "jeonse"
-    },
-    {
-      "region": "Iksan-si",
-      "week": "2025-09-29",
-      "rate": -0.012785969420605914,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gunsan",
-      "week": "2025-09-29",
-      "rate": -0.009540947118877615,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jeollanam-do",
-      "week": "2025-09-29",
-      "rate": 0.0269770201569575,
-      "type": "jeonse"
-    },
-    {
-      "region": "Mokpo",
-      "week": "2025-09-29",
-      "rate": 0.027300943361707627,
-      "type": "jeonse"
-    },
-    {
-      "region": "Suncheon",
-      "week": "2025-09-29",
-      "rate": 0.054500035998533126,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gwangyang",
-      "week": "2025-09-29",
-      "rate": -0.011514070688864859,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yeosu",
-      "week": "2025-09-29",
-      "rate": -0.013679250873709992,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gyeongsangbuk-do",
-      "week": "2025-09-29",
-      "rate": -0.001065790515907307,
-      "type": "jeonse"
-    },
-    {
-      "region": "Pohang",
-      "week": "2025-09-29",
-      "rate": -0.0390079760992799,
-      "type": "jeonse"
-    },
-    {
-      "region": "Nam-gu.4",
-      "week": "2025-09-29",
-      "rate": -0.02137303050560998,
-      "type": "jeonse"
-    },
-    {
-      "region": "Buk-gu .1",
-      "week": "2025-09-29",
-      "rate": -0.047983378263790094,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gumi",
-      "week": "2025-09-29",
-      "rate": -0.00717169329869255,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gyeongsan",
-      "week": "2025-09-29",
-      "rate": 0.11558104903425438,
-      "type": "jeonse"
-    },
-    {
-      "region": "Andong",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gimcheon",
-      "week": "2025-09-29",
-      "rate": 0.03341448796798516,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gyeongsangnam-do",
-      "week": "2025-09-29",
-      "rate": 0.0395117502780484,
-      "type": "jeonse"
-    },
-    {
-      "region": "Changwon",
-      "week": "2025-09-29",
-      "rate": 0.0001052719910421267,
-      "type": "jeonse"
-    },
-    {
-      "region": "Masan happo-gu",
-      "week": "2025-09-29",
-      "rate": 3.7013155979583195e-11,
-      "type": "jeonse"
-    },
-    {
-      "region": "Masan hoiwon-gu",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "jeonse"
-    },
-    {
-      "region": "Sungsan-gu",
-      "week": "2025-09-29",
-      "rate": 0.0036258112882834592,
-      "type": "jeonse"
-    },
-    {
-      "region": "Uichang-gu",
-      "week": "2025-09-29",
-      "rate": -0.006907926704105577,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jinhae-gu",
-      "week": "2025-09-29",
-      "rate": 0.0,
-      "type": "jeonse"
-    },
-    {
-      "region": "Yangsan",
-      "week": "2025-09-29",
-      "rate": 0.14676235339849938,
-      "type": "jeonse"
-    },
-    {
-      "region": "Geoje",
-      "week": "2025-09-29",
-      "rate": 0.07222912132897939,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jinju",
-      "week": "2025-09-29",
-      "rate": 0.08956473980489539,
-      "type": "jeonse"
-    },
-    {
-      "region": "Gimhae",
-      "week": "2025-09-29",
-      "rate": 0.0062321461425778974,
-      "type": "jeonse"
-    },
-    {
-      "region": "Tongyeong",
-      "week": "2025-09-29",
-      "rate": 3.4739982207505285e-11,
-      "type": "jeonse"
-    },
-    {
-      "region": "Jeju/ Seogwipo",
-      "week": "2025-09-29",
-      "rate": 0.005627974458839959,
       "type": "jeonse"
     },
     {
@@ -101380,6 +100324,1158 @@
       "region": "Non-Metropolitan Area",
       "week": "2026-04-06",
       "rate": 0.04047616464425878,
+      "type": "jeonse"
+    },
+    {
+      "region": "Total",
+      "week": "2026-04-13",
+      "rate": 0.10801884561165058,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seoul",
+      "week": "2026-04-13",
+      "rate": 0.20278086892477568,
+      "type": "jeonse"
+    },
+    {
+      "region": "Northern seoul",
+      "week": "2026-04-13",
+      "rate": 0.2529835235220534,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gangbuk-gu",
+      "week": "2026-04-13",
+      "rate": 0.8448409088425985,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwangjin-gu",
+      "week": "2026-04-13",
+      "rate": 0.16937004714966364,
+      "type": "jeonse"
+    },
+    {
+      "region": "Nowon-gu",
+      "week": "2026-04-13",
+      "rate": 0.31241216005424816,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dobong-gu",
+      "week": "2026-04-13",
+      "rate": 0.3068261171943399,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dongdaemun-gu",
+      "week": "2026-04-13",
+      "rate": 0.17004381327582266,
+      "type": "jeonse"
+    },
+    {
+      "region": "Mapo-gu",
+      "week": "2026-04-13",
+      "rate": 0.14218502457673207,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seodaemun-gu",
+      "week": "2026-04-13",
+      "rate": 0.13761094747510572,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seongdong-gu",
+      "week": "2026-04-13",
+      "rate": 0.32066113192747575,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seongbuk-gu",
+      "week": "2026-04-13",
+      "rate": 0.3348044908039276,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yongsan-gu",
+      "week": "2026-04-13",
+      "rate": 0.12154992792952665,
+      "type": "jeonse"
+    },
+    {
+      "region": "Eunpyeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.09172765777037711,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jongno-gu",
+      "week": "2026-04-13",
+      "rate": 0.10788356085463342,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jung-gu",
+      "week": "2026-04-13",
+      "rate": 0.1888396481476198,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jungnang-gu",
+      "week": "2026-04-13",
+      "rate": 0.20112865737721206,
+      "type": "jeonse"
+    },
+    {
+      "region": "Southern Seoul",
+      "week": "2026-04-13",
+      "rate": 0.15762648892151443,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gangnam-gu",
+      "week": "2026-04-13",
+      "rate": 0.03992969158056024,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gangdong-gu",
+      "week": "2026-04-13",
+      "rate": 0.3095511947048446,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gangseo-gu",
+      "week": "2026-04-13",
+      "rate": 0.16203571726041668,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwanak-gu",
+      "week": "2026-04-13",
+      "rate": 0.35793332598002014,
+      "type": "jeonse"
+    },
+    {
+      "region": "Guro-gu",
+      "week": "2026-04-13",
+      "rate": 0.260167126893967,
+      "type": "jeonse"
+    },
+    {
+      "region": "Geumcheon-gu",
+      "week": "2026-04-13",
+      "rate": 0.16227990096899284,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dongjak-gu",
+      "week": "2026-04-13",
+      "rate": 0.0787871110111108,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seocho-gu",
+      "week": "2026-04-13",
+      "rate": 0.062385062512649976,
+      "type": "jeonse"
+    },
+    {
+      "region": "Songpa-gu",
+      "week": "2026-04-13",
+      "rate": 0.20245438369389568,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yangcheon-gu",
+      "week": "2026-04-13",
+      "rate": 0.07527270567464567,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yeongdeungpo-gu",
+      "week": "2026-04-13",
+      "rate": 0.14412123492558282,
+      "type": "jeonse"
+    },
+    {
+      "region": "6 Large Cities",
+      "week": "2026-04-13",
+      "rate": 0.07359647357627959,
+      "type": "jeonse"
+    },
+    {
+      "region": "Busan",
+      "week": "2026-04-13",
+      "rate": 0.11372694154625622,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jung-gu.1",
+      "week": "2026-04-13",
+      "rate": 3.382670009404527e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seo-gu",
+      "week": "2026-04-13",
+      "rate": 0.020493134734182995,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dong-gu",
+      "week": "2026-04-13",
+      "rate": 0.20404561629896412,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yeongdo-gu",
+      "week": "2026-04-13",
+      "rate": 0.0,
+      "type": "jeonse"
+    },
+    {
+      "region": "Busanjin-gu",
+      "week": "2026-04-13",
+      "rate": 0.03598654945811632,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dongnae-gu",
+      "week": "2026-04-13",
+      "rate": 0.41268906474292183,
+      "type": "jeonse"
+    },
+    {
+      "region": "Nam-gu",
+      "week": "2026-04-13",
+      "rate": 0.020914819765338478,
+      "type": "jeonse"
+    },
+    {
+      "region": "Buk-gu",
+      "week": "2026-04-13",
+      "rate": 0.039500624617963144,
+      "type": "jeonse"
+    },
+    {
+      "region": "Haeundae-gu",
+      "week": "2026-04-13",
+      "rate": 0.23407143173355788,
+      "type": "jeonse"
+    },
+    {
+      "region": "Saha-gu",
+      "week": "2026-04-13",
+      "rate": 0.12678059208089976,
+      "type": "jeonse"
+    },
+    {
+      "region": "Geumjeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.032831403452179546,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yeonje-gu",
+      "week": "2026-04-13",
+      "rate": 0.11624455851896763,
+      "type": "jeonse"
+    },
+    {
+      "region": "Suyeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.2168508038516313,
+      "type": "jeonse"
+    },
+    {
+      "region": "Sasang-gu",
+      "week": "2026-04-13",
+      "rate": 0.036921775740088016,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gijang-gun",
+      "week": "2026-04-13",
+      "rate": 0.01469316203210741,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gangseo-gu.1",
+      "week": "2026-04-13",
+      "rate": 3.859154102909226e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Daegu",
+      "week": "2026-04-13",
+      "rate": 0.027738648960669684,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jung-gu ",
+      "week": "2026-04-13",
+      "rate": 0.03647476543340599,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dong-gu ",
+      "week": "2026-04-13",
+      "rate": 0.03625000438739409,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seo-gu ",
+      "week": "2026-04-13",
+      "rate": 0.014045172710747027,
+      "type": "jeonse"
+    },
+    {
+      "region": "Nam-gu.1",
+      "week": "2026-04-13",
+      "rate": -3.499018440604284e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Buk-gu ",
+      "week": "2026-04-13",
+      "rate": 0.017171651228557714,
+      "type": "jeonse"
+    },
+    {
+      "region": "Suseong-gu ",
+      "week": "2026-04-13",
+      "rate": 0.002226587482768762,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dalseo-gu ",
+      "week": "2026-04-13",
+      "rate": 0.032150068714622504,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dalseong-gun ",
+      "week": "2026-04-13",
+      "rate": 0.07143801764177223,
+      "type": "jeonse"
+    },
+    {
+      "region": "Incheon",
+      "week": "2026-04-13",
+      "rate": 0.09486914429958862,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jung-gu.2",
+      "week": "2026-04-13",
+      "rate": 0.08503011448390951,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dong-gu.1",
+      "week": "2026-04-13",
+      "rate": 4.049684902948702e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Michuhol-gu",
+      "week": "2026-04-13",
+      "rate": 0.09460651875579967,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yeonsu-gu",
+      "week": "2026-04-13",
+      "rate": 0.18674608369398,
+      "type": "jeonse"
+    },
+    {
+      "region": "Namdong-gu",
+      "week": "2026-04-13",
+      "rate": 0.02356721764285005,
+      "type": "jeonse"
+    },
+    {
+      "region": "Bupyeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.2169565392688596,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gyeyang-gu",
+      "week": "2026-04-13",
+      "rate": 0.04950824990397824,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seo-gu.1",
+      "week": "2026-04-13",
+      "rate": 0.017146528791212267,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwangju",
+      "week": "2026-04-13",
+      "rate": 0.009760894043880405,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dong-gu.2",
+      "week": "2026-04-13",
+      "rate": -2.6010537786769756e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seo-gu.2",
+      "week": "2026-04-13",
+      "rate": 0.0040972145249942755,
+      "type": "jeonse"
+    },
+    {
+      "region": "Nam-gu.2",
+      "week": "2026-04-13",
+      "rate": 0.03898901113543655,
+      "type": "jeonse"
+    },
+    {
+      "region": "Buk-gu.1",
+      "week": "2026-04-13",
+      "rate": 0.005213060770958359,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwangsan-gu",
+      "week": "2026-04-13",
+      "rate": 0.006580016121591788,
+      "type": "jeonse"
+    },
+    {
+      "region": "Daejeon",
+      "week": "2026-04-13",
+      "rate": 0.039893581019609,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dong-gu.3",
+      "week": "2026-04-13",
+      "rate": 3.601675060104575e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jung-gu.3",
+      "week": "2026-04-13",
+      "rate": -0.007437130419910346,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seo-gu.3",
+      "week": "2026-04-13",
+      "rate": 0.05002320993496192,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yuseong-gu",
+      "week": "2026-04-13",
+      "rate": 0.09271829639083871,
+      "type": "jeonse"
+    },
+    {
+      "region": "Daedeok-gu",
+      "week": "2026-04-13",
+      "rate": -0.0035841629107485964,
+      "type": "jeonse"
+    },
+    {
+      "region": "Ulsan",
+      "week": "2026-04-13",
+      "rate": 0.14559224181204844,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jung-gu.4",
+      "week": "2026-04-13",
+      "rate": 0.14579864876730536,
+      "type": "jeonse"
+    },
+    {
+      "region": "Nam-gu.3",
+      "week": "2026-04-13",
+      "rate": 0.23017477479452797,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dong-gu.4",
+      "week": "2026-04-13",
+      "rate": 0.05387392191455589,
+      "type": "jeonse"
+    },
+    {
+      "region": "Buk-gu.2",
+      "week": "2026-04-13",
+      "rate": 0.141410438840829,
+      "type": "jeonse"
+    },
+    {
+      "region": "Ulju-gun",
+      "week": "2026-04-13",
+      "rate": 0.09080557285047289,
+      "type": "jeonse"
+    },
+    {
+      "region": "5 Large Cities",
+      "week": "2026-04-13",
+      "rate": 0.06738891422869914,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seoul Metropolitan Area",
+      "week": "2026-04-13",
+      "rate": 0.16164674794097894,
+      "type": "jeonse"
+    },
+    {
+      "region": "Sejong",
+      "week": "2026-04-13",
+      "rate": 0.03273021296300355,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gyeonggi-do",
+      "week": "2026-04-13",
+      "rate": 0.15620819387806414,
+      "type": "jeonse"
+    },
+    {
+      "region": "Suwon",
+      "week": "2026-04-13",
+      "rate": 0.18108925760064348,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jangan-gu",
+      "week": "2026-04-13",
+      "rate": 0.14637916582869978,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwonseon-gu",
+      "week": "2026-04-13",
+      "rate": 0.035713907889330085,
+      "type": "jeonse"
+    },
+    {
+      "region": "Paldal-gu",
+      "week": "2026-04-13",
+      "rate": 0.4762348799850839,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yeongtong-gu",
+      "week": "2026-04-13",
+      "rate": 0.20099007445167635,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seongnam",
+      "week": "2026-04-13",
+      "rate": 0.2602763092925955,
+      "type": "jeonse"
+    },
+    {
+      "region": "Sujeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.12560866255851438,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jungwon-gu",
+      "week": "2026-04-13",
+      "rate": 0.7414192638538577,
+      "type": "jeonse"
+    },
+    {
+      "region": "Bundang-gu",
+      "week": "2026-04-13",
+      "rate": 0.16911978176584347,
+      "type": "jeonse"
+    },
+    {
+      "region": "Goyang",
+      "week": "2026-04-13",
+      "rate": 0.03146102077865741,
+      "type": "jeonse"
+    },
+    {
+      "region": "Deogyang-gu",
+      "week": "2026-04-13",
+      "rate": 0.08053768852425466,
+      "type": "jeonse"
+    },
+    {
+      "region": "Ilsandong-gu",
+      "week": "2026-04-13",
+      "rate": -0.022926668639223668,
+      "type": "jeonse"
+    },
+    {
+      "region": "Ilsanseo-gu",
+      "week": "2026-04-13",
+      "rate": 0.009054210192881745,
+      "type": "jeonse"
+    },
+    {
+      "region": "Anyang",
+      "week": "2026-04-13",
+      "rate": 0.2683139969498783,
+      "type": "jeonse"
+    },
+    {
+      "region": "Manan-gu",
+      "week": "2026-04-13",
+      "rate": 0.20896761366130762,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dongan-gu",
+      "week": "2026-04-13",
+      "rate": 0.29678159364552803,
+      "type": "jeonse"
+    },
+    {
+      "region": "Bucheon",
+      "week": "2026-04-13",
+      "rate": 0.02698435929054017,
+      "type": "jeonse"
+    },
+    {
+      "region": "Wonmi-gu",
+      "week": "2026-04-13",
+      "rate": 0.01162074701909407,
+      "type": "jeonse"
+    },
+    {
+      "region": "Sosa-gu",
+      "week": "2026-04-13",
+      "rate": 0.0457500965196279,
+      "type": "jeonse"
+    },
+    {
+      "region": "Ojeong-gu",
+      "week": "2026-04-13",
+      "rate": 0.04960041132482185,
+      "type": "jeonse"
+    },
+    {
+      "region": "Uijeongbu",
+      "week": "2026-04-13",
+      "rate": 0.04051936597079456,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwangmyeong",
+      "week": "2026-04-13",
+      "rate": 0.6289873513065208,
+      "type": "jeonse"
+    },
+    {
+      "region": "Pyeongtaek",
+      "week": "2026-04-13",
+      "rate": 0.03236767936660935,
+      "type": "jeonse"
+    },
+    {
+      "region": "Ansan",
+      "week": "2026-04-13",
+      "rate": 0.12038577365548549,
+      "type": "jeonse"
+    },
+    {
+      "region": "Danwon-gu",
+      "week": "2026-04-13",
+      "rate": 0.16412238492491657,
+      "type": "jeonse"
+    },
+    {
+      "region": "Sangrok-gu",
+      "week": "2026-04-13",
+      "rate": 0.05925668879162912,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwacheon",
+      "week": "2026-04-13",
+      "rate": -3.333231579255171e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Guri",
+      "week": "2026-04-13",
+      "rate": 0.35952409024541476,
+      "type": "jeonse"
+    },
+    {
+      "region": "Namyangju",
+      "week": "2026-04-13",
+      "rate": 0.1874349034870547,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yongin",
+      "week": "2026-04-13",
+      "rate": 0.23221831352918704,
+      "type": "jeonse"
+    },
+    {
+      "region": "Cheoin-gu",
+      "week": "2026-04-13",
+      "rate": 0.12455473768679182,
+      "type": "jeonse"
+    },
+    {
+      "region": "Giheung-gu",
+      "week": "2026-04-13",
+      "rate": 0.11365184491089124,
+      "type": "jeonse"
+    },
+    {
+      "region": "Suji-gu",
+      "week": "2026-04-13",
+      "rate": 0.39994914176591423,
+      "type": "jeonse"
+    },
+    {
+      "region": "Siheung",
+      "week": "2026-04-13",
+      "rate": 0.03466928728922884,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gunpo",
+      "week": "2026-04-13",
+      "rate": 0.11367758781418837,
+      "type": "jeonse"
+    },
+    {
+      "region": "Uiwang",
+      "week": "2026-04-13",
+      "rate": 0.35562903561809167,
+      "type": "jeonse"
+    },
+    {
+      "region": "Hanam",
+      "week": "2026-04-13",
+      "rate": 0.13866085770399278,
+      "type": "jeonse"
+    },
+    {
+      "region": "Osan",
+      "week": "2026-04-13",
+      "rate": 0.06847519582474296,
+      "type": "jeonse"
+    },
+    {
+      "region": "Paju",
+      "week": "2026-04-13",
+      "rate": 0.014288063280776302,
+      "type": "jeonse"
+    },
+    {
+      "region": "Icheon",
+      "week": "2026-04-13",
+      "rate": -0.07439946126626303,
+      "type": "jeonse"
+    },
+    {
+      "region": "Anseong",
+      "week": "2026-04-13",
+      "rate": 0.2417298565795221,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gimpo",
+      "week": "2026-04-13",
+      "rate": 0.08620035490389068,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yangju",
+      "week": "2026-04-13",
+      "rate": 0.6415271593775987,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dongducheon",
+      "week": "2026-04-13",
+      "rate": -4.0915800209498856e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwangju.1",
+      "week": "2026-04-13",
+      "rate": 0.013576776967075604,
+      "type": "jeonse"
+    },
+    {
+      "region": "Hwaseong",
+      "week": "2026-04-13",
+      "rate": 0.16136407804460015,
+      "type": "jeonse"
+    },
+    {
+      "region": "Manse-gu",
+      "week": "2026-04-13",
+      "rate": 5.1305496448603575e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Hyohaeng-gu",
+      "week": "2026-04-13",
+      "rate": 0.26444828970116135,
+      "type": "jeonse"
+    },
+    {
+      "region": "Byeongjeom-gu",
+      "week": "2026-04-13",
+      "rate": 0.09993640562159944,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dongtan-gu",
+      "week": "2026-04-13",
+      "rate": 0.21066020416147516,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gangwon-do",
+      "week": "2026-04-13",
+      "rate": 0.041704247259544615,
+      "type": "jeonse"
+    },
+    {
+      "region": "Chuncheon",
+      "week": "2026-04-13",
+      "rate": 0.08784928010798658,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gangneung",
+      "week": "2026-04-13",
+      "rate": 0.011070478297361155,
+      "type": "jeonse"
+    },
+    {
+      "region": "Wonju",
+      "week": "2026-04-13",
+      "rate": -0.030330722139482014,
+      "type": "jeonse"
+    },
+    {
+      "region": "Chungcheongbuk-do",
+      "week": "2026-04-13",
+      "rate": 0.12031023750332552,
+      "type": "jeonse"
+    },
+    {
+      "region": "Cheongju",
+      "week": "2026-04-13",
+      "rate": 0.12822939243297252,
+      "type": "jeonse"
+    },
+    {
+      "region": "Sangdang-gu",
+      "week": "2026-04-13",
+      "rate": 0.03200914507935896,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seowon-gu",
+      "week": "2026-04-13",
+      "rate": 0.00636098109349579,
+      "type": "jeonse"
+    },
+    {
+      "region": "Cheongwon-gu",
+      "week": "2026-04-13",
+      "rate": 2.942003207219501e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Heungdeok-gu",
+      "week": "2026-04-13",
+      "rate": 0.35327049957275886,
+      "type": "jeonse"
+    },
+    {
+      "region": "Chungju",
+      "week": "2026-04-13",
+      "rate": 0.027395057603781567,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jecheon",
+      "week": "2026-04-13",
+      "rate": 0.23330318873847344,
+      "type": "jeonse"
+    },
+    {
+      "region": "Chungcheongnam-do ",
+      "week": "2026-04-13",
+      "rate": 0.03456180933126047,
+      "type": "jeonse"
+    },
+    {
+      "region": "Cheonan",
+      "week": "2026-04-13",
+      "rate": -0.01022140024843072,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dongnam-gu",
+      "week": "2026-04-13",
+      "rate": -0.0298672081173325,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seobuk-gu",
+      "week": "2026-04-13",
+      "rate": 0.0023285197674849834,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gongju",
+      "week": "2026-04-13",
+      "rate": 0.0,
+      "type": "jeonse"
+    },
+    {
+      "region": "Asan",
+      "week": "2026-04-13",
+      "rate": -0.007293468317869256,
+      "type": "jeonse"
+    },
+    {
+      "region": "Nonsan",
+      "week": "2026-04-13",
+      "rate": 0.03198261954912947,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gyeryong",
+      "week": "2026-04-13",
+      "rate": 0.07152372357442675,
+      "type": "jeonse"
+    },
+    {
+      "region": "Dangjin",
+      "week": "2026-04-13",
+      "rate": 0.15869118452660072,
+      "type": "jeonse"
+    },
+    {
+      "region": "Seosan",
+      "week": "2026-04-13",
+      "rate": 0.06770926794041238,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jeollabuk-do",
+      "week": "2026-04-13",
+      "rate": 0.07611833461841097,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jeonju",
+      "week": "2026-04-13",
+      "rate": 0.08836132209983734,
+      "type": "jeonse"
+    },
+    {
+      "region": "Wansan-gu",
+      "week": "2026-04-13",
+      "rate": 0.09765874781853294,
+      "type": "jeonse"
+    },
+    {
+      "region": "Deokjin-gu",
+      "week": "2026-04-13",
+      "rate": 0.07861961911141209,
+      "type": "jeonse"
+    },
+    {
+      "region": "Iksan-si",
+      "week": "2026-04-13",
+      "rate": 0.16589660829733274,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gunsan",
+      "week": "2026-04-13",
+      "rate": 0.009004765525343399,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jeollanam-do",
+      "week": "2026-04-13",
+      "rate": 0.0882118217188047,
+      "type": "jeonse"
+    },
+    {
+      "region": "Mokpo",
+      "week": "2026-04-13",
+      "rate": 0.022943250887589414,
+      "type": "jeonse"
+    },
+    {
+      "region": "Suncheon",
+      "week": "2026-04-13",
+      "rate": 0.2716817744935751,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gwangyang",
+      "week": "2026-04-13",
+      "rate": 4.022250149866334e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yeosu",
+      "week": "2026-04-13",
+      "rate": 0.01930543587660383,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gyeongsangbuk-do",
+      "week": "2026-04-13",
+      "rate": 0.0023228417751314343,
+      "type": "jeonse"
+    },
+    {
+      "region": "Pohang",
+      "week": "2026-04-13",
+      "rate": -0.044940325855628294,
+      "type": "jeonse"
+    },
+    {
+      "region": "Nam-gu.4",
+      "week": "2026-04-13",
+      "rate": -0.017949514863338362,
+      "type": "jeonse"
+    },
+    {
+      "region": "Buk-gu .1",
+      "week": "2026-04-13",
+      "rate": -0.057571950602707575,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gumi",
+      "week": "2026-04-13",
+      "rate": 0.028635179182560113,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gyeongsan",
+      "week": "2026-04-13",
+      "rate": 0.04851541744649138,
+      "type": "jeonse"
+    },
+    {
+      "region": "Andong",
+      "week": "2026-04-13",
+      "rate": 0.0,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gimcheon",
+      "week": "2026-04-13",
+      "rate": -1.2274530652379918e-11,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gyeongsangnam-do",
+      "week": "2026-04-13",
+      "rate": 0.02695672672931386,
+      "type": "jeonse"
+    },
+    {
+      "region": "Changwon",
+      "week": "2026-04-13",
+      "rate": 0.0117396195035278,
+      "type": "jeonse"
+    },
+    {
+      "region": "Masan happo-gu",
+      "week": "2026-04-13",
+      "rate": -0.002692561668145893,
+      "type": "jeonse"
+    },
+    {
+      "region": "Masan hoiwon-gu",
+      "week": "2026-04-13",
+      "rate": -4.865411587852982e-12,
+      "type": "jeonse"
+    },
+    {
+      "region": "Sungsan-gu",
+      "week": "2026-04-13",
+      "rate": 0.015861665563456185,
+      "type": "jeonse"
+    },
+    {
+      "region": "Uichang-gu",
+      "week": "2026-04-13",
+      "rate": 0.028440022741908526,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jinhae-gu",
+      "week": "2026-04-13",
+      "rate": 0.015727374156252555,
+      "type": "jeonse"
+    },
+    {
+      "region": "Yangsan",
+      "week": "2026-04-13",
+      "rate": 0.09318295358427049,
+      "type": "jeonse"
+    },
+    {
+      "region": "Geoje",
+      "week": "2026-04-13",
+      "rate": -0.004681893923350767,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jinju",
+      "week": "2026-04-13",
+      "rate": 0.05528839441436404,
+      "type": "jeonse"
+    },
+    {
+      "region": "Gimhae",
+      "week": "2026-04-13",
+      "rate": 0.01252219190441916,
+      "type": "jeonse"
+    },
+    {
+      "region": "Tongyeong",
+      "week": "2026-04-13",
+      "rate": 0.01285869187247379,
+      "type": "jeonse"
+    },
+    {
+      "region": "Jeju/ Seogwipo",
+      "week": "2026-04-13",
+      "rate": 0.0,
+      "type": "jeonse"
+    },
+    {
+      "region": "Non-Metropolitan Area",
+      "week": "2026-04-13",
+      "rate": 0.047204616802197744,
       "type": "jeonse"
     }
   ],
@@ -202879,6 +202975,126 @@
         "region": "제주특별자치도 Jeju",
         "week": "2026-04-06",
         "value": 39.37408497
+      },
+      {
+        "region": "전국 Total",
+        "week": "2026-04-13",
+        "value": 40.12502833
+      },
+      {
+        "region": "서울특별시 Seoul",
+        "week": "2026-04-13",
+        "value": 68.21295375
+      },
+      {
+        "region": "강북14개구 Northern seoul",
+        "week": "2026-04-13",
+        "value": 70.62249631
+      },
+      {
+        "region": "강남11개구 Southern Seoul",
+        "week": "2026-04-13",
+        "value": 66.05597128
+      },
+      {
+        "region": "6개광역시 6 Large Cities",
+        "week": "2026-04-13",
+        "value": 26.74181709
+      },
+      {
+        "region": "5개광역시 5 Large Cities",
+        "week": "2026-04-13",
+        "value": 25.94343085
+      },
+      {
+        "region": "부산광역시  Busan",
+        "week": "2026-04-13",
+        "value": 22.27097412
+      },
+      {
+        "region": "대구광역시  Daegu",
+        "week": "2026-04-13",
+        "value": 29.21399032
+      },
+      {
+        "region": "인천광역시  Incheon",
+        "week": "2026-04-13",
+        "value": 29.47571775
+      },
+      {
+        "region": "광주광역시  Gwangju",
+        "week": "2026-04-13",
+        "value": 15.43175602
+      },
+      {
+        "region": "대전광역시  Daejeon",
+        "week": "2026-04-13",
+        "value": 33.62123242
+      },
+      {
+        "region": "울산광역시  Ulsan",
+        "week": "2026-04-13",
+        "value": 35.04153521
+      },
+      {
+        "region": "세종특별자치시  Sejong",
+        "week": "2026-04-13",
+        "value": 18.33333317
+      },
+      {
+        "region": "수도권 Seoul Metropolitan Area",
+        "week": "2026-04-13",
+        "value": 49.41980839
+      },
+      {
+        "region": "경기도  Gyeonggi-do",
+        "week": "2026-04-13",
+        "value": 44.53527854
+      },
+      {
+        "region": "강원특별자치도 Gangwon-do",
+        "week": "2026-04-13",
+        "value": 33.91390505
+      },
+      {
+        "region": "충청북도  ChungCheongbuk-do",
+        "week": "2026-04-13",
+        "value": 30.18325344
+      },
+      {
+        "region": "충청남도  ChungCheongnam-do",
+        "week": "2026-04-13",
+        "value": 22.50276736
+      },
+      {
+        "region": "전북특별자치도  Jeollabuk-do",
+        "week": "2026-04-13",
+        "value": 64.02448356
+      },
+      {
+        "region": "전라남도  Jeollanam-do",
+        "week": "2026-04-13",
+        "value": 34.22772333
+      },
+      {
+        "region": "경상북도  Gyeongsangbuk-do",
+        "week": "2026-04-13",
+        "value": 38.72026734
+      },
+      {
+        "region": "경상남도  Gyeongsangnam-do",
+        "week": "2026-04-13",
+        "value": 31.52786665
+      },
+      {
+        "region": "기타지방 Non Metropolitan Area",
+        "week": "2026-04-13",
+        "value": 34.9669508
+      },
+      {
+        "region": "제주특별자치도 Jeju",
+        "week": "2026-04-13",
+        "value": 46.46296571
       }
     ],
     "jeonse_supply": [
@@ -304376,6 +304592,126 @@
         "region": "제주특별자치도 Jeju",
         "week": "2026-04-06",
         "value": 161.3264098
+      },
+      {
+        "region": "전국 Total",
+        "week": "2026-04-13",
+        "value": 172.29237097
+      },
+      {
+        "region": "서울특별시 Seoul",
+        "week": "2026-04-13",
+        "value": 178.1048904
+      },
+      {
+        "region": "강북14개구 Northern seoul",
+        "week": "2026-04-13",
+        "value": 187.20806396
+      },
+      {
+        "region": "강남11개구 Southern Seoul",
+        "week": "2026-04-13",
+        "value": 169.95588064
+      },
+      {
+        "region": "6개광역시 6 Large Cities",
+        "week": "2026-04-13",
+        "value": 170.76502834
+      },
+      {
+        "region": "5개광역시 5 Large Cities",
+        "week": "2026-04-13",
+        "value": 167.66836524
+      },
+      {
+        "region": "부산광역시  Busan",
+        "week": "2026-04-13",
+        "value": 172.30551653
+      },
+      {
+        "region": "대구광역시  Daegu",
+        "week": "2026-04-13",
+        "value": 151.14674099
+      },
+      {
+        "region": "인천광역시  Incheon",
+        "week": "2026-04-13",
+        "value": 181.36888003
+      },
+      {
+        "region": "광주광역시  Gwangju",
+        "week": "2026-04-13",
+        "value": 166.85981082
+      },
+      {
+        "region": "대전광역시  Daejeon",
+        "week": "2026-04-13",
+        "value": 167.30294718
+      },
+      {
+        "region": "울산광역시  Ulsan",
+        "week": "2026-04-13",
+        "value": 193.65068495
+      },
+      {
+        "region": "세종특별자치시  Sejong",
+        "week": "2026-04-13",
+        "value": 151.66666662
+      },
+      {
+        "region": "수도권 Seoul Metropolitan Area",
+        "week": "2026-04-13",
+        "value": 176.80465022
+      },
+      {
+        "region": "경기도  Gyeonggi-do",
+        "week": "2026-04-13",
+        "value": 175.11476078
+      },
+      {
+        "region": "강원특별자치도 Gangwon-do",
+        "week": "2026-04-13",
+        "value": 162.55463293
+      },
+      {
+        "region": "충청북도  ChungCheongbuk-do",
+        "week": "2026-04-13",
+        "value": 182.13808585
+      },
+      {
+        "region": "충청남도  ChungCheongnam-do",
+        "week": "2026-04-13",
+        "value": 172.99030642
+      },
+      {
+        "region": "전북특별자치도  Jeollabuk-do",
+        "week": "2026-04-13",
+        "value": 172.59294839
+      },
+      {
+        "region": "전라남도  Jeollanam-do",
+        "week": "2026-04-13",
+        "value": 162.77249829
+      },
+      {
+        "region": "경상북도  Gyeongsangbuk-do",
+        "week": "2026-04-13",
+        "value": 158.24122732
+      },
+      {
+        "region": "경상남도  Gyeongsangnam-do",
+        "week": "2026-04-13",
+        "value": 171.07285681
+      },
+      {
+        "region": "기타지방 Non Metropolitan Area",
+        "week": "2026-04-13",
+        "value": 167.98033553
+      },
+      {
+        "region": "제주특별자치도 Jeju",
+        "week": "2026-04-13",
+        "value": 129.46841405
       }
     ]
   }
