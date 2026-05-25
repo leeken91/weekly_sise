@@ -108,7 +108,7 @@ def convert_excel_to_json():
                                     'type': data_type
                                 })
 
-                elif '매수매도' in sheet_name:
+                elif '매수우위' in sheet_name:
                     # 매수매도 시트 처리 (매수우위지수)
                     for weekly_data in sheet_data['recent_weeks']:
                         if isinstance(weekly_data, dict) and 'date' in weekly_data:

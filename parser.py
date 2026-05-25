@@ -54,7 +54,7 @@ class KBRealEstateParser:
             result = self._parse_change_sheet(sheet_name)
             logger.info(f"  -> 증감 시트 결과 타입: {type(result)}")
             return result
-        elif '매수매도' in sheet_name or '전세수급' in sheet_name:
+        elif '매수우위' in sheet_name or '전세수급' in sheet_name:
             logger.info(f"  -> 수급 시트로 처리: {'매수매도' in sheet_name}, {'전세수급' in sheet_name}")
             result = self._parse_supply_sheet(sheet_name)
             logger.info(f"  -> 수급 시트 결과 타입: {type(result)}")
